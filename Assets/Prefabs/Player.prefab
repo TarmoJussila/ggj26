@@ -80,7 +80,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SplitScreenPlayer
   _maxStamina: 0
   _jumpBufferLength: 0.07
-  _lookSpeed: 8
+  _lookSpeed: 100
   _walkSpeed: 13.4
   _runSpeed: 1.5
   _airtimeThreshold: 0
