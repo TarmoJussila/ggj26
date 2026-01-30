@@ -1,10 +1,16 @@
+using System;
 using Logbound.Data;
 using Logbound.Utilities;
+using UnityEngine;
 
 namespace Logbound.Services
 {
     public class ForecastService : Singleton<ForecastService>
     {
+        public event Action<WeatherState, float> OnForecastUpdated;
+        
+        [SerializeField] private float _forecastIntervalDuration = 60f;
+        
         private WeatherState _previousTargetState;
         private WeatherState _currentTargetState;
         private WeatherState _nextTargetState;
@@ -12,6 +18,8 @@ namespace Logbound.Services
         private float _previousTargetTemperature;
         private float _currentTargetTemperature;
         private float _nextTargetTemperature;
+        
+        private float _forecastTimer;
 
         protected override void Awake()
         {
@@ -27,6 +35,16 @@ namespace Logbound.Services
             );
         }
 
+        private void Update()
+        {
+            _forecastTimer += Time.deltaTime;
+            if (_forecastTimer >= _forecastIntervalDuration)
+            {
+                _forecastTimer = 0f;
+                UpdateForecast(WeatherUtility.GetRandomWeatherState(), WeatherUtility.GetRandomTemperatureCelsius());
+            }
+        }
+
         private void InitializeForecast(WeatherState previousState, WeatherState currentState, WeatherState nextState,
             float previousTemperature, float currentTemperature, float nextTemperature)
         {
@@ -39,7 +57,7 @@ namespace Logbound.Services
             _nextTargetTemperature = nextTemperature;
         }
         
-        public void UpdateForecast(WeatherState nextState, float nextTemperature)
+        private void UpdateForecast(WeatherState nextState, float nextTemperature)
         {
             _previousTargetState = _currentTargetState;
             _currentTargetState = _nextTargetState;
@@ -48,6 +66,8 @@ namespace Logbound.Services
             _previousTargetTemperature = _currentTargetTemperature;
             _currentTargetTemperature = _nextTargetTemperature;
             _nextTargetTemperature = nextTemperature;
+            
+            OnForecastUpdated?.Invoke(_currentTargetState, _currentTargetTemperature);
         }
         
         public WeatherState GetWeatherState(WeatherUtility.WeatherTimeState weatherTimeState)
@@ -70,6 +90,11 @@ namespace Logbound.Services
                 WeatherUtility.WeatherTimeState.Next => _nextTargetTemperature,
                 _ => _currentTargetTemperature
             };
+        }
+        
+        public float GetForecastProgress()
+        {
+            return _forecastTimer / _forecastIntervalDuration;
         }
     }
 }
