@@ -5,7 +5,7 @@ namespace Logbound
 {
     [RequireComponent(typeof(Rigidbody))]
     [RequireComponent(typeof(Collider))]
-    public class MaskItem : InteractableItem
+    public class BasicMaskItem : InteractableItem
     {
         private Rigidbody _rb;
         private Collider[] _colliders;
