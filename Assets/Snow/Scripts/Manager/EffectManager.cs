@@ -1,3 +1,4 @@
+using Logbound.Utilities;
 using UnityEngine;
 
 namespace Manager
