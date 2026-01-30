@@ -125,8 +125,8 @@ Material:
     - _RimPower: 7
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
-    - _SnowDepth: 2
-    - _SnowHeight: 0.67
+    - _SnowDepth: 1
+    - _SnowHeight: 2
     - _SnowNormalStrength: 0.413
     - _SnowTextureOpacity: 1
     - _SnowTextureScale: 2
