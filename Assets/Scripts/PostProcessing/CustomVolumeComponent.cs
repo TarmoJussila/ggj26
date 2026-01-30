@@ -1,7 +1,7 @@
 using System;
 using UnityEngine.Rendering;
 
-namespace PostProcessing
+namespace Logbound.PostProcessing
 {
     [Serializable]
     public class CustomVolumeComponent : VolumeComponent

@@ -1,11 +1,11 @@
-using PostProcessing;
+using Logbound.PostProcessing;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.RenderGraphModule;
 using UnityEngine.Rendering.RenderGraphModule.Util;
 using UnityEngine.Rendering.Universal;
 
-namespace Rendering
+namespace Logbound.Rendering
 {
     public class BlitMaterialRendererFeature : ScriptableRendererFeature
     {

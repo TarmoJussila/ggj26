@@ -1,9 +1,9 @@
 using Logbound.Utilities;
 using UnityEngine;
 
-namespace Manager
+namespace Logbound.Services
 {
-    public class EffectManager : Singleton<EffectManager>
+    public class EffectService : Singleton<EffectService>
     {
         [field: SerializeField] public Material SnowTrackerMaterial { get; private set; }
     }
