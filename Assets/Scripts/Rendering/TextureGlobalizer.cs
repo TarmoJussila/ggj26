@@ -1,24 +1,27 @@
 using UnityEngine;
 
-public class TextureGlobalizer : MonoBehaviour
+namespace Logbound.Rendering
 {
-    [SerializeField] private RenderTexture _texture;
-    [SerializeField] private string _textureName;
-
-    private void Awake()
+    public class TextureGlobalizer : MonoBehaviour
     {
-        SetGlobal();
-    }
+        [SerializeField] private RenderTexture _texture;
+        [SerializeField] private string _textureName;
+
+        private void Awake()
+        {
+            SetGlobal();
+        }
 
 #if UNITY_EDITOR
-    private void OnValidate()
-    {
-        SetGlobal();
-    }
+        private void OnValidate()
+        {
+            SetGlobal();
+        }
 #endif
 
-    public void SetGlobal()
-    {
-        Shader.SetGlobalTexture(_textureName, _texture);
+        public void SetGlobal()
+        {
+            Shader.SetGlobalTexture(_textureName, _texture);
+        }
     }
 }

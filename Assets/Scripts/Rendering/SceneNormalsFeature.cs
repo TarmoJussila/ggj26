@@ -3,7 +3,7 @@ using UnityEngine.Rendering;
 using UnityEngine.Rendering.RenderGraphModule;
 using UnityEngine.Rendering.Universal;
 
-namespace Rendering
+namespace Logbound.Rendering
 {
     public class SceneNormalsFeature : ScriptableRendererFeature
     {
