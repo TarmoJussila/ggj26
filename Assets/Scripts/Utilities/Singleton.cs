@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Logbound.Core
+namespace Logbound.Utilities
 {
     public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
     {
