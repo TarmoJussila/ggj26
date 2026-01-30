@@ -474,6 +474,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1356535690544037848, guid: a0b3d67a9df8a4026a3cdc027517fa37, type: 3}
+      propertyPath: m_MoveAction
+      value: 
+      objectReference: {fileID: -8784545083839296357, guid: e2c68cb2d28b14129b19ee41bd21e71f, type: 3}
+    - target: {fileID: 1356535690544037848, guid: a0b3d67a9df8a4026a3cdc027517fa37, type: 3}
+      propertyPath: m_CancelAction
+      value: 
+      objectReference: {fileID: 7727032971491509709, guid: e2c68cb2d28b14129b19ee41bd21e71f, type: 3}
+    - target: {fileID: 1356535690544037848, guid: a0b3d67a9df8a4026a3cdc027517fa37, type: 3}
+      propertyPath: m_SubmitAction
+      value: 
+      objectReference: {fileID: 392368643174621059, guid: e2c68cb2d28b14129b19ee41bd21e71f, type: 3}
     - target: {fileID: 1698831668871645812, guid: a0b3d67a9df8a4026a3cdc027517fa37, type: 3}
       propertyPath: m_Layer
       value: 8
