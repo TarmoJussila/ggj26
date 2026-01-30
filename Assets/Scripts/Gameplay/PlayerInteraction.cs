@@ -7,7 +7,7 @@ namespace Logbound
 {
     public class PlayerInteraction : MonoBehaviour
     {
-        public static event Action<PlayerInteraction, InteractableItem> OnPlayerInteractableFound;
+        public event Action<InteractableItem> OnInteractableFound;
 
         [SerializeField] private Transform _cameraTransform;
         [SerializeField] private Transform _carryRoot;
@@ -36,7 +36,7 @@ namespace Logbound
                 DropPressed();
             }
         }
-        
+
         public void InteractPressed()
         {
             if (LastFoundInteractable == null)
@@ -56,7 +56,6 @@ namespace Logbound
             {
                 LastFoundInteractable.Interact(this);
             }
-
         }
 
         public void DropPressed()
@@ -65,7 +64,7 @@ namespace Logbound
             {
                 return;
             }
-            
+
             CurrentCarryItem.transform.SetParent(null);
             CurrentCarryItem.StopCarry();
             CurrentCarryItem = null;
@@ -84,8 +83,8 @@ namespace Logbound
 
         private void ScanInteractables()
         {
-            Debug.DrawLine(_cameraTransform.position, _cameraTransform.position + _cameraTransform.forward *_interactRange);
-            
+            Debug.DrawLine(_cameraTransform.position, _cameraTransform.position + _cameraTransform.forward * _interactRange);
+
             if (!Physics.Raycast(_cameraTransform.position, _cameraTransform.forward, out RaycastHit hit, _interactRange, _interactLayerMask))
             {
                 InvokeInteractableLost();
@@ -98,9 +97,16 @@ namespace Logbound
                 return;
             }
 
+            // already carrying something and target is a carryable that has no other function
+            if (CurrentCarryItem != null && item is CarryableItem carryableItem && !carryableItem.HasSecondaryInteraction)
+            {
+                InvokeInteractableLost();
+                return;
+            }
+
             LastFoundInteractable = item;
-            
-            OnPlayerInteractableFound?.Invoke(this, item);
+
+            OnInteractableFound?.Invoke(item);
         }
 
         private void InvokeInteractableLost()
@@ -108,7 +114,7 @@ namespace Logbound
             if (LastFoundInteractable != null)
             {
                 LastFoundInteractable = null;
-                OnPlayerInteractableFound?.Invoke(this, null);
+                OnInteractableFound?.Invoke(null);
             }
         }
     }

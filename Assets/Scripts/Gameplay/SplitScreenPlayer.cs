@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -34,13 +35,18 @@ namespace Logbound.Gameplay
         private Vector2 _moveInput;
         private Vector2 _lookInput;
 
-        private bool MouseInput => _playerInput.currentControlScheme.Equals("Keyboard&Mouse");
+        public bool MouseInput => _playerInput.currentControlScheme.Equals("Keyboard&Mouse");
 
         private void Awake()
         {
             _cameraTransform = GetComponentInChildren<Camera>().transform;
             _characterController = GetComponentInChildren<CharacterController>();
             _playerInput = GetComponent<PlayerInput>();
+        }
+
+        private void Start()
+        {
+            GetComponentInChildren<PlayerHudController>().Initialize(this);
         }
 
         private void Update()
