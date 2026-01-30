@@ -1,8 +1,8 @@
-using UnityEngine;
+using Logbound.Utilities;
 
 namespace Logbound.Services
 {
-    public class WeatherService : MonoBehaviour
+    public class WeatherService : Singleton<WeatherService>
     {
     }
 }
