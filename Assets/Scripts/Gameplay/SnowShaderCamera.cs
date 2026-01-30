@@ -4,10 +4,10 @@ namespace Logbound.Gameplay
 {
     public class SnowShaderCamera : MonoBehaviour
     {
-        [SerializeField] RenderTexture _drawRt;
-        [SerializeField] RenderTexture _globalRt;
+        [SerializeField] private RenderTexture _drawRt;
+        [SerializeField] private RenderTexture _globalRt;
 
-        [SerializeField] Transform _target;
+        [SerializeField] private Transform _target;
 
         [SerializeField] private float _yPos = -64;
 
@@ -16,9 +16,9 @@ namespace Logbound.Gameplay
 
         private Vector3 _lastPos;
 
-        void Awake()
+        private void Awake()
         {
-            Camera cam = GetComponent<Camera>();
+            var cam = GetComponent<Camera>();
             cam.depthTextureMode = DepthTextureMode.DepthNormals;
 
             Shader.SetGlobalTexture("_GlobalEffectRT", _globalRt);

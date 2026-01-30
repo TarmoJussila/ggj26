@@ -6,9 +6,9 @@ namespace Logbound.Gameplay
     {
         [SerializeField] private float _speed = 10f;
         [SerializeField] private float _jump = 10f;
-        
+
         private Rigidbody _rb;
-        
+
         private void Awake()
         {
             _rb = GetComponent<Rigidbody>();

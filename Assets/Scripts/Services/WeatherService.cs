@@ -7,12 +7,12 @@ namespace Logbound.Services
     {
         public float TemperatureCelsius { get; set; }
         public WeatherState CurrentWeather { get; set; }
-        
+
         public void SetWeatherState(WeatherState state)
         {
             CurrentWeather = state;
         }
-        
+
         public void SetTemperature(float temperature)
         {
             TemperatureCelsius = temperature;

@@ -5,7 +5,7 @@ namespace Logbound.Utilities
     public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
     {
         private static T _instance;
-        private static object _lock = new object();
+        private static object _lock = new();
 
         public static T Instance
         {
@@ -20,7 +20,7 @@ namespace Logbound.Utilities
                             _instance = (T)FindObjectOfType(typeof(T));
                             if (_instance == null)
                             {
-                                GameObject singletonObj = new GameObject(typeof(T).Name);
+                                var singletonObj = new GameObject(typeof(T).Name);
                                 _instance = singletonObj.AddComponent<T>();
                             }
                         }

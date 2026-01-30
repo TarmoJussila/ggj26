@@ -8,7 +8,7 @@ namespace Logbound.Gameplay
 
         private Vector3 _offset;
 
-        void Start()
+        private void Start()
         {
             _offset = _target.position - transform.position;
         }
@@ -20,7 +20,7 @@ namespace Logbound.Gameplay
         }
     #endif
 
-        void Update()
+        private void Update()
         {
             Shader.SetGlobalVector("_MainCameraPosition", transform.position);
             transform.position = _target.position - _offset;

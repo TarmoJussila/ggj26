@@ -10,7 +10,7 @@ namespace Logbound.Rendering
     public class BlitMaterialRendererFeature : ScriptableRendererFeature
     {
         [SerializeField] private bool _enableCameraNormals;
-        [SerializeField] Material _material;
+        [SerializeField] private Material _material;
         [SerializeField] private RenderPassEvent _injectionPoint = RenderPassEvent.AfterRenderingPostProcessing;
 
         private BlendPass _pass;
@@ -34,7 +34,7 @@ namespace Logbound.Rendering
             renderer.EnqueuePass(_pass);
         }
 
-        class BlendPass : ScriptableRenderPass
+        private class BlendPass : ScriptableRenderPass
         {
             public Material EffectMaterial;
 
@@ -62,7 +62,7 @@ namespace Logbound.Rendering
                     return;
                 }
 
-                UniversalResourceData resourceData = frameData.Get<UniversalResourceData>();
+                var resourceData = frameData.Get<UniversalResourceData>();
 
                 if (resourceData.isActiveTargetBackBuffer)
                 {
@@ -75,7 +75,7 @@ namespace Logbound.Rendering
                 dstDesc.name = _passName;
                 dstDesc.clearBuffer = false;
 
-                TextureHandle dst = renderGraph.CreateTexture(dstDesc);
+                var dst = renderGraph.CreateTexture(dstDesc);
 
                 if (!src.IsValid() || !dst.IsValid())
                 {

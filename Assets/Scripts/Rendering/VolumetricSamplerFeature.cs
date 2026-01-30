@@ -7,7 +7,7 @@ namespace Logbound.Rendering
 {
     public class VolumetricSamplerFeature : ScriptableRendererFeature
     {
-        class CustomRenderPass : ScriptableRenderPass
+        private class CustomRenderPass : ScriptableRenderPass
         {
             private Material _material;
 
@@ -30,7 +30,7 @@ namespace Logbound.Rendering
 
             // This static method is passed as the RenderFunc delegate to the RenderGraph render pass.
             // It is used to execute draw commands.
-            static void ExecutePass(PassData data, RasterGraphContext context)
+            private static void ExecutePass(PassData data, RasterGraphContext context)
             {
             }
 
@@ -70,8 +70,8 @@ namespace Logbound.Rendering
 
                     // Make use of frameData to access resources and camera data through the dedicated containers.
                     // Eg:
-                    UniversalCameraData cameraData = frameData.Get<UniversalCameraData>();
-                    UniversalResourceData resourceData = frameData.Get<UniversalResourceData>();
+                    var cameraData = frameData.Get<UniversalCameraData>();
+                    var resourceData = frameData.Get<UniversalResourceData>();
 
                     if (resourceData.isActiveTargetBackBuffer)
                     {
@@ -81,9 +81,9 @@ namespace Logbound.Rendering
                     // Setup pass inputs and outputs through the builder interface.
                     // Eg:
                     // builder.UseTexture(sourceTexture);
-                    RenderTextureDescriptor textureProperties = new RenderTextureDescriptor(cameraData.cameraTargetDescriptor.width, cameraData.cameraTargetDescriptor.height, RenderTextureFormat.Default, 0);
+                    var textureProperties = new RenderTextureDescriptor(cameraData.cameraTargetDescriptor.width, cameraData.cameraTargetDescriptor.height, RenderTextureFormat.Default, 0);
 
-                    TextureHandle destination = UniversalRenderer.CreateRenderGraphTexture(renderGraph,
+                    var destination = UniversalRenderer.CreateRenderGraphTexture(renderGraph,
                         textureProperties, _globalTextureName, false);
 
                     // This sets the render target of the pass to the active color texture. Change it to your own render target as needed.
@@ -114,7 +114,7 @@ namespace Logbound.Rendering
         [SerializeField] private RenderTexture m_RenderTexture;
         [SerializeField] private string m_GlobalTextureName;
 
-        CustomRenderPass m_ScriptablePass;
+        private CustomRenderPass m_ScriptablePass;
 
         /// <inheritdoc/>
         public override void Create()

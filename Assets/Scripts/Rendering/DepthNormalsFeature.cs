@@ -8,7 +8,7 @@ namespace Logbound.Rendering
 {
     public class DepthNormalsFeature : ScriptableRendererFeature
     {
-        class DepthNormalsPass : ScriptableRenderPass
+        private class DepthNormalsPass : ScriptableRenderPass
         {
             private Material _material;
             private List<ShaderTagId> _shaderTags = new();
@@ -22,7 +22,7 @@ namespace Logbound.Rendering
 
             private RenderTexture _externalTexture;
             private RTHandle _externalTextureHandle;
-            
+
             private class PassData
             {
                 // Create a field to store the list of objects to draw
@@ -33,11 +33,11 @@ namespace Logbound.Rendering
             {
                 _material = mat;
                 globalTextureID = Shader.PropertyToID(_textureName);
-                _shaderTags = new List<ShaderTagId>()
+                _shaderTags = new List<ShaderTagId>
                 {
-                    new ShaderTagId("DepthOnly")
+                    new("DepthOnly")
                 };
-                this._filteringSettings = new FilteringSettings(RenderQueueRange.opaque);
+                _filteringSettings = new FilteringSettings(RenderQueueRange.opaque);
                 //_destHandle =  RTHandles.Alloc("_DepthNormalsTexture", name: "_DepthNormalsTexture");
                 _externalTexture = rt;
             }
@@ -49,30 +49,30 @@ namespace Logbound.Rendering
                 using (var builder = renderGraph.AddRasterRenderPass<PassData>(_passName, out var passData))
                 {
                     // Get the data needed to create the list of objects to draw
-                    UniversalRenderingData renderingData = frameContext.Get<UniversalRenderingData>();
-                    UniversalCameraData cameraData = frameContext.Get<UniversalCameraData>();
-                    UniversalLightData lightData = frameContext.Get<UniversalLightData>();
-                    SortingCriteria sortFlags = cameraData.defaultOpaqueSortFlags;
-                    FilteringSettings filterSettings = _filteringSettings;
-                    UniversalResourceData resourceData = frameContext.Get<UniversalResourceData>();
+                    var renderingData = frameContext.Get<UniversalRenderingData>();
+                    var cameraData = frameContext.Get<UniversalCameraData>();
+                    var lightData = frameContext.Get<UniversalLightData>();
+                    var sortFlags = cameraData.defaultOpaqueSortFlags;
+                    var filterSettings = _filteringSettings;
+                    var resourceData = frameContext.Get<UniversalResourceData>();
 
                     if (resourceData.isActiveTargetBackBuffer)
                     {
                         return;
                     }
 
-                    RenderTextureDescriptor textureProperties =
+                    var textureProperties =
                         new RenderTextureDescriptor(Screen.width, Screen.height, RenderTextureFormat.Default, 0);
                     _destHandle =
                         UniversalRenderer.CreateRenderGraphTexture(renderGraph, textureProperties, _textureName, false);
 
                     // Create drawing settings
-                    DrawingSettings drawSettings = RenderingUtils.CreateDrawingSettings(_shaderTags,
+                    var drawSettings = RenderingUtils.CreateDrawingSettings(_shaderTags,
                         renderingData, cameraData, lightData, sortFlags);
-                
+
                     _externalTextureHandle = RTHandles.Alloc(_externalTexture);
 
-                    TextureHandle rtHandle = renderGraph.ImportTexture(_externalTextureHandle);
+                    var rtHandle = renderGraph.ImportTexture(_externalTextureHandle);
 
                     // Add the override material to the drawing settings
                     drawSettings.overrideMaterial = _material;
@@ -88,17 +88,16 @@ namespace Logbound.Rendering
                     builder.AllowGlobalStateModification(true);
                     builder.UseRendererList(passData.rendererListHandle);
                     builder.SetRenderAttachment(rtHandle, 0, AccessFlags.ReadWrite);
-                    
+
                     builder.SetRenderAttachmentDepth(resourceData.activeDepthTexture, AccessFlags.Write);
                     builder.AllowPassCulling(false);
 
                     builder.SetRenderFunc((PassData data, RasterGraphContext context) => ExecutePass(data, context));
                     builder.Dispose();
-                    
                 }
             }
 
-            static void ExecutePass(PassData data, RasterGraphContext context)
+            private static void ExecutePass(PassData data, RasterGraphContext context)
             {
                 // Clear the render target to black
                 context.cmd.ClearRenderTarget(true, true, Color.white);
@@ -115,7 +114,7 @@ namespace Logbound.Rendering
             // }
         }
 
-        DepthNormalsPass m_ScriptablePass;
+        private DepthNormalsPass m_ScriptablePass;
 
         [SerializeField] private RenderTexture _renderTexture;
         [SerializeField] private RenderPassEvent _injectionPoint = RenderPassEvent.AfterRenderingPrePasses;
@@ -124,9 +123,9 @@ namespace Logbound.Rendering
         public override void Create()
         {
             //Material mat = new Material(Shader.Find("Hidden/ViewSpaceNormalsShader"));
-            Material mat = new Material(Shader.Find("Hidden/Internal-DepthNormalsTexture"));
+            var mat = new Material(Shader.Find("Hidden/Internal-DepthNormalsTexture"));
             m_ScriptablePass = new DepthNormalsPass(mat, _renderTexture);
-            
+
             // Configures where the render pass should be injected.
             m_ScriptablePass.renderPassEvent = _injectionPoint;
         }

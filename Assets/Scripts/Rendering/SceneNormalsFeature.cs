@@ -10,19 +10,19 @@ namespace Logbound.Rendering
         public class MyCustomData : ContextItem
         {
             public TextureHandle textureToTransfer;
-            
+
             public override void Reset()
             {
                 textureToTransfer = TextureHandle.nullHandle;
             }
         }
-        
-        class PassData
+
+        private class PassData
         {
             internal TextureHandle copySourceTexture;
         }
 
-        class SceneNormalsPass : ScriptableRenderPass
+        private class SceneNormalsPass : ScriptableRenderPass
         {
             private Material _material;
             private string _passName = "DepthNormalsPass";
@@ -40,25 +40,25 @@ namespace Logbound.Rendering
 
             public override void RecordRenderGraph(RenderGraph renderGraph, ContextContainer frameData)
             {
-                UniversalResourceData resourceData = frameData.Get<UniversalResourceData>();
+                var resourceData = frameData.Get<UniversalResourceData>();
 
                 if (resourceData.isActiveTargetBackBuffer)
                 {
                     return;
                 }
-                
+
                 using (var builder = renderGraph.AddRasterRenderPass<PassData>("SceneNormalsFeature", out var passData))
                 {
-                    RenderTextureDescriptor textureProperties = new RenderTextureDescriptor(Screen.width, Screen.height, RenderTextureFormat.Default, 0);
-                    TextureHandle texture = UniversalRenderer.CreateRenderGraphTexture(renderGraph, textureProperties, "NormalFeatureTexture", false);
-                    MyCustomData customData = frameData.Create<MyCustomData>();
+                    var textureProperties = new RenderTextureDescriptor(Screen.width, Screen.height, RenderTextureFormat.Default, 0);
+                    var texture = UniversalRenderer.CreateRenderGraphTexture(renderGraph, textureProperties, "NormalFeatureTexture", false);
+                    var customData = frameData.Create<MyCustomData>();
                     customData.textureToTransfer = texture;
                     //builder.SetRenderAttachmentDepth(frameData);
                     builder.SetRenderAttachment(texture, 0, AccessFlags.Write);
-    
+
                     builder.AllowPassCulling(false);
 
-                  //  builder.SetRenderFunc((PassData data, RasterGraphContext context) => ExecutePass(data, context));
+                    //  builder.SetRenderFunc((PassData data, RasterGraphContext context) => ExecutePass(data, context));
                 }
 
                 var src = resourceData.activeColorTexture;
@@ -68,8 +68,8 @@ namespace Logbound.Rendering
                     return;
                 }
 
-               // RenderGraphUtils.BlitMaterialParameters p = new(src, texture, _material, 0);
-              //  renderGraph.AddBlitPass(p, passName);
+                // RenderGraphUtils.BlitMaterialParameters p = new(src, texture, _material, 0);
+                //  renderGraph.AddBlitPass(p, passName);
             }
 
             public override void OnCameraCleanup(CommandBuffer cmd)
@@ -82,7 +82,7 @@ namespace Logbound.Rendering
         [SerializeField] private RenderTexture _renderTexture;
         [SerializeField] private RenderPassEvent _injectionPoint = RenderPassEvent.AfterRenderingPrePasses;
 
-        SceneNormalsPass m_ScriptablePass;
+        private SceneNormalsPass m_ScriptablePass;
 
         /// <inheritdoc/>
         public override void Create()
