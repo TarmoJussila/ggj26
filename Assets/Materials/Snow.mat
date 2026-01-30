@@ -49,19 +49,19 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
+        m_Texture: {fileID: 2800000, guid: 45c43aab6f03b03489c3d1f4475831f3, type: 3}
+        m_Scale: {x: 2, y: 2}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Noise:
-        m_Texture: {fileID: 10309, guid: 0000000000000000f000000000000000, type: 0}
+        m_Texture: {fileID: 2800000, guid: 345cc38fab477bd49a1ed9dabec622e6, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Normal:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: de617743d9b8b654cb85d88527fac1b3, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -73,7 +73,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SparkleNoise:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 45c43aab6f03b03489c3d1f4475831f3, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
@@ -122,16 +122,16 @@ Material:
     - _PathBlending: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _RimPower: 1
+    - _RimPower: 7
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SnowDepth: 2
     - _SnowHeight: 0.67
-    - _SnowNormalStrength: 0
+    - _SnowNormalStrength: 0.413
     - _SnowTextureOpacity: 1
     - _SnowTextureScale: 2
-    - _SparkCutoff: 2
-    - _SparkleScale: 0
+    - _SparkCutoff: 0.84
+    - _SparkleScale: 3.97
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _SrcBlendAlpha: 1
@@ -141,10 +141,10 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 0.094732285, g: 0.094732285, b: 0.094732285, a: 1}
+    - _Color: {r: 0.5707547, g: 0.65286, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _PathColorIn: {r: 0.0744037, g: 0.0747597, b: 0.0754717, a: 1}
-    - _PathColorOut: {r: 0.0130627025, g: 0.012415453, b: 0.084905684, a: 1}
+    - _PathColorIn: {r: 0.8396226, g: 0.06732824, b: 0.06732824, a: 1}
+    - _PathColorOut: {r: 0.03773582, g: 0.03773582, b: 0.03773582, a: 1}
     - _RimColor: {r: 0.0009765625, g: 0.0009765625, b: 0.0009765625, a: 1}
     - _ShadowColor: {r: 0.25663045, g: 0.5870207, b: 0.6886792, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
