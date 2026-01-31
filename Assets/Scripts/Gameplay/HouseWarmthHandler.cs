@@ -39,14 +39,6 @@ namespace Logbound.Gameplay
         }
 
         /// <summary>
-        /// Returns true if the indoor temperature is warm enough (0 or higher).
-        /// </summary>
-        public bool IsWarm()
-        {
-            return _indoorTemperature >= 0f;
-        }
-
-        /// <summary>
         /// Returns a factor from 0 to 1 representing how cold it is inside.
         /// 0 = warm (0°C or higher), 1 = very cold (-50°C or lower)
         /// </summary>
