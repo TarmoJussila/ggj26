@@ -324,18 +324,18 @@ MonoBehaviour:
   CurrentMaskType: 0
   WalkAnim:
   - Front: {fileID: 21300000, guid: 9dd5abbedca115a4eaff40ce44ac6feb, type: 3}
-    Back: {fileID: 21300000, guid: 9dd5abbedca115a4eaff40ce44ac6feb, type: 3}
+    Back: {fileID: 21300000, guid: 7a4f578946512674eb21587fff05bbcf, type: 3}
   - Front: {fileID: 21300000, guid: 8759f148a5211204692fc78e60cd6de0, type: 3}
-    Back: {fileID: 21300000, guid: 8759f148a5211204692fc78e60cd6de0, type: 3}
+    Back: {fileID: 21300000, guid: 4505f396ec7a85947b12310b76200585, type: 3}
   - Front: {fileID: 21300000, guid: 69f6a1791a1126d499188cfa691f0b9e, type: 3}
-    Back: {fileID: 21300000, guid: 69f6a1791a1126d499188cfa691f0b9e, type: 3}
+    Back: {fileID: 21300000, guid: f2ea5506f93243744b887e79dd24d713, type: 3}
   - Front: {fileID: 21300000, guid: 31be2f87afdea524da382a9f1cdd068f, type: 3}
-    Back: {fileID: 21300000, guid: 31be2f87afdea524da382a9f1cdd068f, type: 3}
+    Back: {fileID: 21300000, guid: 6013e23f74a1f7a44b5416aed927084f, type: 3}
   - Front: {fileID: 21300000, guid: 7a25e478dbfd26443822183a31f0db81, type: 3}
-    Back: {fileID: 21300000, guid: 7a25e478dbfd26443822183a31f0db81, type: 3}
+    Back: {fileID: 21300000, guid: 5ac446d9746422443b8e536a6b7c171d, type: 3}
   IdleAnim:
   - Front: {fileID: 21300000, guid: 9dd5abbedca115a4eaff40ce44ac6feb, type: 3}
-    Back: {fileID: 21300000, guid: 9dd5abbedca115a4eaff40ce44ac6feb, type: 3}
+    Back: {fileID: 21300000, guid: 7a4f578946512674eb21587fff05bbcf, type: 3}
   JumpAnim:
   - Front: {fileID: 21300000, guid: 9b2d850f4888d3e4d8a51861f06f6be5, type: 3}
     Back: {fileID: 21300000, guid: 9b2d850f4888d3e4d8a51861f06f6be5, type: 3}
