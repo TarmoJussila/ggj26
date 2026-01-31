@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfff6e025e7c66c44baf2d7ae1567f1b, type: 3}
+  m_Name: SkiMask
+  m_EditorClassIdentifier: Assembly-CSharp::Logbound.MaskFrames
+  MaskType: 3
+  Frames:
+  - {fileID: 21300000, guid: 3191a851d7136be41aec2d398de199e5, type: 3}
+  - {fileID: 21300000, guid: 4437137873782374db624e40aee8c7f4, type: 3}
+  - {fileID: 21300000, guid: eb68eae07dc526f4f8aae69fbb2a482a, type: 3}
+  - {fileID: 21300000, guid: 4f90863145edc6047a2529401fde6987, type: 3}
+  - {fileID: 21300000, guid: 6a72142b3402c384dac6e85bbada2ef8, type: 3}

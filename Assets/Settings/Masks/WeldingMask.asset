@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfff6e025e7c66c44baf2d7ae1567f1b, type: 3}
+  m_Name: WeldingMask
+  m_EditorClassIdentifier: Assembly-CSharp::Logbound.MaskFrames
+  MaskType: 2
+  Frames:
+  - {fileID: 21300000, guid: ff1a15e12f0c13e45b425deebe31bdd9, type: 3}
+  - {fileID: 21300000, guid: a23e9be15aa088f41b995329c607cfc4, type: 3}
+  - {fileID: 21300000, guid: 1055d90e700ef374e9067afe020b9de6, type: 3}
+  - {fileID: 21300000, guid: 7588f780bc971f1488d6242add8b2760, type: 3}
+  - {fileID: 21300000, guid: 4e206b76c3ab3d34293cb1a0d27a775a, type: 3}

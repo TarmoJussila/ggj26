@@ -219,6 +219,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Logbound.PlayerVisuals
   _animSpeed: 0.2
   _playerIndex: 0
+  _maskFrames:
+  - {fileID: 11400000, guid: eab49525b688ba84481503cdb71e5f40, type: 2}
+  - {fileID: 11400000, guid: ddc8f301b480f064c8f87c4ac3220cf9, type: 2}
+  - {fileID: 11400000, guid: 29e3a89ff3d27ed43a3ad351366f1dcb, type: 2}
+  - {fileID: 11400000, guid: 2e1487805a6b0ae46adaf7f1d4bac95f, type: 2}
+  - {fileID: 11400000, guid: ed046d6e60a977542a53976931a52da3, type: 2}
+  - {fileID: 11400000, guid: a4a6b11cbf5e09a4b8c32eeadf0827ae, type: 2}
+  - {fileID: 11400000, guid: 546de11135f828a46a0fd8d901854975, type: 2}
+  - {fileID: 11400000, guid: 220433ca753fb0a40adee10b48588530, type: 2}
+  - {fileID: 11400000, guid: e7151740f6b3f174e9618a6f1f6b48f0, type: 2}
+  CurrentMaskType: 0
   WalkAnim:
   - {fileID: 21300000, guid: 9dd5abbedca115a4eaff40ce44ac6feb, type: 3}
   - {fileID: 21300000, guid: 8759f148a5211204692fc78e60cd6de0, type: 3}
@@ -230,4 +241,5 @@ MonoBehaviour:
   JumpAnim:
   - {fileID: 21300000, guid: 9b2d850f4888d3e4d8a51861f06f6be5, type: 3}
   _rend: {fileID: 4396249742302542985}
+  _maskRend: {fileID: 0}
   _minimumPlayTimeBeforeSwitch: 0.15

@@ -5,17 +5,17 @@ namespace Logbound.Gameplay
 {
     public class PlayerMaskHelper : MonoBehaviour
     {
-        [SerializeField] private Transform _maskRoot;
-        
         public BasicMaskItem CurrentMask { get; private set; }
         
         public void WearMask(BasicMaskItem maskItem)
         {
-            maskItem.transform.SetParent(_maskRoot);
+            maskItem.transform.SetParent(transform);
             maskItem.transform.localPosition = Vector3.zero;
-            maskItem.transform.forward = _maskRoot.transform.forward;
+            maskItem.transform.forward = transform.forward;
 
             CurrentMask = maskItem;
+            
+            GetComponentInChildren<PlayerAnimator>().SetMaskType(maskItem.MaskType);
         }
 
         public void DropMask()
@@ -23,6 +23,7 @@ namespace Logbound.Gameplay
             CurrentMask.transform.SetParent(null);
             CurrentMask.StopCarry();
             CurrentMask = null;
+            GetComponentInChildren<PlayerAnimator>().SetMaskType(MaskType.NONE);
         }
     }
 }

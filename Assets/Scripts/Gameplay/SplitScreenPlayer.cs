@@ -1,5 +1,6 @@
 using System;
 using Logbound.Gameplay.UI;
+using Logbound.Masks;
 using Logbound.UI;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -108,6 +109,7 @@ namespace Logbound.Gameplay
 
             _cameraTransform.rotation =
                 Quaternion.Euler(_verticalLookRotation, _cameraTransform.rotation.eulerAngles.y, 0);
+
         }
 
         private void HandleNotGrounded()

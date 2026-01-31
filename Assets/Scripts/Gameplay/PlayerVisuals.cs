@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using Logbound.Masks;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -11,11 +12,18 @@ namespace Logbound.Gameplay
 
         [SerializeField] private int _playerIndex;
 
+        [SerializeField] private List<MaskFrames> _maskFrames;
+
+        private MaskFrames _currentMaskFrames;
+
+        public MaskType CurrentMaskType;
+
         public List<Sprite> WalkAnim;
         public List<Sprite> IdleAnim;
         public List<Sprite> JumpAnim;
 
         [SerializeField] private SpriteRenderer _rend;
+        [SerializeField] private SpriteRenderer _maskRend;
 
         public Anim CurrentAnimation { get; private set; }
 
@@ -26,7 +34,6 @@ namespace Logbound.Gameplay
         private float _frameTimer;
 
         private Transform _targetPlayerTransform;
-
 
         [SerializeField] private float _minimumPlayTimeBeforeSwitch = 0.3f;
         private float _currentPlayTime;
@@ -71,7 +78,7 @@ namespace Logbound.Gameplay
             {
                 return;
             }
-            
+
             _frameTimer += Time.deltaTime;
             _currentPlayTime += Time.deltaTime;
 
@@ -90,7 +97,26 @@ namespace Logbound.Gameplay
                 }
 
                 _rend.sprite = _currentAnim[_currentFrame];
+                if (_currentMaskFrames != null && _maskRend != null)
+                {
+                    _maskRend.sprite = _currentMaskFrames.Frames[_currentFrame];
+                }
+
                 _frameTimer = 0f;
+            }
+        }
+
+        public void SetMaskType(MaskType maskType)
+        {
+            CurrentMaskType = maskType;
+
+            if (CurrentMaskType != MaskType.NONE)
+            {
+                _currentMaskFrames = _maskFrames.FirstOrDefault(mf => mf.MaskType == CurrentMaskType);
+            }
+            else
+            {
+                _currentMaskFrames = null;
             }
         }
 

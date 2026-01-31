@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Logbound.Masks;
 using UnityEngine;
 
 namespace Logbound.Gameplay
@@ -12,6 +13,14 @@ namespace Logbound.Gameplay
             foreach (var vis in _visuals)
             {
                 vis.SetAnimation(animation);
+            }
+        }
+
+        public void SetMaskType(MaskType maskType)
+        {
+            foreach (var vis in _visuals)
+            {
+                vis.SetMaskType(maskType);
             }
         }
     }
