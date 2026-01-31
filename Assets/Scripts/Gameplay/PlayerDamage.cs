@@ -6,6 +6,8 @@ namespace Logbound.Gameplay
 {
     public class PlayerDamage : MonoBehaviour
     {
+        public const float HeatPercentageOnRespawn = 0.25f;
+
         public event Action OnPlayerTakeDamage;
         public event Action OnPlayerDead;
         public event Action OnPlayerHeal;
@@ -105,6 +107,7 @@ namespace Logbound.Gameplay
         public void Resurrect()
         {
             Health = MaxHealth;
+            PlayerHeat = MaxHeat * HeatPercentageOnRespawn;
             OnPlayerResurrect?.Invoke();
             OnPlayerHeal?.Invoke();
         }
