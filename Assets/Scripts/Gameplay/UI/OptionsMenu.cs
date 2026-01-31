@@ -11,7 +11,7 @@ namespace Logbound.Gameplay.UI
 
         private void OnEnable()
         {
-            _invertVerticalLookToggle.isOn = !InvertVerticalLook;
+            _invertVerticalLookToggle.isOn = InvertVerticalLook;
         }
 
         private void Start()
@@ -26,7 +26,7 @@ namespace Logbound.Gameplay.UI
 
         private void OnInvertVerticalLookChanged(bool arg0)
         {
-            InvertVerticalLook = !arg0;
+            InvertVerticalLook = arg0;
         }
     }
 }
