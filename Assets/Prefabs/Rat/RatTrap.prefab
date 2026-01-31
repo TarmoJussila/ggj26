@@ -101,6 +101,9 @@ GameObject:
   - component: {fileID: 1597167856359843674}
   - component: {fileID: 3828732846570634885}
   - component: {fileID: 161461948938469434}
+  - component: {fileID: 1396873565313770960}
+  - component: {fileID: 890258765910919446}
+  - component: {fileID: 8800251297400813788}
   m_Layer: 0
   m_Name: RatTrap
   m_TagString: Hazard
@@ -159,6 +162,67 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.25, y: 0.30102408, z: 0.2}
   m_Center: {x: 0, y: 0.12602794, z: 0}
+--- !u!54 &1396873565313770960
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7177155704923092538}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &890258765910919446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7177155704923092538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 616b3af201022c743acd8e87c29b63e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Logbound.Gameplay.CarryableItem
+  HasSecondaryInteraction: 0
+--- !u!65 &8800251297400813788
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7177155704923092538}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.25, y: 0.2, z: 0.2}
+  m_Center: {x: 0, y: 0.05, z: 0}
 --- !u!1001 &1598447224861127461
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -167,6 +231,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1597167856359843674}
     m_Modifications:
+    - target: {fileID: 346025451125543567, guid: c09a45330fcaec44090d9d84c033bd22, type: 3}
+      propertyPath: m_VersionIndex
+      value: 2556
+      objectReference: {fileID: 0}
     - target: {fileID: 2066296315209676330, guid: c09a45330fcaec44090d9d84c033bd22, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5

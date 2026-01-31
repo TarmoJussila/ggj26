@@ -82,6 +82,11 @@ namespace Logbound.Gameplay
 
         public void TakeDamage(float damage)
         {
+            if (Health <= 0)
+            {
+                return;
+            }
+            
             Health -= damage;
 
             OnPlayerTakeDamage?.Invoke();
