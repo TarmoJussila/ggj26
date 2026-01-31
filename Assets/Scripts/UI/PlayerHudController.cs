@@ -124,7 +124,7 @@ namespace Logbound.UI
 
             bool carriable = interactableItem is CarryableItem && _playerInteraction.CurrentCarryItem == null;
 
-            string button = Player.MouseInput ? "E" : "Y";
+            string button = Player.MouseInput ? "E" : "X";
             string tooltip = "Press " + button + " to " + (carriable ? "pick up" : "interact");
 
             _tooltipText.text = tooltip;
