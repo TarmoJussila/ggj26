@@ -21,7 +21,7 @@ namespace Logbound.Rats
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.CompareTag("RatTrap"))
+            if (other.CompareTag("Hazard") || other.CompareTag("RatTrap"))
             {
                 Die();
             }

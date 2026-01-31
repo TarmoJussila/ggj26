@@ -1,4 +1,5 @@
 using System;
+using Logbound.Masks;
 using UnityEngine;
 
 namespace Logbound.Gameplay
@@ -15,7 +16,14 @@ namespace Logbound.Gameplay
         public float PlayerHeat { get; private set; }
 
         public float MaxHealth = 10000;
-        public float MaxHeat = 10000; 
+        public float MaxHeat = 10000;
+
+        private PlayerMaskHelper _playerMaskHelper;
+
+        private void Awake()
+        {
+            _playerMaskHelper = GetComponent<PlayerMaskHelper>();
+        }
 
         private void Start()
         {
@@ -39,7 +47,9 @@ namespace Logbound.Gameplay
                 return;
             }
 
-            TakeDamage(hazard.DamagePerTick);
+            bool gasMask = _playerMaskHelper.CurrentMask?.MaskType == MaskType.GAS;
+            
+            TakeDamage(hazard.DamagePerTick * (gasMask ? 0 : 1));
         }
 
         private void OnTriggerEnter(Collider other)
