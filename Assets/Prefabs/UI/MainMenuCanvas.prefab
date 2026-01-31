@@ -726,19 +726,7 @@ MonoBehaviour:
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2780348581015784693}
-        m_TargetAssemblyTypeName: Logbound.UI.MainMenu, Assembly-CSharp
-        m_MethodName: set_FullScreenEnabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_IsOn: 0
 --- !u!1 &1130009923642964285
 GameObject:
@@ -1424,6 +1412,7 @@ MonoBehaviour:
   _quitButton: {fileID: 481433248905517285}
   _resolutionDropdown: {fileID: 2012933416185805114}
   _applyButton: {fileID: 599518462360445179}
+  _fullscreenToggle: {fileID: 513918456059498964}
 --- !u!1 &4448618330956059301
 GameObject:
   m_ObjectHideFlags: 0

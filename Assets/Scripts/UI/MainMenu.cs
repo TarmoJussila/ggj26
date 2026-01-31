@@ -11,6 +11,7 @@ namespace Logbound.UI
         [SerializeField] private Button _quitButton;
         [SerializeField] private TMP_Dropdown _resolutionDropdown;
         [SerializeField] private Button _applyButton;
+        [SerializeField] private Toggle _fullscreenToggle;
 
         private Resolution[] _resolutions;
         private int _selectedIndex = -1;
@@ -21,8 +22,12 @@ namespace Logbound.UI
             _playButton.onClick.AddListener(OnPlayButtonClicked);
             _quitButton.onClick.AddListener(OnQuitButtonClicked);
             _applyButton.onClick.AddListener(OnApplyClick);
-            
-            FullScreenEnabled = Screen.fullScreen;
+            _fullscreenToggle.onValueChanged.AddListener(delegate
+            {
+                ToggleValueChanged(_fullscreenToggle);
+            });
+
+            FullScreenEnabled = _fullscreenToggle.isOn;
             var temp = new List<Resolution>();
             _resolutionDropdown.ClearOptions();
             _resolutionDropdown.onValueChanged.AddListener(SelectResolution);
@@ -59,6 +64,7 @@ namespace Logbound.UI
             _quitButton.onClick.RemoveListener(OnQuitButtonClicked);
             _applyButton.onClick.RemoveListener(OnApplyClick);
             _resolutionDropdown.onValueChanged.RemoveListener(SelectResolution);
+            _fullscreenToggle.onValueChanged.RemoveAllListeners();
         }
 
         private void OnQuitButtonClicked()
@@ -89,7 +95,13 @@ namespace Logbound.UI
             var res = _resolutions[_selectedIndex];
             Screen.SetResolution(res.width, res.height,
                 FullScreenEnabled ? FullScreenMode.FullScreenWindow : FullScreenMode.Windowed, res.refreshRateRatio);
-            Debug.Log($"Applying resolution: {res.width}x{res.height}");
+            Debug.Log($"Applying resolution: {res.width}x{res.height}, {res.refreshRateRatio}Hz, fullscreen {FullScreenEnabled}");
+        }
+
+        private void ToggleValueChanged(Toggle fullscreenToggle)
+        {
+            Debug.Log($"Fullscreen: {fullscreenToggle.isOn}");
+            FullScreenEnabled = fullscreenToggle.isOn;
         }
     }
 }
