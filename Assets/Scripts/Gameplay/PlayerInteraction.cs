@@ -14,12 +14,18 @@ namespace Logbound.Gameplay
         [SerializeField] private float _interactRange;
         [SerializeField] private LayerMask _interactLayerMask;
 
+        private PlayerMaskHelper _playerMaskHelper;
         private float _scanTimer;
 
         public InteractableItem LastFoundInteractable { get; private set; }
 
         public CarryableItem CurrentCarryItem { get; private set; }
 
+        private void Awake()
+        {
+            _playerMaskHelper = GetComponent<PlayerMaskHelper>();
+        }
+        
         private void OnInteract(InputValue value)
         {
             if (value.isPressed)
@@ -90,6 +96,8 @@ namespace Logbound.Gameplay
         {
             if (CurrentCarryItem == null)
             {
+                //try drop mask when hands are empty
+                _playerMaskHelper.DropMask();
                 return;
             }
 
