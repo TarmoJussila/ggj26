@@ -10,6 +10,7 @@ namespace Logbound.Services
         public event Action<WeatherState, float> OnForecastUpdated;
         
         [SerializeField] private float _forecastIntervalDuration = 60f;
+        [SerializeField] private float _initialTemperatureCelsius = 0f;
         
         private WeatherState _previousTargetState;
         private WeatherState _currentTargetState;
@@ -29,7 +30,7 @@ namespace Logbound.Services
                 WeatherUtility.GetRandomWeatherState(),
                 WeatherUtility.GetRandomWeatherState(),
                 WeatherUtility.GetRandomTemperatureCelsius(),
-                WeatherUtility.GetRandomTemperatureCelsius(),
+                _initialTemperatureCelsius,
                 WeatherUtility.GetRandomTemperatureCelsius()
             );
         }
