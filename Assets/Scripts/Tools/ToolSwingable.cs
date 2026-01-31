@@ -9,6 +9,8 @@ namespace Logbound
 {
     public abstract class ToolSwingable : CarryableItem
     {
+        public bool UsableAlone;
+        
         [SerializeField] private AnimationCurve _swingCurve;
         [SerializeField] private float _startRotation = 0.0f;
         [SerializeField] private float _endRotation = 65f;

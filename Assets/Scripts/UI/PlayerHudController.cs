@@ -83,6 +83,7 @@ namespace Logbound.UI
         private void OnPlayerResurrect()
         {
             SetPlayerAlive(true);
+            Player.Respawn();
         }
 
         private void OnPlayerDead()
@@ -158,17 +159,10 @@ namespace Logbound.UI
             _healthBarSlow.fillAmount = targetFill;
         }
 
-        private void Respawn()
-        {
-            _playerDamage.Heal(_playerDamage.MaxHealth);
-            Player.Respawn();
-            SetPlayerAlive(true);
-        }
-
         private IEnumerator RespawnCoroutine()
         {
             yield return new WaitForSeconds(RespawnDelaySeconds);
-            Respawn();
+            _playerDamage.Heal(_playerDamage.MaxHealth);
         }
 
         [System.Serializable]

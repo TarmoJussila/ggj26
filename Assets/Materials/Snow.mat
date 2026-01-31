@@ -126,7 +126,7 @@ Material:
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SnowDepth: 4
-    - _SnowHeight: 0
+    - _SnowHeight: 2
     - _SnowNormalStrength: 0
     - _SnowTextureOpacity: 0.6
     - _SnowTextureScale: 1

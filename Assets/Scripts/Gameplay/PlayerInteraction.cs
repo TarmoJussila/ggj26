@@ -30,6 +30,23 @@ namespace Logbound.Gameplay
 
         private void OnAttack(InputValue value)
         {
+            if (!value.isPressed)
+            {
+                return;
+            }
+
+            if (CurrentCarryItem is ToolSwingable tool && tool.UsableAlone)
+            {
+                tool.Interact(this);
+            }
+            else if (CurrentCarryItem != null && LastFoundInteractable != null && LastFoundInteractable.CanInteractWithOtherItem(CurrentCarryItem))
+            {
+                CurrentCarryItem.Interact(this);
+            }
+        }
+
+        private void OnDrop(InputValue value)
+        {
             if (value.isPressed)
             {
                 DropPressed();
@@ -88,7 +105,14 @@ namespace Logbound.Gameplay
         {
             Debug.DrawLine(_cameraTransform.position, _cameraTransform.position + _cameraTransform.forward * _interactRange);
 
-            if (!Physics.Raycast(_cameraTransform.position, _cameraTransform.forward, out RaycastHit hit, _interactRange, _interactLayerMask, QueryTriggerInteraction.Ignore))
+            if (!Physics.Raycast(
+                    _cameraTransform.position,
+                    _cameraTransform.forward,
+                    out RaycastHit hit,
+                    _interactRange,
+                    _interactLayerMask,
+                    QueryTriggerInteraction.Ignore
+                ))
             {
                 InvokeInteractableLost();
                 return;
