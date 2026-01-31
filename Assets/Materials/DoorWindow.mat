@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Window
+  m_Name: DoorWindow
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -32,11 +32,11 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: 8d8100af3377b1441a1496e454a47bc0, type: 3}
+        m_Texture: {fileID: 2800000, guid: 98199c0aa8fe9ef46b6703cf0ffd859c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 80f076968761851438ba5ea804a17963, type: 3}
+        m_Texture: {fileID: 2800000, guid: e74589ab877e3aa43934698e99252ea9, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -56,11 +56,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 8d8100af3377b1441a1496e454a47bc0, type: 3}
+        m_Texture: {fileID: 2800000, guid: 98199c0aa8fe9ef46b6703cf0ffd859c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 2800000, guid: d06ff2934973e874f9a03b89818dfd7e, type: 3}
+        m_Texture: {fileID: 2800000, guid: 3dddffa9833975c4cb754936cf850fdd, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
