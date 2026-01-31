@@ -22,6 +22,8 @@ namespace Logbound.Gameplay
 
         private PlayerMaskHelper _playerMaskHelper;
 
+        [SerializeField] private float _maskHealing;
+
         private void Awake()
         {
             _playerMaskHelper = GetComponent<PlayerMaskHelper>();
@@ -49,9 +51,19 @@ namespace Logbound.Gameplay
                 return;
             }
 
-            bool gasMask = _playerMaskHelper.CurrentMask?.MaskType == MaskType.GAS;
+            float damage = hazard.DamagePerTick;
+            var mask = _playerMaskHelper.CurrentMask?.MaskType;
 
-            TakeDamage(hazard.DamagePerTick * (gasMask ? 0 : 1));
+            if (mask == MaskType.GAS)
+            {
+                damage = 0;
+            }
+            else if (mask == MaskType.COVID)
+            {
+                damage /= 4;
+            }
+
+            TakeDamage(damage);
         }
 
         private void OnTriggerEnter(Collider other)
@@ -66,6 +78,13 @@ namespace Logbound.Gameplay
 
         private void Update()
         {
+            var mask = _playerMaskHelper.CurrentMask?.MaskType;
+
+            if (mask == MaskType.SLEEPING || mask == MaskType.SKINCARE)
+            {
+                Heal(_maskHealing * Time.deltaTime);
+            }
+
             float currentTemperature = WeatherTransitionController.Instance.GetCurrentTemperature();
             if (currentTemperature >= 0)
             {
@@ -74,9 +93,19 @@ namespace Logbound.Gameplay
 
             float weatherDamage = Mathf.Ceil(Mathf.Abs(currentTemperature) / 5f);
 
-            if (_playerMaskHelper.CurrentMask?.MaskType == MaskType.SKIMASK)
+            if (mask == MaskType.SKIMASK)
             {
                 weatherDamage /= 10;
+            }
+
+            if (mask == MaskType.COVID)
+            {
+                weatherDamage /= 2;
+            }
+
+            if (mask == MaskType.WELDING)
+            {
+                weatherDamage *= 1.5f;
             }
 
             PlayerHeat = Mathf.Clamp(PlayerHeat - weatherDamage, 0, MaxHeat);
@@ -92,6 +121,13 @@ namespace Logbound.Gameplay
             if (Health <= 0)
             {
                 return;
+            }
+
+            var mask = _playerMaskHelper.CurrentMask?.MaskType;
+
+            if (mask == MaskType.PROTECTIVE || mask == MaskType.WELDING)
+            {
+                damage /= 2;
             }
 
             Health -= damage;

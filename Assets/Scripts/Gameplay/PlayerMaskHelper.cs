@@ -8,6 +8,7 @@ namespace Logbound.Gameplay
     {
         public event Action<MaskType> OnMaskChanged;
         
+        
         public BasicMaskItem CurrentMask { get; private set; }
         
         public void WearMask(BasicMaskItem maskItem)
