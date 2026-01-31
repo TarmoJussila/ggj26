@@ -164,5 +164,10 @@ namespace Logbound.Rats
             _spawnTimer += _deathBonusTime;
             Debug.Log($"Rat died! Added {_deathBonusTime}s to spawn timer. New timer: {_spawnTimer:F2}s");
         }
+
+        public int GetActiveRatCount()
+        {
+            return _ratObjects?.Count ?? 0;
+        }
     }
 }

@@ -1,4 +1,5 @@
 using Logbound.Gameplay;
+using Logbound.Rats;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -40,8 +41,10 @@ namespace Logbound.UI
 
         private void UpdateRatCount()
         {
-            // TODO: Implement rat count logic
-            _fillImage.fillAmount = 0f;
+            const int maxRats = 20;
+            int ratCount = RatController.Instance.GetActiveRatCount();
+            // 0 rats = full bar (1), 20 rats = empty bar (0)
+            _fillImage.fillAmount = 1f - Mathf.Clamp01((float)ratCount / maxRats);
         }
     }
 }
