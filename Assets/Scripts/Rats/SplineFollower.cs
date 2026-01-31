@@ -7,33 +7,34 @@ namespace Logbound.Rats
 {
     public class SplineFollower : MonoBehaviour
     {
-        [FormerlySerializedAs("SplineContainer")]
         [Header("Settings")]
-        public SplineContainer _splineContainer;
-        [FormerlySerializedAs("Speed")]
-        public float _speed = 5f;
-        [FormerlySerializedAs("loop")]
+        public SplineContainer SplineContainer;
+        public float Speed = 5f;
         [SerializeField] private bool _loop = true;
-        [FormerlySerializedAs("faceForward")]
         [SerializeField] private bool _faceForward = true;
+        [SerializeField] private float _minSpeed = 3f;
+        [SerializeField] private float _maxSpeed = 5f;
+        [SerializeField] private float _maxScale = 2f;
+        [SerializeField] private float _minScale = 1f;
     
         private float _distancePercentage = 0f;
         private float _splineLength;
 
         public void Initialize()
         {
-            if (_splineContainer != null)
-            {
-                _splineLength = _splineContainer.CalculateLength();
-            }
+            if (SplineContainer != null)
+                _splineLength = SplineContainer.CalculateLength();
+            Speed = UnityEngine.Random.Range(_minSpeed, _maxSpeed);
+            float randomScale = UnityEngine.Random.Range(_minScale, _maxScale);
+            transform.localScale = new Vector3(randomScale, randomScale, randomScale);
         }
 
-        private void Update()
+        void Update()
         {
-            if (_splineContainer == null || _splineLength <= 0) return;
-            
-            _distancePercentage += (_speed * Time.deltaTime) / _splineLength;
-            
+            if (SplineContainer == null || _splineLength <= 0) return;
+
+            _distancePercentage += (Speed * Time.deltaTime) / _splineLength;
+
             if (_loop)
             {
                 _distancePercentage %= 1f; 
@@ -43,13 +44,13 @@ namespace Logbound.Rats
                 _distancePercentage = Mathf.Clamp01(_distancePercentage);
                 if (_distancePercentage >= 1f) return;
             }
-            
-            transform.position = (Vector3)_splineContainer.EvaluatePosition(_distancePercentage);
-            
+
+            transform.position = (Vector3)SplineContainer.EvaluatePosition(_distancePercentage);
+
             if (_faceForward)
             {
-                float3 forward = _splineContainer.EvaluateTangent(_distancePercentage);
-                float3 up = _splineContainer.EvaluateUpVector(_distancePercentage);
+                float3 forward = SplineContainer.EvaluateTangent(_distancePercentage);
+                float3 up = SplineContainer.EvaluateUpVector(_distancePercentage);
             
                 if (!forward.Equals(float3.zero))
                 {

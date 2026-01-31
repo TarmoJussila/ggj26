@@ -41,7 +41,16 @@ namespace Logbound.Gameplay
 
             TakeDamage(hazard.DamagePerTick);
         }
-        
+
+        private void OnTriggerEnter(Collider other)
+        {
+            // Take damage from rat trap.
+            if (other.CompareTag("RatTrap") && other.TryGetComponent(out Hazard hazard))
+            {
+                TakeDamage(hazard.DamagePerTick);
+            }
+        }
+
         private void Update()
         {
             float currentTemperature = WeatherTransitionController.Instance.GetCurrentTemperature();

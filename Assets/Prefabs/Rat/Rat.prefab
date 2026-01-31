@@ -1036,13 +1036,15 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7421124029051187604}
+  - component: {fileID: 1342394737020416974}
   - component: {fileID: 7437438921565049489}
   - component: {fileID: 3565073530668384854}
   - component: {fileID: 5003925511037507136}
   - component: {fileID: 5352084348957058517}
+  - component: {fileID: 3442071801743992958}
   m_Layer: 0
   m_Name: Rat
-  m_TagString: Untagged
+  m_TagString: Rat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1063,6 +1065,19 @@ Transform:
   - {fileID: 2904151703437019259}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 8.23, z: 0}
+--- !u!114 &1342394737020416974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6263393768695190359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cabdebda4f7cd074ca5ccb77d70a96b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  _splineFollower: {fileID: 7437438921565049489}
 --- !u!114 &7437438921565049489
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1075,10 +1090,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4833c22e73371b64eb2b1264f91d18e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  _splineContainer: {fileID: 0}
-  _speed: 5
+  SplineContainer: {fileID: 0}
+  Speed: 5
   _loop: 1
   _faceForward: 1
+  _minSpeed: 3
+  _maxSpeed: 5
+  _maxScale: 2
+  _minScale: 1
 --- !u!136 &3565073530668384854
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1212,6 +1231,33 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!54 &3442071801743992958
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6263393768695190359}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &6602898055292037051
 GameObject:
   m_ObjectHideFlags: 0
