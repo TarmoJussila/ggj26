@@ -6,9 +6,6 @@ namespace Logbound.Gameplay
 {
     public class SnowShaderController : MonoBehaviour
     {
-        [Header("Material")]
-        [SerializeField] private Material _snowMaterial;
-
         [Header("Height Decay Settings")]
         [SerializeField] private float _snowfallHeightDecay = 100f;
         [SerializeField] private float _noSnowHeightDecay = 10f;
@@ -19,9 +16,6 @@ namespace Logbound.Gameplay
 
         [Header("Transition")]
         [SerializeField] private float _transitionSpeed = 10f;
-
-        private static readonly int HeightDecayProperty = Shader.PropertyToID("_HeightDecay");
-        private static readonly int DecayDurationProperty = Shader.PropertyToID("_DecayDuration");
 
         private float _targetHeightDecay;
         private float _targetDecayDuration;
@@ -34,6 +28,9 @@ namespace Logbound.Gameplay
             _currentDecayDuration = _noSnowDecayDuration;
             _targetHeightDecay = _noSnowHeightDecay;
             _targetDecayDuration = _noSnowDecayDuration;
+            
+            Shader.SetGlobalFloat("_HeightDecay", _currentHeightDecay);
+            Shader.SetGlobalFloat("_DecayDuration", _currentDecayDuration);
         }
 
         private void OnEnable()
@@ -63,11 +60,6 @@ namespace Logbound.Gameplay
 
         private void Update()
         {
-            if (_snowMaterial == null)
-            {
-                return;
-            }
-
             bool heightDecayChanged = !Mathf.Approximately(_currentHeightDecay, _targetHeightDecay);
             bool decayDurationChanged = !Mathf.Approximately(_currentDecayDuration, _targetDecayDuration);
 
@@ -79,13 +71,13 @@ namespace Logbound.Gameplay
             if (heightDecayChanged)
             {
                 _currentHeightDecay = Mathf.MoveTowards(_currentHeightDecay, _targetHeightDecay, _transitionSpeed * Time.deltaTime);
-                _snowMaterial.SetFloat(HeightDecayProperty, _currentHeightDecay);
+                Shader.SetGlobalFloat("_HeightDecay", _currentHeightDecay);
             }
 
             if (decayDurationChanged)
             {
                 _currentDecayDuration = Mathf.MoveTowards(_currentDecayDuration, _targetDecayDuration, _transitionSpeed * Time.deltaTime);
-                _snowMaterial.SetFloat(DecayDurationProperty, _currentDecayDuration);
+                Shader.SetGlobalFloat("_DecayDuration", _currentDecayDuration);
             }
         }
     }
