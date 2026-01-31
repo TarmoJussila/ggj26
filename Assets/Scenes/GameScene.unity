@@ -11323,6 +11323,17 @@ Mesh:
       - serializedVersion: 1
         m_IndexStart: 0
         m_IndexCount: 0
+--- !u!114 &1939603769 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7501402866140818204, guid: fbc330c1e36d2a54e8cfbba7bdccce36, type: 3}
+  m_PrefabInstance: {fileID: 2632894839131849160}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: beaca2e8302c74f4aad83d34fafe2cbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Logbound.Fireplace
 --- !u!43 &1965647759
 Mesh:
   m_ObjectHideFlags: 0
@@ -12972,6 +12983,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1793598073427955411, guid: 7a311878a9a78d84a8f11a4cf8ee367a, type: 3}
+      propertyPath: _fireplace
+      value: 
+      objectReference: {fileID: 1939603769}
     - target: {fileID: 6054638420249568209, guid: 7a311878a9a78d84a8f11a4cf8ee367a, type: 3}
       propertyPath: m_Name
       value: WeatherSystem

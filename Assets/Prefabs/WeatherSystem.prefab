@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 6143762556387550758}
   - component: {fileID: 5339211258306983433}
   - component: {fileID: 4624726173872687335}
+  - component: {fileID: 1793598073427955411}
   m_Layer: 0
   m_Name: WeatherSystem
   m_TagString: Untagged
@@ -63,6 +64,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Logbound.Services.ForecastService
   _forecastIntervalDuration: 30
+  _initialTemperatureCelsius: 0
 --- !u!114 &2264210155607370765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,3 +142,18 @@ MonoBehaviour:
   _blendableSkybox: {fileID: 2100000, guid: 9d815e335a32840dfb09f0c5a531df96, type: 2}
   _dayCubemap: {fileID: 8900000, guid: 0e981c5218a661d479182696be5f084f, type: 3}
   _nightCubemap: {fileID: 8900000, guid: ac8a32e5107b67a47939926c52798a2b, type: 3}
+--- !u!114 &1793598073427955411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6054638420249568209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f44d11525bb4ad3bebb38bd255af5d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Logbound.Gameplay.HouseWarmthHandler
+  _fireplace: {fileID: 0}
+  _baseInsulation: 10
+  _fireplaceMaxHeat: 30
