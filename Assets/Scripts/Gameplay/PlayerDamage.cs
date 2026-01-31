@@ -11,11 +11,11 @@ namespace Logbound.Gameplay
         public event Action OnPlayerResurrect;
         public event Action OnPlayerHeatChange;
 
-        public int Health { get; private set; }
-        public int PlayerHeat { get; private set; }
+        public float Health { get; private set; }
+        public float PlayerHeat { get; private set; }
 
-        public int MaxHealth = 10000;
-        public int MaxHeat = 10000; 
+        public float MaxHealth = 10000;
+        public float MaxHeat = 10000; 
 
         private void Start()
         {
@@ -60,7 +60,7 @@ namespace Logbound.Gameplay
                 return;
             }
 
-            int weatherDamage = Mathf.CeilToInt(Mathf.Abs(currentTemperature) / 5f);
+            float weatherDamage = Mathf.Ceil(Mathf.Abs(currentTemperature) / 5f);
             
             PlayerHeat = Mathf.Clamp(PlayerHeat - weatherDamage, 0, MaxHeat);
             
@@ -70,7 +70,7 @@ namespace Logbound.Gameplay
             }
         }
 
-        public void TakeDamage(int damage)
+        public void TakeDamage(float damage)
         {
             Health -= damage;
 
@@ -82,9 +82,9 @@ namespace Logbound.Gameplay
             }
         }
 
-        public void Heal(int health)
+        public void Heal(float health)
         {
-            int oldHealth = Health;
+            float oldHealth = Health;
 
             Health += health;
 
