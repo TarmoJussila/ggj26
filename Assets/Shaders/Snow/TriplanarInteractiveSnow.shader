@@ -22,8 +22,8 @@ Shader "Custom/Snow Interactive" {
 		[HDR]_PathColorOut("Snow Path Color Out", Color) = (0.5,0.5,0.7,1)
 		_PathBlending("Snow Path Blending", Range(0,3)) = 0.3
 		_MainTex("Snow Texture", 2D) = "white" {}
-		_SnowHeight("Snow Height", Range(0,15)) = 0.3
-		_SnowDepth("Snow Path Depth", Range(-2,2)) = 0.3
+		_SnowHeight("Snow Height", Range(0,5)) = 0.3
+		_SnowDepth("Snow Path Depth", Range(-2,5)) = 0.3
 		_SnowTextureOpacity("Snow Texture Opacity", Range(0,1)) = 0.3
 		_SnowTextureScale("Snow Texture Scale", Range(0,2)) = 0.3
 		_Normal("Snow Normal", 2D) = "bump" {}

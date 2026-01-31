@@ -57,7 +57,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Noise:
-        m_Texture: {fileID: 2800000, guid: 345cc38fab477bd49a1ed9dabec622e6, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Normal:
@@ -114,8 +114,8 @@ Material:
     - _GlossyReflections: 0
     - _MaxTessDistance: 32
     - _Metallic: 0
-    - _NoiseScale: 0.002
-    - _NoiseWeight: 1
+    - _NoiseScale: 0.42
+    - _NoiseWeight: 2
     - _NormalSampleThickness: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.005
@@ -125,10 +125,10 @@ Material:
     - _RimPower: 1
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
-    - _SnowDepth: 1
-    - _SnowHeight: 6.9
+    - _SnowDepth: 4
+    - _SnowHeight: 4
     - _SnowNormalStrength: 0
-    - _SnowTextureOpacity: 1
+    - _SnowTextureOpacity: 0.6
     - _SnowTextureScale: 1
     - _SparkCutoff: 0.84
     - _SparkleScale: 2
