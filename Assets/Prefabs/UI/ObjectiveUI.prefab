@@ -34,7 +34,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 10, y: -25}
+  m_AnchoredPosition: {x: 0, y: -35}
   m_SizeDelta: {x: 120, y: 120}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!222 &8407250326737112740
@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 69c7bb056830e3147aec161405215923, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7c8fe8177a2de4c698d04c969b9f392b, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -205,6 +205,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 560604889899463789}
     m_Modifications:
+    - target: {fileID: 344987814450099032, guid: 4c7a8258de5384a10a5934061b219382, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 344987814450099032, guid: 4c7a8258de5384a10a5934061b219382, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 70
+      objectReference: {fileID: 0}
     - target: {fileID: 497684986607964606, guid: 4c7a8258de5384a10a5934061b219382, type: 3}
       propertyPath: m_Name
       value: ProgressBar_Heat
@@ -213,6 +221,10 @@ PrefabInstance:
       propertyPath: _fillImage
       value: 
       objectReference: {fileID: 6220266710969736047}
+    - target: {fileID: 3417730589316659066, guid: 4c7a8258de5384a10a5934061b219382, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 11b7b270ad17846cf896dfebb3869b6b, type: 3}
     - target: {fileID: 7923060737347714147, guid: 4c7a8258de5384a10a5934061b219382, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -322,6 +334,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 560604889899463789}
     m_Modifications:
+    - target: {fileID: 344987814450099032, guid: 4c7a8258de5384a10a5934061b219382, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 344987814450099032, guid: 4c7a8258de5384a10a5934061b219382, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 70
+      objectReference: {fileID: 0}
     - target: {fileID: 497684986607964606, guid: 4c7a8258de5384a10a5934061b219382, type: 3}
       propertyPath: m_Name
       value: ProgressBar_Rats
@@ -337,7 +357,7 @@ PrefabInstance:
     - target: {fileID: 3417730589316659066, guid: 4c7a8258de5384a10a5934061b219382, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 9dd5abbedca115a4eaff40ce44ac6feb, type: 3}
+      objectReference: {fileID: 21300000, guid: 046359e83fe8a4802a8f483e8d0d0990, type: 3}
     - target: {fileID: 3945739813908026399, guid: 4c7a8258de5384a10a5934061b219382, type: 3}
       propertyPath: m_Color.b
       value: 0.05762726
