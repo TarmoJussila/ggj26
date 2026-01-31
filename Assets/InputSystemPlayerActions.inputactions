@@ -1053,6 +1053,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "InputDisabled",
+            "id": "65b11a6e-aeea-4069-adf7-0484422139b2",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "5ed6d4b6-e5b6-42c5-bb67-6f09a9a5419f",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "94df100c-b1c3-419f-9bb7-85b6638f5425",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [

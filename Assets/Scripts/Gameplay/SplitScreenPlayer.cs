@@ -249,5 +249,23 @@ namespace Logbound.Gameplay
             _optionsMenu.gameObject.SetActive(false);
             _playerInput.SwitchCurrentActionMap("Player");
         }
+
+        public void DisableInput()
+        {
+            _optionsMenu.gameObject.SetActive(false);
+            _playerInput.SwitchCurrentActionMap("InputDisabled");
+        }
+
+        public void EnableInput()
+        {
+            _optionsMenu.gameObject.SetActive(false);
+            _playerInput.SwitchCurrentActionMap("Player");
+        }
+
+        public void Respawn()
+        {
+            transform.position = new Vector3(0f, 0f, 0f);
+            EnableInput();
+        }
     }
 }

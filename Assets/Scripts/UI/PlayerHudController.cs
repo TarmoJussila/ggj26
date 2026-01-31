@@ -13,6 +13,8 @@ namespace Logbound.UI
 {
     public class PlayerHudController : MonoBehaviour
     {
+        public const float RespawnDelaySeconds = 3f;
+
         public SplitScreenPlayer Player { get; private set; }
 
         private PlayerInteraction _playerInteraction;
@@ -86,6 +88,7 @@ namespace Logbound.UI
         private void OnPlayerDead()
         {
             SetPlayerAlive(false);
+            StartCoroutine(RespawnCoroutine());
         }
 
         private void OnPlayerTakeDamage()
@@ -102,6 +105,11 @@ namespace Logbound.UI
         {
             _deadElements.SetActive(!alive);
             _aliveElements.SetActive(alive);
+
+            if (!alive)
+            {
+                Player.DisableInput();
+            }
         }
 
         private void OnInteractableFound(InteractableItem interactableItem)
@@ -148,6 +156,19 @@ namespace Logbound.UI
             }
 
             _healthBarSlow.fillAmount = targetFill;
+        }
+
+        private void Respawn()
+        {
+            _playerDamage.Heal(_playerDamage.MaxHealth);
+            Player.Respawn();
+            SetPlayerAlive(true);
+        }
+
+        private IEnumerator RespawnCoroutine()
+        {
+            yield return new WaitForSeconds(RespawnDelaySeconds);
+            Respawn();
         }
 
         [System.Serializable]
