@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace Logbound
+namespace Logbound.Gameplay
 {
     public class PlayerInteraction : MonoBehaviour
     {

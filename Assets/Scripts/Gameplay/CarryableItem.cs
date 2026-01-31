@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Logbound
+namespace Logbound.Gameplay
 {
     [RequireComponent(typeof(Rigidbody))]
     [RequireComponent(typeof(Collider))]

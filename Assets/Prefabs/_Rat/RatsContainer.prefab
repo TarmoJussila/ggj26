@@ -867,7 +867,7 @@ GameObject:
   - component: {fileID: 490976603380583965}
   - component: {fileID: 1083463233778640193}
   m_Layer: 0
-  m_Name: RATSContainer
+  m_Name: RatsContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

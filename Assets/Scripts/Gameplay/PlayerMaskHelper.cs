@@ -1,6 +1,7 @@
+using Logbound.Masks;
 using UnityEngine;
 
-namespace Logbound
+namespace Logbound.Gameplay
 {
     public class PlayerMaskHelper : MonoBehaviour
     {

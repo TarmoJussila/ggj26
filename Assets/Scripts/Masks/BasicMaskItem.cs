@@ -1,6 +1,7 @@
+using Logbound.Gameplay;
 using UnityEngine;
 
-namespace Logbound
+namespace Logbound.Masks
 {
     [RequireComponent(typeof(Rigidbody))]
     [RequireComponent(typeof(Collider))]

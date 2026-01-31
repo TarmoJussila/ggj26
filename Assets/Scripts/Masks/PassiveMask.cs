@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Logbound
+namespace Logbound.Masks
 {
     public class PassiveMask : MonoBehaviour
     {

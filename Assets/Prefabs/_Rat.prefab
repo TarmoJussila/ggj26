@@ -606,7 +606,7 @@ GameObject:
   - component: {fileID: 6232684850051550158}
   - component: {fileID: 6063686163542405954}
   m_Layer: 0
-  m_Name: RAT
+  m_Name: _Rat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

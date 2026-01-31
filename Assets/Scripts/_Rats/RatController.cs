@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Splines;
 
-namespace Logbound
+namespace Logbound.Rats
 {
     public class RatController : MonoBehaviour
     {
