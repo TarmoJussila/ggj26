@@ -112,7 +112,7 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
-    - _MaxTessDistance: 100
+    - _MaxTessDistance: 32
     - _Metallic: 0
     - _NoiseScale: 0.002
     - _NoiseWeight: 2
