@@ -12,7 +12,6 @@ namespace Logbound.Rats
         private void Start()
         {
             _audioSource.Play();
-            _audioSource.time = Mathf.Lerp(0, 30f, Random.Range(0, 1));
-        }
-    }
+            _audioSource.time = Mathf.Lerp(0f, 30f, Random.Range(0f, 1f));
+        }}
 }
