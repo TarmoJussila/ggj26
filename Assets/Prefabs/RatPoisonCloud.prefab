@@ -4889,4 +4889,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd12f88baaa63494593a346f6b2f4e47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Logbound.Gameplay.Hazard
+  _lifetime: 10
   <DamagePerTick>k__BackingField: 100
