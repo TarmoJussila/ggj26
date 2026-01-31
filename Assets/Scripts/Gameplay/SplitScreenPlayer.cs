@@ -18,6 +18,7 @@ namespace Logbound.Gameplay
         private Transform _cameraTransform;
         private CharacterController _characterController;
         private PlayerInput _playerInput;
+        private PlayerAnimator _animator;
 
         private float _currentStamina;
         [SerializeField] private float _maxStamina;
@@ -54,6 +55,7 @@ namespace Logbound.Gameplay
             _cameraTransform = GetComponentInChildren<Camera>().transform;
             _characterController = GetComponentInChildren<CharacterController>();
             _playerInput = GetComponent<PlayerInput>();
+            _animator = GetComponentInChildren<PlayerAnimator>();
         }
 
         private void Start()
@@ -71,12 +73,16 @@ namespace Logbound.Gameplay
             {
                 _jumpBuffer -= Time.deltaTime;
             }
+            
+            Vector3 move = transform.right * (moveX * _walkSpeed) + transform.forward * (moveZ * _walkSpeed) +
+                                        Vector3.up * _verticalVelocity;
 
             UpdateGroundedCheck();
 
             if (IsGrounded())
             {
                 HandleGrounded();
+                _animator.SetAnimation(_moveInput.magnitude > 0.1f ? Anim.Walk : Anim.Idle);
             }
             else
             {
@@ -84,11 +90,8 @@ namespace Logbound.Gameplay
             }
 
             float moveSpeed = _walkSpeed; //_inputReceiver.sprint ? walk : run
-            Vector3 move = transform.right * (moveX * _walkSpeed) + transform.forward * (moveZ * _walkSpeed) +
-                           Vector3.up * _verticalVelocity;
-
-            _characterController.Move(move * Time.deltaTime);
             
+            _characterController.Move(move * Time.deltaTime);
             
             // Apply horizontal look input + horizontal recoil
             float horizontalLook = _lookInput.x * _lookSpeed * Time.deltaTime;
@@ -129,6 +132,7 @@ namespace Logbound.Gameplay
 
         private void Jump()
         {
+            _animator.SetAnimation(Anim.Jump);
             _verticalVelocity = _jumpVelocity;
             _airTime = _airtimeThreshold;
         }

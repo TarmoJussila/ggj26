@@ -57,7 +57,6 @@ namespace Logbound.Gameplay
 
         public override void Interact(PlayerInteraction playerInteraction)
         {
-            throw new NotImplementedException();
         }
     }
 }

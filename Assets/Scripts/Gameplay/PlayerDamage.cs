@@ -9,10 +9,13 @@ namespace Logbound.Gameplay
         public event Action OnPlayerDead;
         public event Action OnPlayerHeal;
         public event Action OnPlayerResurrect;
+        public event Action OnPlayerHeatChange;
 
         public int Health { get; private set; }
+        public int PlayerHeat { get; private set; }
 
-        public int MaxHealth;
+        public int MaxHealth = 10000;
+        public int MaxHeat = 10000; 
 
         private void Start()
         {
@@ -21,6 +24,11 @@ namespace Logbound.Gameplay
 
         private void OnTriggerStay(Collider other)
         {
+            if (other.CompareTag("Heat") && other.TryGetComponent(out Fireplace fireplace))
+            {
+                PlayerHeat += fireplace.GetPlayerHeatingEffect();
+            }
+            
             if (!other.CompareTag($"Hazard"))
             {
                 return;
@@ -32,6 +40,16 @@ namespace Logbound.Gameplay
             }
 
             TakeDamage(hazard.DamagePerTick);
+        }
+
+        private void Update()
+        {
+            PlayerHeat = Mathf.Clamp(PlayerHeat - 1, 0, MaxHeat);
+            
+            if (PlayerHeat <= 0)
+            {
+                TakeDamage(2);
+            }
         }
 
         public void TakeDamage(int damage)

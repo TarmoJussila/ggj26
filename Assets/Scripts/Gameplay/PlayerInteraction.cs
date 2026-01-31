@@ -43,13 +43,17 @@ namespace Logbound.Gameplay
                 return;
             }
 
-            if (LastFoundInteractable is CarryableItem carryable)
+            if (LastFoundInteractable is CarryableItem carryable && CurrentCarryItem == null)
             {
                 CurrentCarryItem = carryable;
                 CurrentCarryItem.StartCarry(this);
                 CurrentCarryItem.transform.SetParent(_carryRoot);
                 CurrentCarryItem.transform.localPosition = Vector3.zero;
                 CurrentCarryItem.transform.forward = _carryRoot.forward;
+            }
+            else if (CurrentCarryItem != null && LastFoundInteractable.CanInteractWithOtherItem(CurrentCarryItem))
+            {
+                CurrentCarryItem.Interact(this);
             }
             else
             {
@@ -84,7 +88,7 @@ namespace Logbound.Gameplay
         {
             Debug.DrawLine(_cameraTransform.position, _cameraTransform.position + _cameraTransform.forward * _interactRange);
 
-            if (!Physics.Raycast(_cameraTransform.position, _cameraTransform.forward, out RaycastHit hit, _interactRange, _interactLayerMask))
+            if (!Physics.Raycast(_cameraTransform.position, _cameraTransform.forward, out RaycastHit hit, _interactRange, _interactLayerMask, QueryTriggerInteraction.Ignore))
             {
                 InvokeInteractableLost();
                 return;
@@ -97,7 +101,7 @@ namespace Logbound.Gameplay
             }
 
             // already carrying something and target is a carryable that has no other function
-            if (CurrentCarryItem != null && item is CarryableItem carryableItem && !carryableItem.HasSecondaryInteraction)
+            if (CurrentCarryItem != null && item is CarryableItem carryableItem && !carryableItem.CanInteractWithOtherItem(CurrentCarryItem))
             {
                 InvokeInteractableLost();
                 return;
