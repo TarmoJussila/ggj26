@@ -149,6 +149,8 @@ namespace Logbound.Rats
             }
             return _spawnIntervals[^1].SpawnInterval;
         }
+
+        public int GetRatCount() => _ratObjects.Count;
         
         public void RemoveRat(SplineFollower ratFollower)
         {

@@ -53,6 +53,14 @@ namespace Logbound.Gameplay
             }
         }
 
+        private void OnThrow(InputValue value)
+        {
+            if (value.isPressed)
+            {
+                ThrowPressed();
+            }
+        }
+
         public void InteractPressed()
         {
             if (LastFoundInteractable == null)
@@ -87,6 +95,23 @@ namespace Logbound.Gameplay
 
             CurrentCarryItem.transform.SetParent(null);
             CurrentCarryItem.StopCarry();
+            CurrentCarryItem = null;
+        }
+
+        public void ThrowPressed()
+        {
+            if (CurrentCarryItem == null)
+            {
+                return;
+            }
+
+            CurrentCarryItem.transform.SetParent(null);
+            CurrentCarryItem.StopCarry();
+
+            Vector3 throwVec = _cameraTransform.forward * 50;
+            
+            CurrentCarryItem.GetComponent<Rigidbody>().AddForce(throwVec);
+            
             CurrentCarryItem = null;
         }
 

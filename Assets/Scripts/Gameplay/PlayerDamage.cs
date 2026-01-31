@@ -36,7 +36,7 @@ namespace Logbound.Gameplay
             {
                 PlayerHeat += fireplace.GetPlayerHeatingEffect();
             }
-            
+
             if (!other.CompareTag($"Hazard"))
             {
                 return;
@@ -48,7 +48,7 @@ namespace Logbound.Gameplay
             }
 
             bool gasMask = _playerMaskHelper.CurrentMask?.MaskType == MaskType.GAS;
-            
+
             TakeDamage(hazard.DamagePerTick * (gasMask ? 0 : 1));
         }
 
@@ -71,9 +71,14 @@ namespace Logbound.Gameplay
             }
 
             float weatherDamage = Mathf.Ceil(Mathf.Abs(currentTemperature) / 5f);
-            
+
+            if (_playerMaskHelper.CurrentMask?.MaskType == MaskType.SKIMASK)
+            {
+                weatherDamage /= 10;
+            }
+
             PlayerHeat = Mathf.Clamp(PlayerHeat - weatherDamage, 0, MaxHeat);
-            
+
             if (PlayerHeat <= 0)
             {
                 TakeDamage(weatherDamage);
@@ -86,7 +91,7 @@ namespace Logbound.Gameplay
             {
                 return;
             }
-            
+
             Health -= damage;
 
             OnPlayerTakeDamage?.Invoke();
@@ -95,6 +100,13 @@ namespace Logbound.Gameplay
             {
                 Kill();
             }
+        }
+
+        public void Resurrect()
+        {
+            Health = MaxHealth;
+            OnPlayerResurrect?.Invoke();
+            OnPlayerHeal?.Invoke();
         }
 
         public void Heal(float health)
