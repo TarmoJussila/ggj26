@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4656691348530815282}
   - component: {fileID: 1618097784365023257}
   - component: {fileID: 2264210155607370765}
+  - component: {fileID: 1177243794599992632}
   m_Layer: 0
   m_Name: WeatherSystem
   m_TagString: Untagged
@@ -75,3 +76,18 @@ MonoBehaviour:
   _targetTemperature: 0
   _weatherTransitionDuration: 10
   _temperatureTransitionDuration: 20
+--- !u!114 &1177243794599992632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6054638420249568209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddddcff4f176428786524602ddd6d2ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Logbound.Gameplay.LightingSettingsHandler
+  _minFogDensity: 0.01
+  _maxFogDensity: 1
+  _transitionSpeed: 1
