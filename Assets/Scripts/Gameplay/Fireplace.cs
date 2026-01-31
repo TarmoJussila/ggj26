@@ -34,7 +34,7 @@ namespace Logbound
 
         public float GetHeatNormalized() => Mathf.Clamp01(BurnTimeLeft / _maxBurnTime);
 
-        public int GetPlayerHeatingEffect() => Mathf.CeilToInt((1 - (GetHeatNormalized() * GetHeatNormalized() * GetHeatNormalized())) * _playerHeatingEffect);
+        public int GetPlayerHeatingEffect() => Mathf.CeilToInt(GetHeatNormalized() * _playerHeatingEffect);
 
         public override void Interact(PlayerInteraction playerInteraction) { }
 
