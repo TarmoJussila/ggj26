@@ -218,6 +218,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Logbound.PlayerVisuals
   _animSpeed: 0.2
+  _playerIndex: 0
   WalkAnim:
   - {fileID: 21300000, guid: 9dd5abbedca115a4eaff40ce44ac6feb, type: 3}
   - {fileID: 21300000, guid: 8759f148a5211204692fc78e60cd6de0, type: 3}
@@ -226,7 +227,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 7a25e478dbfd26443822183a31f0db81, type: 3}
   IdleAnim:
   - {fileID: 21300000, guid: 9dd5abbedca115a4eaff40ce44ac6feb, type: 3}
-  - {fileID: 21300000, guid: 31be2f87afdea524da382a9f1cdd068f, type: 3}
   JumpAnim:
   - {fileID: 21300000, guid: 9b2d850f4888d3e4d8a51861f06f6be5, type: 3}
   _rend: {fileID: 4396249742302542985}
+  _minimumPlayTimeBeforeSwitch: 0.15

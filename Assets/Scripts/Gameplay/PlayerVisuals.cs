@@ -27,6 +27,10 @@ namespace Logbound.Gameplay
 
         private Transform _targetPlayerTransform;
 
+
+        [SerializeField] private float _minimumPlayTimeBeforeSwitch = 0.3f;
+        private float _currentPlayTime;
+
         private void Awake()
         {
             PlayerJoinHelper.OnPlayerAdded += CheckPlayers;
@@ -64,6 +68,7 @@ namespace Logbound.Gameplay
         private void Update()
         {
             _frameTimer += Time.deltaTime;
+            _currentPlayTime += Time.deltaTime;
 
             if (_targetPlayerTransform != null)
             {
@@ -86,6 +91,12 @@ namespace Logbound.Gameplay
 
         public void SetAnimation(Anim anim)
         {
+            if (CurrentAnimation == anim || _currentPlayTime < _minimumPlayTimeBeforeSwitch)
+            {
+                return;
+            }
+
+            _currentPlayTime = 0.0f;
             _currentAnim = new(GetFrames(anim));
             CurrentAnimation = anim;
             _currentFrame = 0;

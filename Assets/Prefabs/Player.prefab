@@ -92,7 +92,7 @@ MonoBehaviour:
   _mouseSensitivity: 0.3
   _walkSpeed: 4
   _runSpeed: 1.5
-  _airtimeThreshold: 0.1
+  _airtimeThreshold: 0.15
   _terminalVelocity: -10
   _jumpVelocity: 3
   _gravity: -6
