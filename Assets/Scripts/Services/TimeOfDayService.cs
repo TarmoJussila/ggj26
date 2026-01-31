@@ -72,8 +72,9 @@ namespace Logbound.Services
             _directionalLight.intensity = Mathf.Lerp(_nightIntensity, _dayIntensity, blendFactor);
             
             float rotationX = Mathf.Lerp(_nightRotationX, _dayRotationX, blendFactor);
+            float rotationY = _currentTime * 360f;
             Vector3 currentRotation = _directionalLight.transform.eulerAngles;
-            _directionalLight.transform.rotation = Quaternion.Euler(rotationX, currentRotation.y, currentRotation.z);
+            _directionalLight.transform.rotation = Quaternion.Euler(rotationX, rotationY, currentRotation.z);
         }
 
         private float CalculateBlendFactor()
