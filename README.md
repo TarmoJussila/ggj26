@@ -44,7 +44,7 @@ Gamepad
 | Quit to main menu | B (hold) |
 
 
-# Credits - Team Too Many Hats
+# Credits - Team Too Many Heads
 
 Tarmo Jussila - Programming
 
