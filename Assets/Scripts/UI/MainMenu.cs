@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -22,10 +23,11 @@ namespace Logbound.UI
             _applyButton.onClick.AddListener(OnApplyClick);
             
             FullScreenEnabled = Screen.fullScreen;
-            _resolutions = Screen.resolutions;
+            var temp = new List<Resolution>();
             _resolutionDropdown.ClearOptions();
+            _resolutionDropdown.onValueChanged.AddListener(SelectResolution);
 
-            foreach (var resolution in _resolutions)
+            foreach (var resolution in Screen.resolutions)
             {
                 var rate = resolution.refreshRateRatio.numerator / (float)resolution.refreshRateRatio.denominator;
                 var text = $"{resolution.width} x {resolution.height} {rate:0.00} Hz";
@@ -46,7 +48,9 @@ namespace Logbound.UI
                 {
                     text = text
                 });
+                temp.Add(resolution);
             }
+            _resolutions = temp.ToArray();
         }
 
         private void OnDestroy()
@@ -54,6 +58,7 @@ namespace Logbound.UI
             _playButton.onClick.RemoveListener(OnPlayButtonClicked);
             _quitButton.onClick.RemoveListener(OnQuitButtonClicked);
             _applyButton.onClick.RemoveListener(OnApplyClick);
+            _resolutionDropdown.onValueChanged.RemoveListener(SelectResolution);
         }
 
         private void OnQuitButtonClicked()
@@ -84,6 +89,7 @@ namespace Logbound.UI
             var res = _resolutions[_selectedIndex];
             Screen.SetResolution(res.width, res.height,
                 FullScreenEnabled ? FullScreenMode.ExclusiveFullScreen : FullScreenMode.Windowed, res.refreshRateRatio);
+            Debug.Log($"Applying resolution: {res.width}x{res.height}");
         }
     }
 }
