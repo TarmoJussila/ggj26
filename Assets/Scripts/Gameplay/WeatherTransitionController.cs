@@ -7,6 +7,8 @@ namespace Logbound.Gameplay
 {
     public class WeatherTransitionController : Singleton<WeatherTransitionController>
     {
+        private const bool VerboseLogging = false;
+
         [SerializeField] private WeatherState _targetWeatherState;
         [SerializeField] private float _targetTemperature;
         [SerializeField] private float _weatherTransitionDuration = 5f;
@@ -52,8 +54,11 @@ namespace Logbound.Gameplay
                     _isTransitioningWeather = false;
                     _initialWeatherState = _targetWeatherState;
                 }
-                
-                Debug.Log($"Transitioning from {_initialWeatherState} to {_targetWeatherState}: {_transitionProgressWeather * 100f}%");
+
+                if (VerboseLogging)
+                {
+                    Debug.Log($"Transitioning from {_initialWeatherState} to {_targetWeatherState}: {_transitionProgressWeather * 100f}%");
+                }
             }
             
             if (_isTransitioningTemperature)
@@ -65,8 +70,11 @@ namespace Logbound.Gameplay
                     _isTransitioningTemperature = false;
                     _initialTemperature = _targetTemperature;
                 }
-                
-                Debug.Log($"Transitioning temperature from {_initialTemperature} to {_targetTemperature}: {_transitionProgressTemperature * 100f}%");
+
+                if (VerboseLogging)
+                {
+                    Debug.Log($"Transitioning temperature from {_initialTemperature} to {_targetTemperature}: {_transitionProgressTemperature * 100f}%");
+                }
             }
         }
         
