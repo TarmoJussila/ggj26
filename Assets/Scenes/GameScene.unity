@@ -11902,11 +11902,24 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 19889002, guid: da60e5460ab2b4a479d4ac2293e0c824, type: 3}
+      propertyPath: InitialModule.startSizeY.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 19889002, guid: da60e5460ab2b4a479d4ac2293e0c824, type: 3}
+      propertyPath: InitialModule.startSizeZ.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da60e5460ab2b4a479d4ac2293e0c824, type: 3}
+--- !u!198 &2060241742 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 19889002, guid: da60e5460ab2b4a479d4ac2293e0c824, type: 3}
+  m_PrefabInstance: {fileID: 2060241741}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &2125905667
 Mesh:
   m_ObjectHideFlags: 0
@@ -12430,6 +12443,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: WeatherSystem
       objectReference: {fileID: 0}
+    - target: {fileID: 6143762556387550758, guid: 7a311878a9a78d84a8f11a4cf8ee367a, type: 3}
+      propertyPath: _rainParticleSystem
+      value: 
+      objectReference: {fileID: 2060241742}
+    - target: {fileID: 6143762556387550758, guid: 7a311878a9a78d84a8f11a4cf8ee367a, type: 3}
+      propertyPath: _snowParticleSystem
+      value: 
+      objectReference: {fileID: 2060241742}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
