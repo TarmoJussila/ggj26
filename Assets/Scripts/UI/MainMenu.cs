@@ -25,10 +25,23 @@ namespace Logbound.UI
             _resolutions = Screen.resolutions;
             _resolutionDropdown.ClearOptions();
 
-            foreach (Resolution resolution in _resolutions)
+            foreach (var resolution in _resolutions)
             {
                 var rate = resolution.refreshRateRatio.numerator / (float)resolution.refreshRateRatio.denominator;
                 var text = $"{resolution.width} x {resolution.height} {rate:0.00} Hz";
+
+                if (resolution.height < 720)
+                {
+                    Debug.Log($"Skipped too small resolution: {text}");
+                    continue;
+                }
+                
+                if (resolution.width / (float)resolution.height < 1920f / 1200f)
+                {
+                    Debug.Log($"Skipped too narrow resolution: {text}");
+                    continue;
+                }
+
                 _resolutionDropdown.options.Add(new TMP_Dropdown.OptionData
                 {
                     text = text
