@@ -162,7 +162,7 @@ namespace Logbound.UI
         private IEnumerator RespawnCoroutine()
         {
             yield return new WaitForSeconds(RespawnDelaySeconds);
-            _playerDamage.Heal(_playerDamage.MaxHealth);
+            _playerDamage.Resurrect();
         }
 
         [System.Serializable]
