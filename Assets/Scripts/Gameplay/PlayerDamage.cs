@@ -5,13 +5,19 @@ namespace Logbound
 {
     public class PlayerDamage : MonoBehaviour
     {
-        public static event Action<PlayerDamage> OnPlayerTakeDamage;
-        public static event Action<PlayerDamage> OnPlayerDead;
-        public static event Action<PlayerDamage> OnPlayerHeal;
+        public event Action OnPlayerTakeDamage;
+        public event Action OnPlayerDead;
+        public event Action OnPlayerHeal;
+        public event Action OnPlayerResurrect;
 
         public int Health { get; private set; }
 
-        [SerializeField] private int _maxHealth;
+        public int MaxHealth;
+
+        private void Start()
+        {
+            Health = MaxHealth;
+        }
 
         private void OnTriggerStay(Collider other)
         {
@@ -32,7 +38,7 @@ namespace Logbound
         {
             Health -= damage;
 
-            OnPlayerTakeDamage?.Invoke(this);
+            OnPlayerTakeDamage?.Invoke();
 
             if (Health <= 0)
             {
@@ -42,15 +48,21 @@ namespace Logbound
 
         public void Heal(int health)
         {
-            
+            int oldHealth = Health;
+
             Health += health;
 
-            OnPlayerHeal?.Invoke(this);
+            if (oldHealth < 0 && Health > 0)
+            {
+                OnPlayerResurrect?.Invoke();
+            }
+
+            OnPlayerHeal?.Invoke();
         }
 
         public void Kill()
         {
-            OnPlayerDead?.Invoke(this);
+            OnPlayerDead?.Invoke();
         }
     }
 }

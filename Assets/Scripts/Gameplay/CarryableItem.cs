@@ -12,6 +12,11 @@ namespace Logbound
 
         private PlayerInteraction beingCarriedBy;
 
+        /// <summary>
+        /// can be interacted with even when carrying other stuff
+        /// </summary>
+        public bool HasSecondaryInteraction;
+
         private void Awake()
         {
             _rb = GetComponent<Rigidbody>();
