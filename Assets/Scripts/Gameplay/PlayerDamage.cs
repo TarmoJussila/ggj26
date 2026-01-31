@@ -41,14 +41,22 @@ namespace Logbound.Gameplay
 
             TakeDamage(hazard.DamagePerTick);
         }
-
+        
         private void Update()
         {
-            PlayerHeat = Mathf.Clamp(PlayerHeat - 1, 0, MaxHeat);
+            float currentTemperature = WeatherTransitionController.Instance.GetCurrentTemperature();
+            if (currentTemperature >= 0)
+            {
+                return;
+            }
+
+            int weatherDamage = Mathf.CeilToInt(Mathf.Abs(currentTemperature) / 5f);
+            
+            PlayerHeat = Mathf.Clamp(PlayerHeat - weatherDamage, 0, MaxHeat);
             
             if (PlayerHeat <= 0)
             {
-                TakeDamage(2);
+                TakeDamage(weatherDamage);
             }
         }
 
