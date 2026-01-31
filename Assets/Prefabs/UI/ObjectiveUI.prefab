@@ -209,6 +209,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ProgressBar_Heat
       objectReference: {fileID: 0}
+    - target: {fileID: 984521714863901159, guid: 4c7a8258de5384a10a5934061b219382, type: 3}
+      propertyPath: _fillImage
+      value: 
+      objectReference: {fileID: 6220266710969736047}
     - target: {fileID: 7923060737347714147, guid: 4c7a8258de5384a10a5934061b219382, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -299,6 +303,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7923060737347714147, guid: 4c7a8258de5384a10a5934061b219382, type: 3}
   m_PrefabInstance: {fileID: 5949032445541786901}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6220266710969736047 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 350690210419539578, guid: 4c7a8258de5384a10a5934061b219382, type: 3}
+  m_PrefabInstance: {fileID: 5949032445541786901}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
 --- !u!1001 &7846197446956790397
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -310,6 +325,14 @@ PrefabInstance:
     - target: {fileID: 497684986607964606, guid: 4c7a8258de5384a10a5934061b219382, type: 3}
       propertyPath: m_Name
       value: ProgressBar_Rats
+      objectReference: {fileID: 0}
+    - target: {fileID: 984521714863901159, guid: 4c7a8258de5384a10a5934061b219382, type: 3}
+      propertyPath: _fillImage
+      value: 
+      objectReference: {fileID: 7511632417445956615}
+    - target: {fileID: 984521714863901159, guid: 4c7a8258de5384a10a5934061b219382, type: 3}
+      propertyPath: _progressBarType
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3417730589316659066, guid: 4c7a8258de5384a10a5934061b219382, type: 3}
       propertyPath: m_Sprite
@@ -417,3 +440,14 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7923060737347714147, guid: 4c7a8258de5384a10a5934061b219382, type: 3}
   m_PrefabInstance: {fileID: 7846197446956790397}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7511632417445956615 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 350690210419539578, guid: 4c7a8258de5384a10a5934061b219382, type: 3}
+  m_PrefabInstance: {fileID: 7846197446956790397}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
