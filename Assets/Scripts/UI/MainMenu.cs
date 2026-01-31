@@ -88,7 +88,7 @@ namespace Logbound.UI
             Screen.fullScreen = FullScreenEnabled;
             var res = _resolutions[_selectedIndex];
             Screen.SetResolution(res.width, res.height,
-                FullScreenEnabled ? FullScreenMode.ExclusiveFullScreen : FullScreenMode.Windowed, res.refreshRateRatio);
+                FullScreenEnabled ? FullScreenMode.FullScreenWindow : FullScreenMode.Windowed, res.refreshRateRatio);
             Debug.Log($"Applying resolution: {res.width}x{res.height}");
         }
     }
