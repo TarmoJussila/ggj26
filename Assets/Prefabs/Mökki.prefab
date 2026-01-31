@@ -85,10 +85,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: f124390d79203b6448e7f51e560b14a8, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: b589646a7a78fdd44b68cd4add8ba8d4, type: 2}
     - target: {fileID: 919132149155446097, guid: f124390d79203b6448e7f51e560b14a8, type: 3}
       propertyPath: m_Name
       value: Kiuas
       objectReference: {fileID: 0}
+    - target: {fileID: 1678474543880128164, guid: f124390d79203b6448e7f51e560b14a8, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: b589646a7a78fdd44b68cd4add8ba8d4, type: 2}
+    - target: {fileID: 1678474543880128164, guid: f124390d79203b6448e7f51e560b14a8, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 003f7a139f13f534492705123a3e9c4c, type: 2}
+    - target: {fileID: 7535294472514242804, guid: f124390d79203b6448e7f51e560b14a8, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 1b4f33ef2ba480d428d928643a2410a6, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1109,6 +1125,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SaunaKalusteet
       objectReference: {fileID: 0}
+    - target: {fileID: 4381635453750098952, guid: 336f90e90548ee045b6a58355443d61a, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 003f7a139f13f534492705123a3e9c4c, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
