@@ -1,3 +1,4 @@
+using System;
 using Logbound.Masks;
 using UnityEngine;
 
@@ -5,6 +6,8 @@ namespace Logbound.Gameplay
 {
     public class PlayerMaskHelper : MonoBehaviour
     {
+        public event Action<MaskType> OnMaskChanged;
+        
         public BasicMaskItem CurrentMask { get; private set; }
         
         public void WearMask(BasicMaskItem maskItem)
@@ -16,6 +19,8 @@ namespace Logbound.Gameplay
             CurrentMask = maskItem;
             
             GetComponentInChildren<PlayerAnimator>().SetMaskType(maskItem.MaskType);
+            
+            OnMaskChanged?.Invoke(maskItem.MaskType);
         }
 
         public void DropMask()
@@ -24,6 +29,8 @@ namespace Logbound.Gameplay
             CurrentMask.StopCarry();
             CurrentMask = null;
             GetComponentInChildren<PlayerAnimator>().SetMaskType(MaskType.NONE);
+            
+            OnMaskChanged?.Invoke(MaskType.NONE);
         }
     }
 }

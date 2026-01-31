@@ -1,6 +1,9 @@
 using System.Collections;
+using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 using Logbound.Gameplay;
+using Logbound.Masks;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -26,6 +29,9 @@ namespace Logbound.UI
         [SerializeField] private Image _healthBarSlow;
         [SerializeField] private float _healthBarAnimDuration;
 
+        [SerializeField] private List<MaskOverlayPair> _maskOverlayPairs;
+        [SerializeField] private Image _maskOverlay;
+
         private Coroutine _healthBarCoroutine;
 
         public void Initialize(SplitScreenPlayer player)
@@ -43,7 +49,15 @@ namespace Logbound.UI
             _playerDamage.OnPlayerTakeDamage += OnPlayerTakeDamage;
             _playerDamage.OnPlayerResurrect += OnPlayerResurrect;
 
+            _playerMaskHelper.OnMaskChanged += OnMaskChanged;
+
             SetPlayerAlive(true);
+        }
+
+        private void OnMaskChanged(MaskType maskType)
+        {
+            _maskOverlay.enabled = maskType != MaskType.NONE;
+            _maskOverlay.sprite = _maskOverlayPairs.FirstOrDefault(mp => mp.MaskType == maskType).Sprite;
         }
 
         private void Update()
@@ -134,6 +148,13 @@ namespace Logbound.UI
             }
 
             _healthBarSlow.fillAmount = targetFill;
+        }
+
+        [System.Serializable]
+        public struct MaskOverlayPair
+        {
+            public MaskType MaskType;
+            public Sprite Sprite;
         }
     }
 }

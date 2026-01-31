@@ -154,6 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Logbound.PlayerDamage
   MaxHealth: 10000
+  MaxHeat: 10000
 --- !u!114 &2112977943805533073
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,7 +167,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcaf0e505397de0419b7d1c3a3fdeaa4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Logbound.PlayerMaskHelper
-  _maskRoot: {fileID: 7279940283608313156}
 --- !u!114 &622269768629347169
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,13 +181,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Logbound.PlayerCameraLayerHelper
   _masks:
   - serializedVersion: 2
-    m_Bits: 951
+    m_Bits: 7607
   - serializedVersion: 2
-    m_Bits: 1463
+    m_Bits: 7095
   - serializedVersion: 2
-    m_Bits: 2487
+    m_Bits: 6071
   - serializedVersion: 2
-    m_Bits: 4535
+    m_Bits: 4023
 --- !u!1 &4243672350318698737
 GameObject:
   m_ObjectHideFlags: 0
@@ -851,6 +851,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1533828243336286498}
     m_Modifications:
+    - target: {fileID: 2190364435427318889, guid: da9eb7f4d130dc140bb8b7726643ab49, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 2332210198386620014, guid: da9eb7f4d130dc140bb8b7726643ab49, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -894,6 +898,14 @@ PrefabInstance:
     - target: {fileID: 3611765406458752795, guid: da9eb7f4d130dc140bb8b7726643ab49, type: 3}
       propertyPath: m_Name
       value: PlayerAnimations
+      objectReference: {fileID: 0}
+    - target: {fileID: 5037843411983912204, guid: da9eb7f4d130dc140bb8b7726643ab49, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5599875810773498957, guid: da9eb7f4d130dc140bb8b7726643ab49, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

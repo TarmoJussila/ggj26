@@ -58,7 +58,7 @@ namespace Logbound.Masks
                 _billboardRefreshTimer = 0.1f;
             }
 
-            transform.forward = _billboardTarget.transform.position - transform.position;
+            _rend.transform.forward = _billboardTarget.transform.position - transform.position;
         }
 
         private void FindNearestCamera() {
