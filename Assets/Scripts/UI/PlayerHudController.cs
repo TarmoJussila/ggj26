@@ -33,6 +33,7 @@ namespace Logbound.UI
 
         [SerializeField] private List<MaskOverlayPair> _maskOverlayPairs;
         [SerializeField] private Image _maskOverlay;
+        [SerializeField] private TextMeshProUGUI _maskDropHintText;
 
         private Coroutine _healthBarCoroutine;
 
@@ -58,8 +59,19 @@ namespace Logbound.UI
 
         private void OnMaskChanged(MaskType maskType)
         {
-            _maskOverlay.enabled = maskType != MaskType.NONE;
+            if (maskType == MaskType.NONE)
+            {
+                _maskOverlay.enabled  = false;
+                _maskDropHintText.gameObject.SetActive(false);
+            }
+            else
+            {
+                _maskOverlay.enabled = true;
+                _maskDropHintText.gameObject.SetActive(true);
+                _maskDropHintText.text = $"Press {(Player.MouseInput ? "G" : "B")} to drop mask";
+            }
             _maskOverlay.sprite = _maskOverlayPairs.FirstOrDefault(mp => mp.MaskType == maskType).Sprite;
+
         }
 
         private void Update()
