@@ -6,11 +6,11 @@ The game was created in 48 hours during the Global Game Jam / Finnish Game Jam 2
 
 # Watch
 
-Gameplay video: [**Watch**](https://)
+Gameplay video: [**Watch**](https://globalgamejam.org/games/2026/logbound-9)
 
 # Download
 
-Executable: [**Download**](https://)
+Executable: [**Download**](https://globalgamejam.org/games/2026/logbound-9)
 
 # Build
 
