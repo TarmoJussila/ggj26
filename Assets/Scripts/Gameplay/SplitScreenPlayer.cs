@@ -10,7 +10,9 @@ namespace Logbound.Gameplay
     [RequireComponent(typeof(PlayerInput))]
     public class SplitScreenPlayer : MonoBehaviour
     {
-        /// <summary>UI navigation only allows one input method at a time.</summary>
+        private const float HoldCrouchToQuitThreshold = 3f;
+
+        /// <summary>UI navigation only allows one input method at a time.</summary>ß
         private static int _pauseMenuLockIndex = -1;
 
         private Transform _cameraTransform;
@@ -40,9 +42,12 @@ namespace Logbound.Gameplay
 
         private Vector2 _moveInput;
         private Vector2 _lookInput;
-        private DateTime _crouchButtonLastPressed;
+        private DateTime _crouchButtonLastPressed = DateTime.MaxValue;
 
         public bool MouseInput => _playerInput.currentControlScheme.Equals("Keyboard&Mouse");
+        public bool HoldingCrouch => _crouchButtonLastPressed < DateTime.MaxValue;
+        public double CrouchHeldTime => HoldingCrouch ? (DateTime.UtcNow - _crouchButtonLastPressed).TotalSeconds : -1d;
+        public double CrouchHoldTimeRemaining => HoldingCrouch ? HoldCrouchToQuitThreshold - CrouchHeldTime : double.MaxValue;
 
         private void Awake()
         {
@@ -194,13 +199,7 @@ namespace Logbound.Gameplay
             }
             else
             {
-                var held = (DateTime.UtcNow - _crouchButtonLastPressed).TotalSeconds;
-                Debug.Log($"Crouch was held for '{held}' seconds");
                 _crouchButtonLastPressed = DateTime.MaxValue;
-                if (held > 3f)
-                {
-                    SceneManager.LoadScene("MainMenuScene");
-                }
             }
         }
 
@@ -235,7 +234,6 @@ namespace Logbound.Gameplay
 
         private void OpenPauseMenu()
         {
-            
             _optionsMenu.gameObject.SetActive(true);
             _playerInput.SwitchCurrentActionMap("UI");
         }
