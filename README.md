@@ -30,9 +30,11 @@ The game was created with **Unity 6000.3.6f1**.
 
 Tarmo Jussila - Programming
 
-Juho Turpeinen - Programming
+Aleksi Toivonen - Programming
 
 Kalle Collan - Programming
+
+Juho Turpeinen - Programming
 
 Tuomo Oksanen - Programming
 
