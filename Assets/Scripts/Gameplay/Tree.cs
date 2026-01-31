@@ -1,14 +1,33 @@
+using System;
 using System.Collections.Generic;
 using Logbound.Gameplay;
 using UnityEngine;
+using UnityEngine.Serialization;
+using Random = UnityEngine.Random;
 
 namespace Logbound
 {
-    public class Log : CarryableItem
+    public class Tree : InteractableItem
     {
         public int HitsLeft = 3;
 
-        [SerializeField] private List<GameObject> ObjectsToEnable;
+        [SerializeField] private List<GameObject> _branches;
+        [SerializeField] private List<GameObject> _objectsToEnable;
+
+        private void Start()
+        {
+            foreach (var branch in _branches)
+            {
+                branch.gameObject.SetActive(false);
+            }
+
+            _branches[Random.Range(0, _branches.Count)].SetActive(true);
+        }
+
+        public override void Interact(PlayerInteraction playerInteraction)
+        {
+            
+        }
 
         public override void UseTool(PlayerInteraction playerInteraction)
         {
@@ -24,12 +43,10 @@ namespace Logbound
                 return;
             }
 
-            foreach (GameObject obj in ObjectsToEnable)
+            foreach (GameObject obj in _objectsToEnable)
             {
                 obj.transform.SetParent(null);
                 obj.SetActive(true);
-                var rb = obj.GetComponent<Rigidbody>();
-                rb.AddForce(Random.insideUnitSphere * (rb.mass / 5));
                 gameObject.SetActive(false);
             }
         }

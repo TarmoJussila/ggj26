@@ -25,7 +25,7 @@ namespace Logbound
             }
         }
 
-        public override void OnInteract(PlayerInteraction playerInteraction)
+        public override void Interact(PlayerInteraction playerInteraction)
         {
             if (_isSwinging)
             {
@@ -37,9 +37,7 @@ namespace Logbound
             OnToolUsed(playerInteraction);
         }
 
-        protected virtual void OnToolUsed(PlayerInteraction playerInteraction)
-        {
-        }
+        protected virtual void OnToolUsed(PlayerInteraction playerInteraction) { }
 
         private void SwingTool()
         {
@@ -53,12 +51,12 @@ namespace Logbound
             float t = 0.0f;
 
             Vector3 euler = transform.localRotation.eulerAngles;
-            
+
             while (t < 1.0f)
             {
                 t += Time.deltaTime / _animDuration;
 
-                transform.localRotation = Quaternion.Euler(_swingCurve.Evaluate(t), euler.y, euler.z);
+                transform.localRotation = Quaternion.Euler(Mathf.Lerp(_startRotation, _endRotation, _swingCurve.Evaluate(t)), euler.y, euler.z);
                 yield return null;
             }
 

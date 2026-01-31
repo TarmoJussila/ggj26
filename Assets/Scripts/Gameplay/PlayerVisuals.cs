@@ -67,6 +67,11 @@ namespace Logbound.Gameplay
 
         private void Update()
         {
+            if (_currentAnim == null)
+            {
+                return;
+            }
+            
             _frameTimer += Time.deltaTime;
             _currentPlayTime += Time.deltaTime;
 

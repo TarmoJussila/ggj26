@@ -57,9 +57,6 @@ namespace Logbound.Gameplay
 
         public override void Interact(PlayerInteraction playerInteraction)
         {
-            OnInteract(playerInteraction);
         }
-
-        public virtual void OnInteract(PlayerInteraction playerInteraction) { }
     }
 }

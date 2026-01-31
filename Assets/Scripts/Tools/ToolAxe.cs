@@ -7,7 +7,7 @@ namespace Logbound
     {
         protected override void OnToolUsed(PlayerInteraction playerInteraction)
         {
-            //playerInteraction.LastFoundInteractable;
+            playerInteraction.LastFoundInteractable.UseTool(playerInteraction);
         }
     }
 }
