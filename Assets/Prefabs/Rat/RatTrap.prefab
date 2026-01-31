@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 274282413764537738}
   m_Layer: 0
   m_Name: RatTrapModel
-  m_TagString: RatTrap
+  m_TagString: Hazard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 161461948938469434}
   m_Layer: 0
   m_Name: RatTrap
-  m_TagString: RatTrap
+  m_TagString: Hazard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -245,7 +245,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cheese
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8640796066322502138, guid: c09a45330fcaec44090d9d84c033bd22, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
