@@ -732,6 +732,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fireplace_sauna Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 7288677007977169531, guid: 9b4584821cdf0064093c5be154850e00, type: 3}
+      propertyPath: m_Size.x
+      value: 2.106369
+      objectReference: {fileID: 0}
+    - target: {fileID: 7288677007977169531, guid: 9b4584821cdf0064093c5be154850e00, type: 3}
+      propertyPath: m_Size.y
+      value: 0.4468372
+      objectReference: {fileID: 0}
+    - target: {fileID: 7288677007977169531, guid: 9b4584821cdf0064093c5be154850e00, type: 3}
+      propertyPath: m_Size.z
+      value: 1.4274774
+      objectReference: {fileID: 0}
+    - target: {fileID: 7288677007977169531, guid: 9b4584821cdf0064093c5be154850e00, type: 3}
+      propertyPath: m_Center.x
+      value: -0.19681549
+      objectReference: {fileID: 0}
+    - target: {fileID: 7288677007977169531, guid: 9b4584821cdf0064093c5be154850e00, type: 3}
+      propertyPath: m_Center.y
+      value: -0.2765814
+      objectReference: {fileID: 0}
+    - target: {fileID: 7288677007977169531, guid: 9b4584821cdf0064093c5be154850e00, type: 3}
+      propertyPath: m_Center.z
+      value: -0.28626132
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
