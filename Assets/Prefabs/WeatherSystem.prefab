@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2264210155607370765}
   - component: {fileID: 1177243794599992632}
   - component: {fileID: 6143762556387550758}
+  - component: {fileID: 5339211258306983433}
   m_Layer: 0
   m_Name: WeatherSystem
   m_TagString: Untagged
@@ -106,3 +107,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Logbound.Gameplay.PrecipitationController
   _rainParticleSystem: {fileID: 0}
   _snowParticleSystem: {fileID: 0}
+--- !u!114 &5339211258306983433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6054638420249568209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7af2ea8663a4bf48251e71dd955ed11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Logbound.Gameplay.SnowShaderController
+  _snowMaterial: {fileID: -876546973899608171, guid: e0855a21d9b02e1409ccee2d334c6cf4, type: 3}
+  _snowfallHeightDecay: 100
+  _noSnowHeightDecay: 10
+  _snowfallDecayDuration: 100
+  _noSnowDecayDuration: 10
+  _transitionSpeed: 10
