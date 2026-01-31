@@ -134,7 +134,7 @@ namespace Logbound.Gameplay
 
         private void Jump()
         {
-            _animator.SetAnimation(Anim.Jump);
+            _animator.SetAnimation(Anim.Jump, true);
             _verticalVelocity = _jumpVelocity;
             _airTime = _airtimeThreshold;
         }

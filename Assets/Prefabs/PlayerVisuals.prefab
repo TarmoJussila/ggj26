@@ -339,7 +339,17 @@ MonoBehaviour:
   JumpAnim:
   - Front: {fileID: 21300000, guid: 9b2d850f4888d3e4d8a51861f06f6be5, type: 3}
     Back: {fileID: 21300000, guid: 9b2d850f4888d3e4d8a51861f06f6be5, type: 3}
-  HitAnim: []
+  HitAnim:
+  - Front: {fileID: 21300000, guid: 2918acea56403fa4db5931d364cacfa8, type: 3}
+    Back: {fileID: 21300000, guid: 2918acea56403fa4db5931d364cacfa8, type: 3}
+  - Front: {fileID: 21300000, guid: c460c929a8a84d1419803c932e321d91, type: 3}
+    Back: {fileID: 21300000, guid: c460c929a8a84d1419803c932e321d91, type: 3}
+  - Front: {fileID: 21300000, guid: 29796374b36912d4fb2109236ced7b82, type: 3}
+    Back: {fileID: 21300000, guid: 29796374b36912d4fb2109236ced7b82, type: 3}
+  - Front: {fileID: 21300000, guid: 69c7bb056830e3147aec161405215923, type: 3}
+    Back: {fileID: 21300000, guid: 69c7bb056830e3147aec161405215923, type: 3}
+  - Front: {fileID: 21300000, guid: 53ce576a8f82def4c95c6977f1ed6373, type: 3}
+    Back: {fileID: 21300000, guid: 53ce576a8f82def4c95c6977f1ed6373, type: 3}
   _rend: {fileID: 4396249742302542985}
   _maskRend: {fileID: 8747943001912121422}
   _minimumPlayTimeBeforeSwitch: 0.15

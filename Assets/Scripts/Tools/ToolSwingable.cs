@@ -33,6 +33,7 @@ namespace Logbound
             }
 
             SwingTool();
+            playerInteraction.GetComponentInChildren<PlayerAnimator>().SetAnimation(Anim.Hit, true);
 
             OnToolUsed(playerInteraction);
         }

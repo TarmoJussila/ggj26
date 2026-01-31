@@ -8,11 +8,11 @@ namespace Logbound.Gameplay
     {
         [SerializeField] private List<PlayerVisuals> _visuals;
 
-        public void SetAnimation(Anim animation)
+        public void SetAnimation(Anim animation, bool force = false)
         {
             foreach (var vis in _visuals)
             {
-                vis.SetAnimation(animation);
+                vis.SetAnimation(animation, force);
             }
         }
 

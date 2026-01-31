@@ -45,7 +45,6 @@ namespace Logbound.Gameplay
         {
             PlayerJoinHelper.OnPlayerAdded += CheckPlayers;
             PlayerJoinHelper.OnPlayerRemoved += CheckPlayers;
-
         }
 
         private void OnDestroy()
@@ -100,14 +99,19 @@ namespace Logbound.Gameplay
                     _currentFrame = 0;
                 }
 
-                bool front = Vector3.Dot(transform.forward, _targetPlayerTransform.forward) < 0;
+                bool front = true;
+
+                if (_targetPlayerTransform != null)
+                {
+                    front = Vector3.Dot(transform.forward, _targetPlayerTransform.forward) < 0;
+                }
 
                 _rend.sprite = front ? _currentAnim[_currentFrame].Front : _currentAnim[_currentFrame].Back;
-                
+
                 if (_currentMaskFrames != null && _maskRend != null)
                 {
                     _maskRend.enabled = front && CurrentMaskType != MaskType.NONE;
-                    
+
                     _maskRend.sprite = _currentMaskFrames.Frames[_currentFrame];
                 }
 
@@ -130,9 +134,14 @@ namespace Logbound.Gameplay
             }
         }
 
-        public void SetAnimation(Anim anim)
+        public void SetAnimation(Anim anim, bool force = false)
         {
-            if (CurrentAnimation == anim || _currentPlayTime < _minimumPlayTimeBeforeSwitch)
+            if (CurrentAnimation == anim && !force)
+            {
+                return;
+            }
+
+            if (!force && _currentAnim != null && _currentPlayTime < _minimumPlayTimeBeforeSwitch)
             {
                 return;
             }
