@@ -119,9 +119,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7af2ea8663a4bf48251e71dd955ed11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Logbound.Gameplay.SnowShaderController
-  _snowMaterial: {fileID: -876546973899608171, guid: e0855a21d9b02e1409ccee2d334c6cf4, type: 3}
-  _snowfallHeightDecay: 100
-  _noSnowHeightDecay: 10
+  _snowfallHeightDecay: 10
+  _noSnowHeightDecay: 100
   _snowfallDecayDuration: 100
   _noSnowDecayDuration: 10
   _transitionSpeed: 10
