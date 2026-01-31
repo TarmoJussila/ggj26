@@ -390,6 +390,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Logbound.Log
   HasSecondaryInteraction: 0
   HitsLeft: 3
+  CanHeatFirePlace: 0
   ObjectsToEnable:
   - {fileID: 621909885673009429}
   - {fileID: 795394881137039823}
@@ -553,6 +554,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Logbound.Log
   HasSecondaryInteraction: 1
   HitsLeft: 999
+  CanHeatFirePlace: 1
   ObjectsToEnable: []
 --- !u!1 &700054073907159074
 GameObject:
@@ -712,6 +714,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Logbound.Log
   HasSecondaryInteraction: 1
   HitsLeft: 999
+  CanHeatFirePlace: 1
   ObjectsToEnable: []
 --- !u!1 &795394881137039823
 GameObject:
@@ -871,6 +874,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Logbound.Log
   HasSecondaryInteraction: 1
   HitsLeft: 999
+  CanHeatFirePlace: 1
   ObjectsToEnable: []
 --- !u!1 &869974971020725339
 GameObject:
@@ -1030,6 +1034,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Logbound.Log
   HasSecondaryInteraction: 1
   HitsLeft: 999
+  CanHeatFirePlace: 1
   ObjectsToEnable: []
 --- !u!1 &1556609127511522146
 GameObject:
@@ -1189,6 +1194,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Logbound.Log
   HasSecondaryInteraction: 1
   HitsLeft: 999
+  CanHeatFirePlace: 1
   ObjectsToEnable: []
 --- !u!1 &2041026368447287417
 GameObject:
@@ -1348,6 +1354,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Logbound.Log
   HasSecondaryInteraction: 1
   HitsLeft: 999
+  CanHeatFirePlace: 1
   ObjectsToEnable: []
 --- !u!1 &2717225564235775478
 GameObject:
@@ -1511,6 +1518,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Logbound.Log
   HasSecondaryInteraction: 0
   HitsLeft: 3
+  CanHeatFirePlace: 0
   ObjectsToEnable:
   - {fileID: 3125477736973461664}
   - {fileID: 7107114414940833143}
@@ -1674,6 +1682,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Logbound.Log
   HasSecondaryInteraction: 1
   HitsLeft: 999
+  CanHeatFirePlace: 1
   ObjectsToEnable: []
 --- !u!1 &3475055846830527439
 GameObject:
@@ -1833,6 +1842,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Logbound.Log
   HasSecondaryInteraction: 1
   HitsLeft: 999
+  CanHeatFirePlace: 1
   ObjectsToEnable: []
 --- !u!1 &4283151442509052745
 GameObject:
@@ -1992,6 +2002,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Logbound.Log
   HasSecondaryInteraction: 1
   HitsLeft: 999
+  CanHeatFirePlace: 1
   ObjectsToEnable: []
 --- !u!1 &4351997131043830880
 GameObject:
@@ -2155,6 +2166,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Logbound.Log
   HasSecondaryInteraction: 0
   HitsLeft: 3
+  CanHeatFirePlace: 0
   ObjectsToEnable:
   - {fileID: 2041026368447287417}
   - {fileID: 3475055846830527439}
@@ -2408,6 +2420,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Logbound.Log
   HasSecondaryInteraction: 1
   HitsLeft: 999
+  CanHeatFirePlace: 1
   ObjectsToEnable: []
 --- !u!1 &5052687668732961825
 GameObject:
@@ -2567,6 +2580,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Logbound.Log
   HasSecondaryInteraction: 1
   HitsLeft: 999
+  CanHeatFirePlace: 1
   ObjectsToEnable: []
 --- !u!1 &5271043104452886835
 GameObject:
@@ -2758,6 +2772,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Logbound.Log
   HasSecondaryInteraction: 1
   HitsLeft: 999
+  CanHeatFirePlace: 1
   ObjectsToEnable: []
 --- !u!1 &6193709324627310235
 GameObject:
@@ -2917,6 +2932,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Logbound.Log
   HasSecondaryInteraction: 1
   HitsLeft: 999
+  CanHeatFirePlace: 1
   ObjectsToEnable: []
 --- !u!1 &6325138688578565296
 GameObject:
@@ -3076,6 +3092,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Logbound.Log
   HasSecondaryInteraction: 1
   HitsLeft: 999
+  CanHeatFirePlace: 1
   ObjectsToEnable: []
 --- !u!1 &6939646649623828159
 GameObject:
@@ -3239,6 +3256,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Logbound.Log
   HasSecondaryInteraction: 0
   HitsLeft: 3
+  CanHeatFirePlace: 0
   ObjectsToEnable:
   - {fileID: 4283151442509052745}
   - {fileID: 5052687668732961825}
@@ -3402,6 +3420,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Logbound.Log
   HasSecondaryInteraction: 1
   HitsLeft: 999
+  CanHeatFirePlace: 1
   ObjectsToEnable: []
 --- !u!1 &7228991497164725064
 GameObject:
@@ -3651,6 +3670,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Logbound.Log
   HasSecondaryInteraction: 1
   HitsLeft: 999
+  CanHeatFirePlace: 1
   ObjectsToEnable: []
 --- !u!1 &8630777091147565699
 GameObject:
@@ -3897,7 +3917,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8680403999314503210}
   serializedVersion: 5
-  m_Mass: 30
+  m_Mass: 15
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -3930,6 +3950,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Logbound.Log
   HasSecondaryInteraction: 0
   HitsLeft: 3
+  CanHeatFirePlace: 0
   ObjectsToEnable:
   - {fileID: 4351997131043830880}
   - {fileID: 6939646649623828159}

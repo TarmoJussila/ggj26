@@ -88,7 +88,7 @@ namespace Logbound.Gameplay
         {
             Debug.DrawLine(_cameraTransform.position, _cameraTransform.position + _cameraTransform.forward * _interactRange);
 
-            if (!Physics.Raycast(_cameraTransform.position, _cameraTransform.forward, out RaycastHit hit, _interactRange, _interactLayerMask))
+            if (!Physics.Raycast(_cameraTransform.position, _cameraTransform.forward, out RaycastHit hit, _interactRange, _interactLayerMask, QueryTriggerInteraction.Ignore))
             {
                 InvokeInteractableLost();
                 return;
