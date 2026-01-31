@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1177243794599992632}
   - component: {fileID: 6143762556387550758}
   - component: {fileID: 5339211258306983433}
+  - component: {fileID: 4624726173872687335}
   m_Layer: 0
   m_Name: WeatherSystem
   m_TagString: Untagged
@@ -124,3 +125,18 @@ MonoBehaviour:
   _snowfallDecayDuration: 100
   _noSnowDecayDuration: 10
   _transitionSpeed: 10
+--- !u!114 &4624726173872687335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6054638420249568209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 222191d8e8174d1194d5c6ae803a9d0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Logbound.Gameplay.SkyboxController
+  _blendableSkybox: {fileID: 2100000, guid: 9d815e335a32840dfb09f0c5a531df96, type: 2}
+  _dayCubemap: {fileID: 8900000, guid: 0e981c5218a661d479182696be5f084f, type: 3}
+  _nightCubemap: {fileID: 8900000, guid: ac8a32e5107b67a47939926c52798a2b, type: 3}
