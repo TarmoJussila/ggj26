@@ -7,6 +7,9 @@ namespace Logbound.Gameplay
     [RequireComponent(typeof(PlayerInput))]
     public class SplitScreenPlayer : MonoBehaviour
     {
+        /// <summary>UI navigation only allows one input method at a time.</summary>
+        private static int _pauseMenuLockIndex = -1;
+
         private Transform _cameraTransform;
         private CharacterController _characterController;
         private PlayerInput _playerInput;
@@ -190,13 +193,44 @@ namespace Logbound.Gameplay
 
         private void OnPause(InputValue value)
         {
-            Debug.Log("Pause");
-            if (value.isPressed)
+            if (!value.isPressed)
             {
-                var pauseMenuWasActive = _playerCanvas.gameObject.activeSelf;
-                _playerCanvas.gameObject.SetActive(!pauseMenuWasActive);
-                _playerInput.SwitchCurrentActionMap(pauseMenuWasActive ? "Player" : "UI");
+                return;
             }
+
+            if (_pauseMenuLockIndex >= 0)
+            {
+                if (_pauseMenuLockIndex != _playerInput.playerIndex)
+                {
+                    Debug.LogWarning($"Can't open pause menu for player index '{_playerInput.playerIndex}', Already locked by player index '{_pauseMenuLockIndex}'");
+                    ClosePauseMenu();
+                    return;
+                }
+            }
+
+            if (_playerCanvas.gameObject.activeSelf)
+            {
+                ClosePauseMenu();
+                _pauseMenuLockIndex = -1;
+            }
+            else
+            {
+                OpenPauseMenu();
+                _pauseMenuLockIndex = _playerInput.playerIndex;
+            }
+        }
+
+        private void OpenPauseMenu()
+        {
+            
+            _playerCanvas.gameObject.SetActive(true);
+            _playerInput.SwitchCurrentActionMap("UI");
+        }
+
+        private void ClosePauseMenu()
+        {
+            _playerCanvas.gameObject.SetActive(false);
+            _playerInput.SwitchCurrentActionMap("Player");
         }
     }
 }
