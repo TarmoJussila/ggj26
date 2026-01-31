@@ -38,6 +38,12 @@ namespace Logbound.Masks
             PlayerJoinHelper.OnPlayerRemoved += GetCameras;
         }
 
+        private void Start()
+        {
+            GetCameras();
+            FindNearestCamera();
+        }
+
         private void GetCameras()
         {
             _cameras = FindObjectsByType<Camera>(FindObjectsSortMode.None);

@@ -18,16 +18,17 @@ namespace Logbound.Gameplay
 
         public MaskType CurrentMaskType;
 
-        public List<Sprite> WalkAnim;
-        public List<Sprite> IdleAnim;
-        public List<Sprite> JumpAnim;
+        public List<SpritePair> WalkAnim;
+        public List<SpritePair> IdleAnim;
+        public List<SpritePair> JumpAnim;
+        public List<SpritePair> HitAnim;
 
         [SerializeField] private SpriteRenderer _rend;
         [SerializeField] private SpriteRenderer _maskRend;
 
         public Anim CurrentAnimation { get; private set; }
 
-        private List<Sprite> _currentAnim;
+        private List<SpritePair> _currentAnim;
         private int _currentFrame;
         private int _maxFrames;
 
@@ -38,10 +39,13 @@ namespace Logbound.Gameplay
         [SerializeField] private float _minimumPlayTimeBeforeSwitch = 0.3f;
         private float _currentPlayTime;
 
+        private SplitScreenPlayer _splitScreenPlayer;
+
         private void Awake()
         {
             PlayerJoinHelper.OnPlayerAdded += CheckPlayers;
             PlayerJoinHelper.OnPlayerRemoved += CheckPlayers;
+
         }
 
         private void OnDestroy()
@@ -96,9 +100,14 @@ namespace Logbound.Gameplay
                     _currentFrame = 0;
                 }
 
-                _rend.sprite = _currentAnim[_currentFrame];
+                bool front = Vector3.Dot(transform.forward, _targetPlayerTransform.forward) < 0;
+
+                _rend.sprite = front ? _currentAnim[_currentFrame].Front : _currentAnim[_currentFrame].Back;
+                
                 if (_currentMaskFrames != null && _maskRend != null)
                 {
+                    _maskRend.enabled = front && CurrentMaskType != MaskType.NONE;
+                    
                     _maskRend.sprite = _currentMaskFrames.Frames[_currentFrame];
                 }
 
@@ -109,6 +118,7 @@ namespace Logbound.Gameplay
         public void SetMaskType(MaskType maskType)
         {
             CurrentMaskType = maskType;
+            _maskRend.enabled = maskType != MaskType.NONE;
 
             if (CurrentMaskType != MaskType.NONE)
             {
@@ -134,22 +144,31 @@ namespace Logbound.Gameplay
             _maxFrames = _currentAnim.Count;
         }
 
-        private List<Sprite> GetFrames(Anim anim)
+        private List<SpritePair> GetFrames(Anim anim)
         {
             switch (anim)
             {
                 case Anim.Idle: return IdleAnim;
                 case Anim.Walk: return WalkAnim;
                 case Anim.Jump: return JumpAnim;
+                case Anim.Hit: return HitAnim;
                 default: return IdleAnim;
             }
         }
+    }
+
+    [System.Serializable]
+    public struct SpritePair
+    {
+        public Sprite Front;
+        public Sprite Back;
     }
 
     public enum Anim
     {
         Idle,
         Walk,
-        Jump
+        Jump,
+        Hit
     }
 }
