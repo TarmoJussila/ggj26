@@ -192,11 +192,17 @@ Shader "Custom/Snow Interactive" {
 				float sparkleStr = saturate(rDot * -nDot);
 				//return half4(sparkleStr, 0,0,1);
 
+				//sparkleStr += (1 - abs(dot(toCam, snownormal))) * 0.02;
+
 				float cutoffSparkles = step(_SparkCutoff, sparkle * step(0.01, sparkleStr));
+
+				//cutoffSparkles += saturate(rDot) * 0.02; //(1 - abs(dot(toCam, snownormal))) * 0.02;
 
 				cutoffSparkles *= saturate(
 					sign(dot(-mainLight.direction, float3(0, -1, 0))));
 				//cutoffSparkles *= saturate(sign(-nDot));
+
+				
 
 				//return half4(cutoffSparkles, 0, 0, 1);
 
