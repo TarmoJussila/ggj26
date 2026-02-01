@@ -39,16 +39,28 @@ namespace Logbound.Gameplay.UI
             if (_player.MouseInput)
             {
                 _toggleLabel.text = "Press Enter to toggle inverted vertical look axis";
-                _wallOfText.text = @"first line
-multiline
-keyboard";
+                _wallOfText.text = @"Move - WASD / Arrow keys
+Look - Mouse
+Jump - Space
+Interact / Pick up item - E
+Use carried item - Mouse 1
+Drop item - G
+Throw item - F
+Quit to main menu - R (hold)
+Options menu - ESC";
             }
             else
             {
                 _toggleLabel.text = "Press A to toggle inverted vertical look axis";
-                _wallOfText.text = @"first line
-multiline
-gamepad";
+                _wallOfText.text = @"Move - Left stick
+Look - Right stick
+Jump - A
+Interact / Pick up item - X
+Use carried item - Right trigger / Right shoulder
+Drop item - B
+Throw item - Y
+Quit to main menu - Left shoulder (hold)
+Options menu - Start";
             }
         }
 
