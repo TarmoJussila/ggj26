@@ -119,6 +119,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &937112 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2666915368026505563, guid: fbc330c1e36d2a54e8cfbba7bdccce36, type: 3}
+  m_PrefabInstance: {fileID: 2632894839131849160}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3f5f626ce69eba4b84006e2184ba71e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Logbound.Door
 --- !u!43 &8284242
 Mesh:
   m_ObjectHideFlags: 0
@@ -836,6 +847,17 @@ Mesh:
       - serializedVersion: 1
         m_IndexStart: 0
         m_IndexCount: 0
+--- !u!114 &82653569 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1768859642724757509, guid: fbc330c1e36d2a54e8cfbba7bdccce36, type: 3}
+  m_PrefabInstance: {fileID: 2632894839131849160}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3f5f626ce69eba4b84006e2184ba71e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Logbound.Door
 --- !u!43 &115949834
 Mesh:
   m_ObjectHideFlags: 0
@@ -3664,6 +3686,17 @@ Mesh:
       - serializedVersion: 1
         m_IndexStart: 0
         m_IndexCount: 0
+--- !u!114 &556009151 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5762102161136190238, guid: fbc330c1e36d2a54e8cfbba7bdccce36, type: 3}
+  m_PrefabInstance: {fileID: 2632894839131849160}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3f5f626ce69eba4b84006e2184ba71e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Logbound.Door
 --- !u!43 &557181236
 Mesh:
   m_ObjectHideFlags: 0
@@ -7689,6 +7722,17 @@ Mesh:
       - serializedVersion: 1
         m_IndexStart: 0
         m_IndexCount: 0
+--- !u!114 &1106178328 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9126702830378776826, guid: fbc330c1e36d2a54e8cfbba7bdccce36, type: 3}
+  m_PrefabInstance: {fileID: 2632894839131849160}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3f5f626ce69eba4b84006e2184ba71e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Logbound.Door
 --- !u!1 &1107280622
 GameObject:
   m_ObjectHideFlags: 0
@@ -7970,6 +8014,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41d6c88388124d5419011417d2ebd880, type: 3}
+--- !u!114 &1165376796 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8676270073622202378, guid: fbc330c1e36d2a54e8cfbba7bdccce36, type: 3}
+  m_PrefabInstance: {fileID: 2632894839131849160}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3f5f626ce69eba4b84006e2184ba71e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Logbound.Gameplay.Door
 --- !u!43 &1169693459
 Mesh:
   m_ObjectHideFlags: 0
@@ -10949,6 +11004,17 @@ Mesh:
       - serializedVersion: 1
         m_IndexStart: 0
         m_IndexCount: 0
+--- !u!114 &1717915914 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2039740720253413051, guid: fbc330c1e36d2a54e8cfbba7bdccce36, type: 3}
+  m_PrefabInstance: {fileID: 2632894839131849160}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3f5f626ce69eba4b84006e2184ba71e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Logbound.Door
 --- !u!43 &1723192792
 Mesh:
   m_ObjectHideFlags: 0
@@ -11597,6 +11663,17 @@ Mesh:
       - serializedVersion: 1
         m_IndexStart: 0
         m_IndexCount: 0
+--- !u!114 &1829109378 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7826419660178173543, guid: fbc330c1e36d2a54e8cfbba7bdccce36, type: 3}
+  m_PrefabInstance: {fileID: 2632894839131849160}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3f5f626ce69eba4b84006e2184ba71e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Logbound.Door
 --- !u!43 &1867339562
 Mesh:
   m_ObjectHideFlags: 0
@@ -13766,6 +13843,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1918570907875911999, guid: fbc330c1e36d2a54e8cfbba7bdccce36, type: 3}
+      propertyPath: _affectsHouseWarmth
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1930919185369855444, guid: fbc330c1e36d2a54e8cfbba7bdccce36, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -13809,6 +13890,18 @@ PrefabInstance:
     - target: {fileID: 4181045753540600745, guid: fbc330c1e36d2a54e8cfbba7bdccce36, type: 3}
       propertyPath: m_Name
       value: "M\xF6kki"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7700562931644759786, guid: fbc330c1e36d2a54e8cfbba7bdccce36, type: 3}
+      propertyPath: _affectsHouseWarmth
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7826419660178173543, guid: fbc330c1e36d2a54e8cfbba7bdccce36, type: 3}
+      propertyPath: _affectsHouseWarmth
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8676270073622202378, guid: fbc330c1e36d2a54e8cfbba7bdccce36, type: 3}
+      propertyPath: _affectsHouseWarmth
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13867,6 +13960,38 @@ PrefabInstance:
       propertyPath: _fireplace
       value: 
       objectReference: {fileID: 1939603769}
+    - target: {fileID: 1793598073427955411, guid: 7a311878a9a78d84a8f11a4cf8ee367a, type: 3}
+      propertyPath: _doors.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793598073427955411, guid: 7a311878a9a78d84a8f11a4cf8ee367a, type: 3}
+      propertyPath: '_doors.Array.data[0]'
+      value: 
+      objectReference: {fileID: 937112}
+    - target: {fileID: 1793598073427955411, guid: 7a311878a9a78d84a8f11a4cf8ee367a, type: 3}
+      propertyPath: '_doors.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1829109378}
+    - target: {fileID: 1793598073427955411, guid: 7a311878a9a78d84a8f11a4cf8ee367a, type: 3}
+      propertyPath: '_doors.Array.data[2]'
+      value: 
+      objectReference: {fileID: 556009151}
+    - target: {fileID: 1793598073427955411, guid: 7a311878a9a78d84a8f11a4cf8ee367a, type: 3}
+      propertyPath: '_doors.Array.data[3]'
+      value: 
+      objectReference: {fileID: 1106178328}
+    - target: {fileID: 1793598073427955411, guid: 7a311878a9a78d84a8f11a4cf8ee367a, type: 3}
+      propertyPath: '_doors.Array.data[4]'
+      value: 
+      objectReference: {fileID: 82653569}
+    - target: {fileID: 1793598073427955411, guid: 7a311878a9a78d84a8f11a4cf8ee367a, type: 3}
+      propertyPath: '_doors.Array.data[5]'
+      value: 
+      objectReference: {fileID: 1165376796}
+    - target: {fileID: 1793598073427955411, guid: 7a311878a9a78d84a8f11a4cf8ee367a, type: 3}
+      propertyPath: '_doors.Array.data[6]'
+      value: 
+      objectReference: {fileID: 1717915914}
     - target: {fileID: 6054638420249568209, guid: 7a311878a9a78d84a8f11a4cf8ee367a, type: 3}
       propertyPath: m_Name
       value: WeatherSystem
