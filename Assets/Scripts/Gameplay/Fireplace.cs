@@ -8,6 +8,8 @@ namespace Logbound.Gameplay
         [SerializeField] private float _maxBurnTime;
         [SerializeField] private float _burnTimePerLog;
         [SerializeField] private float _playerHeatingEffect;
+        [SerializeField] private AudioSource _audioSource;
+        [SerializeField] private float _audioVolume;
 
         public float BurnTimeLeft { get; private set; }
 
@@ -23,7 +25,7 @@ namespace Logbound.Gameplay
             BurnTimeLeft -= Time.deltaTime;
 
             BurnTimeLeft = Mathf.Clamp(BurnTimeLeft, 0, _maxBurnTime);
-            
+            _audioSource.volume = _audioVolume * (BurnTimeLeft / _maxBurnTime);
             foreach (var particle in _burnParticles)
             {
                 particle.transform.localScale = Vector3.one * BurnTimeLeft / _maxBurnTime;
