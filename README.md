@@ -2,6 +2,8 @@
 
 **Logbound** is a tense survival game set in a frozen wilderness where every decision can mean the difference between warmth and death. You must chop wood, keep the fire alive, and stop your grandma from freezing while battling waves of sneaky rats. Different masks grant unique abilities, forcing you to swap roles on the fly as you struggle to survive the cold.
 
+The game can be played as a single-player experience, or as local multiplayer with up to 4 players.
+
 The game was created in 48 hours during the Global Game Jam / Finnish Game Jam 2026.
 
 # Watch
