@@ -23537,7 +23537,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   _lifetime: 0
-  <DamagePerTick>k__BackingField: 10
+  <DamagePerTick>k__BackingField: 500
   _activeVisual: {fileID: 4944328407475540178}
   _inactiveVisual: {fileID: 1753238365172627353}
   _triggerSound: {fileID: 1908585821818553434}

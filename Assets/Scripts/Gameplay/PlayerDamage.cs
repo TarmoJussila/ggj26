@@ -50,6 +50,11 @@ namespace Logbound.Gameplay
             {
                 return;
             }
+            
+            if (other.TryGetComponent(out RatTrapHazard RatTrapHazard) && !RatTrapHazard.IsActive)
+            {
+                return;
+            }
 
             float damage = hazard.DamagePerTick;
             var mask = _playerMaskHelper.CurrentMask?.MaskType;
