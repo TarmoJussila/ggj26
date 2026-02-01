@@ -45,6 +45,8 @@ namespace Logbound.Gameplay
         {
             PlayerJoinHelper.OnPlayerAdded += CheckPlayers;
             PlayerJoinHelper.OnPlayerRemoved += CheckPlayers;
+
+            _splitScreenPlayer = GetComponentInParent<SplitScreenPlayer>();
         }
 
         private void OnDestroy()
@@ -87,7 +89,9 @@ namespace Logbound.Gameplay
 
             if (_targetPlayerTransform != null)
             {
-                transform.forward = _targetPlayerTransform.position - transform.position;
+                   Vector3 forward = _targetPlayerTransform.position - transform.position;
+                   forward.y = 0;
+                   transform.forward = forward;
             }
 
             if (_frameTimer >= _animSpeed)
@@ -99,23 +103,18 @@ namespace Logbound.Gameplay
                     _currentFrame = 0;
                 }
 
-                bool front = true;
-
-                if (_targetPlayerTransform != null)
-                {
-                    front = Vector3.Dot(transform.forward, _targetPlayerTransform.forward) < 0;
-                }
-
-                _rend.sprite = front ? _currentAnim[_currentFrame].Front : _currentAnim[_currentFrame].Back;
-
-                if (_currentMaskFrames != null && _maskRend != null)
-                {
-                    _maskRend.enabled = front && CurrentMaskType != MaskType.NONE;
-
-                    _maskRend.sprite = _currentMaskFrames.Frames[_currentFrame];
-                }
-
                 _frameTimer = 0f;
+            }
+
+            bool front = Vector3.Dot((transform.position - _targetPlayerTransform.position), _splitScreenPlayer.transform.forward) < 0;
+
+            _rend.sprite = front ? _currentAnim[_currentFrame].Front : _currentAnim[_currentFrame].Back;
+
+            if (_currentMaskFrames != null && _maskRend != null)
+            {
+                _maskRend.enabled = front && CurrentMaskType != MaskType.NONE;
+
+                _maskRend.sprite = _currentMaskFrames.Frames[_currentFrame];
             }
         }
 
