@@ -155,6 +155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Logbound.PlayerDamage
   MaxHealth: 10000
   MaxHeat: 10000
+  _maskHealing: 0
 --- !u!114 &2112977943805533073
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,13 +182,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Logbound.PlayerCameraLayerHelper
   _masks:
   - serializedVersion: 2
-    m_Bits: 7607
+    m_Bits: 951
   - serializedVersion: 2
-    m_Bits: 7095
+    m_Bits: 1463
   - serializedVersion: 2
-    m_Bits: 6071
+    m_Bits: 2487
   - serializedVersion: 2
-    m_Bits: 4023
+    m_Bits: 4535
 --- !u!1 &4243672350318698737
 GameObject:
   m_ObjectHideFlags: 0

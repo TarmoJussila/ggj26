@@ -77,7 +77,7 @@ namespace Logbound.Gameplay
 
         private void Update()
         {
-            if (_currentAnim == null)
+            if (_currentAnim == null || _targetPlayerTransform == null)
             {
                 return;
             }
