@@ -15,6 +15,8 @@ namespace Logbound.UI
     {
         [SerializeField] private ProgressBarType _progressBarType;
         [SerializeField] private Image _fillImage;
+        
+        private const float LoseThreshold = 0.01f;
 
         private void Update()
         {
@@ -40,7 +42,7 @@ namespace Logbound.UI
             float warmthFactor = Mathf.Clamp01((indoorTemp + 30f) / 50f);
             _fillImage.fillAmount = warmthFactor;
 
-            if (warmthFactor < 0.01f)
+            if (warmthFactor < LoseThreshold)
             {
                 GameLoseController.Instance.LoseGame();
             }
@@ -53,7 +55,7 @@ namespace Logbound.UI
             // 0 rats = full bar (1), 20 rats = empty bar (0)
             _fillImage.fillAmount = 1f - Mathf.Clamp01((float)ratCount / maxRats);
 
-            if (_fillImage.fillAmount < 0.01f)
+            if (_fillImage.fillAmount < LoseThreshold)
             {
                 GameLoseController.Instance.LoseGame();
             }

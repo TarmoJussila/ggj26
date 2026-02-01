@@ -4,8 +4,11 @@ namespace Logbound.Gameplay
 {
     public class Door : InteractableItem
     {
-        public bool IsOpen;
+        public bool IsOpen { get; private set; }
+        public bool AffectsHouseWarmth => _affectsHouseWarmth;
 
+        [SerializeField] bool _affectsHouseWarmth = true;
+        
         private float _initialRotationY;
         private float _targetRotationY;
         private float _rotationY;
@@ -16,15 +19,15 @@ namespace Logbound.Gameplay
             _targetRotationY = transform.localRotation.eulerAngles.y + 90f;
         }
 
-        public override void Interact(PlayerInteraction playerInteraction)
-        {
-            IsOpen = !IsOpen;
-        }
-
         private void Update()
         {
             _rotationY = Mathf.MoveTowardsAngle(_rotationY, IsOpen ? _targetRotationY : _initialRotationY, Time.deltaTime * 3 * 90);
             transform.localRotation = Quaternion.Euler(0, _rotationY, 0);
+        }
+        
+        public override void Interact(PlayerInteraction playerInteraction)
+        {
+            IsOpen = !IsOpen;
         }
     }
 }
