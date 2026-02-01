@@ -25343,6 +25343,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2528577729603513051, guid: 9b4584821cdf0064093c5be154850e00, type: 3}
+      propertyPath: m_TagString
+      value: Hazard
+      objectReference: {fileID: 0}
+    - target: {fileID: 3815164348314449892, guid: 9b4584821cdf0064093c5be154850e00, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.084
+      objectReference: {fileID: 0}
     - target: {fileID: 4347740065871359928, guid: 9b4584821cdf0064093c5be154850e00, type: 3}
       propertyPath: m_Name
       value: Fireplace_sauna Variant
