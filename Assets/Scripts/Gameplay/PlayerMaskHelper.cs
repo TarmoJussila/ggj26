@@ -13,6 +13,11 @@ namespace Logbound.Gameplay
         
         public void WearMask(BasicMaskItem maskItem)
         {
+            if (CurrentMask != null)
+            {
+                DropMask();
+            }
+            
             maskItem.transform.SetParent(transform);
             maskItem.transform.localPosition = Vector3.zero;
             maskItem.transform.forward = transform.forward;
