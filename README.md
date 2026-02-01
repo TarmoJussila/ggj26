@@ -21,6 +21,7 @@ The game was created with **Unity 6000.3.6f1**.
  3. Enjoy the game
 
 # Controls
+
 Keyboard & Mouse
 | Action        | Bind          |
 | ------------- |:-------------:|
@@ -29,7 +30,7 @@ Keyboard & Mouse
 | Jump | Space |
 | Interact / Pick up item | E |
 | Use carried item | Mouse 1 |
-| Drop Item | G |
+| Drop item | G |
 | Throw item | F |
 | Quit to main menu | R (hold) |
 | Options menu | ESC |
@@ -42,8 +43,8 @@ Gamepad
 | Look | Right stick |
 | Jump | A |
 | Interact / Pick up item | X |
-| Use carried item | Right trigger / right shoulder |
-| Drop Item | B |
+| Use carried item | Right trigger / Right shoulder |
+| Drop item | B |
 | Throw item | Y |
 | Quit to main menu | Left shoulder (hold) |
 | Options menu | Start |
