@@ -1,11 +1,8 @@
-using System;
 using System.Collections;
 using Logbound.Gameplay;
-using Unity.Mathematics;
 using UnityEngine;
-using UnityEngine.UI;
 
-namespace Logbound
+namespace Logbound.Tools
 {
     public abstract class ToolSwingable : CarryableItem
     {

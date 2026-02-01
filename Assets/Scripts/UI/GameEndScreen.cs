@@ -1,8 +1,8 @@
-using System;
 using System.Collections;
+using Logbound.Gameplay;
 using UnityEngine;
 
-namespace Logbound
+namespace Logbound.UI
 {
     public class GameEndScreen : MonoBehaviour
     {

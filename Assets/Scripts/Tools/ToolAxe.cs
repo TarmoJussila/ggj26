@@ -1,7 +1,6 @@
 using Logbound.Gameplay;
-using UnityEngine;
 
-namespace Logbound
+namespace Logbound.Tools
 {
     public class ToolAxe : ToolSwingable
     {

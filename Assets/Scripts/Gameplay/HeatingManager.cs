@@ -1,7 +1,6 @@
 using Logbound.Utilities;
-using UnityEngine;
 
-namespace Logbound
+namespace Logbound.Gameplay
 {
     public class HeatingManager : Singleton<HeatingManager>
     {

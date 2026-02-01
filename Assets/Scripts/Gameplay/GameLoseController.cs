@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
-namespace Logbound
+namespace Logbound.Gameplay
 {
     public class GameLoseController : Singleton<GameLoseController>
     {

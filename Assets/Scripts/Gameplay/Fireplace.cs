@@ -1,9 +1,7 @@
-using System;
 using System.Collections.Generic;
-using Logbound.Gameplay;
 using UnityEngine;
 
-namespace Logbound
+namespace Logbound.Gameplay
 {
     public class Fireplace : InteractableItem
     {

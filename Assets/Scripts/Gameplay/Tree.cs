@@ -1,11 +1,9 @@
-using System;
 using System.Collections.Generic;
-using Logbound.Gameplay;
+using Logbound.Tools;
 using UnityEngine;
-using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
-namespace Logbound
+namespace Logbound.Gameplay
 {
     public class Tree : InteractableItem
     {

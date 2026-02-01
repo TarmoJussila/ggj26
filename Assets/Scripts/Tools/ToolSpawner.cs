@@ -2,7 +2,7 @@ using Logbound.Gameplay;
 using Unity.Mathematics;
 using UnityEngine;
 
-namespace Logbound
+namespace Logbound.Tools
 {
     public class ToolSpawner : ToolSwingable
     {

@@ -1,8 +1,8 @@
 using System.Collections.Generic;
-using Logbound.Gameplay;
+using Logbound.Tools;
 using UnityEngine;
 
-namespace Logbound
+namespace Logbound.Gameplay
 {
     public class Log : CarryableItem
     {
