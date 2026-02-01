@@ -29,7 +29,7 @@ namespace Logbound.Rats
             transform.localScale = new Vector3(randomScale, randomScale, randomScale);
         }
 
-        void Update()
+        private void Update()
         {
             if (SplineContainer == null || _splineLength <= 0) return;
 

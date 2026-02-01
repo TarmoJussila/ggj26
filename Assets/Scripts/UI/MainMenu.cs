@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 namespace Logbound.UI
 {
-    public class MainMenu :MonoBehaviour
+    public class MainMenu : MonoBehaviour
     {
         [SerializeField] private Button _playButton;
         [SerializeField] private Button _quitButton;
