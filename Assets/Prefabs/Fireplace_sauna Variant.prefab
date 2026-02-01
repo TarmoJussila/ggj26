@@ -4911,6 +4911,10 @@ PrefabInstance:
       value: Fireplace_sauna Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4161806860445333758, guid: 2cb7a3a112fa1cd4aa8996a01b8f95de, type: 3}
+      propertyPath: _playerHeatingEffect
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 4161806860445333758, guid: 2cb7a3a112fa1cd4aa8996a01b8f95de, type: 3}
       propertyPath: _burnParticles.Array.size
       value: 2
       objectReference: {fileID: 0}
