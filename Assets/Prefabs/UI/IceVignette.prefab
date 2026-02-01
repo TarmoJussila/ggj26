@@ -94,4 +94,4 @@ MonoBehaviour:
   _minScale: 1.5
   _maxScale: 1
   _minAlpha: 0
-  _maxAlpha: 1
+  _maxAlpha: 0.5
