@@ -15,11 +15,20 @@ namespace Logbound.UI
     {
         [SerializeField] private ProgressBarType _progressBarType;
         [SerializeField] private Image _fillImage;
+        [SerializeField] private AudioSource _loseAudioSource;
+        [SerializeField] private AudioClip _loseSoundRats;
+        [SerializeField] private AudioClip _loseSoundCold;
         
         private const float LoseThreshold = 0.01f;
+        private bool hasPlayedLoseSound = false;
 
         private void Update()
         {
+            if (Input.GetKeyDown(KeyCode.A))
+            {
+                _loseAudioSource.PlayOneShot(_loseSoundCold);
+            }
+            
             if (_fillImage == null)
                 return;
 
@@ -45,6 +54,11 @@ namespace Logbound.UI
             if (warmthFactor < LoseThreshold)
             {
                 GameLoseController.Instance.LoseGame();
+                if (!hasPlayedLoseSound)
+                {
+                    _loseAudioSource.PlayOneShot(_loseSoundCold);
+                    hasPlayedLoseSound = true;
+                }
             }
         }
 
@@ -58,6 +72,11 @@ namespace Logbound.UI
             if (_fillImage.fillAmount < LoseThreshold)
             {
                 GameLoseController.Instance.LoseGame();
+                if (!hasPlayedLoseSound)
+                {
+                    _loseAudioSource.PlayOneShot(_loseSoundRats);
+                    hasPlayedLoseSound = true;
+                }
             }
         }
     }
