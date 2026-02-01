@@ -242,7 +242,7 @@ GameObject:
   - component: {fileID: 9175710817747344884}
   - component: {fileID: 236705301106128451}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: JoinText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -303,8 +303,8 @@ MonoBehaviour:
 
     Gamepad A'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 473ae64fed15d7d4384bdf7a10dfb638, type: 2}
-  m_sharedMaterial: {fileID: 5571912833763466969, guid: 473ae64fed15d7d4384bdf7a10dfb638, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 098a56e79958e054f9a1158090fd4607, type: 2}
+  m_sharedMaterial: {fileID: 9104973269741113845, guid: 098a56e79958e054f9a1158090fd4607, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -447,11 +447,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
+  m_ReferenceResolution: {x: 1920, y: 1080}
+  m_ScreenMatchMode: 1
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
