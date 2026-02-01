@@ -24,11 +24,6 @@ namespace Logbound.UI
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.A))
-            {
-                _loseAudioSource.PlayOneShot(_loseSoundCold);
-            }
-            
             if (_fillImage == null)
                 return;
 
