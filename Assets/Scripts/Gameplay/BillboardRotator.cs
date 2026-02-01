@@ -1,10 +1,8 @@
-using System;
 using System.Linq;
-using Logbound.Gameplay;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace Logbound
+namespace Logbound.Gameplay
 {
     public class BillboardRotator : MonoBehaviour
     {

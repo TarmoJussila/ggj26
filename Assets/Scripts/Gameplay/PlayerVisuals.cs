@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Logbound.Data;
 using Logbound.Masks;
 using UnityEngine;
 using UnityEngine.InputSystem;

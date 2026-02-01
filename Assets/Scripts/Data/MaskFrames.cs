@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using Logbound.Masks;
 using UnityEngine;
 
-namespace Logbound
+namespace Logbound.Data
 {
     [CreateAssetMenu(fileName = "MaskFrames", menuName = "Scriptable Objects/MaskFrames")]
     public class MaskFrames : ScriptableObject
