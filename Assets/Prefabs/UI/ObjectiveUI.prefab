@@ -147,7 +147,10 @@ MonoBehaviour:
 
 
 
-    Press ESC to play again'
+    Press R to play again
+
+    ESC
+    to run away from the sadness'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 098a56e79958e054f9a1158090fd4607, type: 2}
   m_sharedMaterial: {fileID: 9104973269741113845, guid: 098a56e79958e054f9a1158090fd4607, type: 2}
