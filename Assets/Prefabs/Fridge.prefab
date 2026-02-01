@@ -9761,8 +9761,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.8, y: 1.2, z: 0.5}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.8, y: 1.2, z: 0.5502523}
+  m_Center: {x: 0, y: 0, z: 0.025126144}
 --- !u!114 &4717435422076840786
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9825,9 +9825,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 034cade3511b35e4ea1e9b66a92d8e70, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: cb45b71f79415124bbfd41758e2cdea6, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 034cade3511b35e4ea1e9b66a92d8e70, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 003f7a139f13f534492705123a3e9c4c, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 034cade3511b35e4ea1e9b66a92d8e70, type: 3}
       propertyPath: 'm_Materials.Array.data[2]'
       value: 
       objectReference: {fileID: 2100000, guid: 6050d621564dd7440939bdebc011022b, type: 2}
+    - target: {fileID: -6932405424777320625, guid: 034cade3511b35e4ea1e9b66a92d8e70, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: cb45b71f79415124bbfd41758e2cdea6, type: 2}
     - target: {fileID: -6198122344354553832, guid: 034cade3511b35e4ea1e9b66a92d8e70, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
@@ -9848,6 +9860,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5838801050270399650, guid: 034cade3511b35e4ea1e9b66a92d8e70, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: cb45b71f79415124bbfd41758e2cdea6, type: 2}
     - target: {fileID: 919132149155446097, guid: 034cade3511b35e4ea1e9b66a92d8e70, type: 3}
       propertyPath: m_Name
       value: Fridge
@@ -9876,6 +9892,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 034cade3511b35e4ea1e9b66a92d8e70, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9117724210553507445}
     - targetCorrespondingSourceObject: {fileID: 117753306372222832, guid: 034cade3511b35e4ea1e9b66a92d8e70, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1656670453026127505}
@@ -9930,6 +9949,32 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.23431855, y: 0.5521311, z: 1}
   m_Center: {x: -0.11715928, y: -0.00000020861626, z: 0.5}
+--- !u!1 &7211269379913238982 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 034cade3511b35e4ea1e9b66a92d8e70, type: 3}
+  m_PrefabInstance: {fileID: 7553375067295216791}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &9117724210553507445
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7211269379913238982}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.71065426, y: 2, z: 1.0308235}
+  m_Center: {x: 0.14467287, y: 1, z: -0.015411615}
 --- !u!1 &7597751348047502311 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 117753306372222832, guid: 034cade3511b35e4ea1e9b66a92d8e70, type: 3}
