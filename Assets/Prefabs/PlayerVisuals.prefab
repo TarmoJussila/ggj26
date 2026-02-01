@@ -350,6 +350,27 @@ MonoBehaviour:
     Back: {fileID: 21300000, guid: 69c7bb056830e3147aec161405215923, type: 3}
   - Front: {fileID: 21300000, guid: 53ce576a8f82def4c95c6977f1ed6373, type: 3}
     Back: {fileID: 21300000, guid: 53ce576a8f82def4c95c6977f1ed6373, type: 3}
+  DrinkAnim:
+  - Front: {fileID: 21300000, guid: 62776d9b94410c64d8044fd2a73b3f8c, type: 3}
+    Back: {fileID: 21300000, guid: 62776d9b94410c64d8044fd2a73b3f8c, type: 3}
+  - Front: {fileID: 21300000, guid: 15c6d271b5bcd9e4595535b7c1024706, type: 3}
+    Back: {fileID: 21300000, guid: 15c6d271b5bcd9e4595535b7c1024706, type: 3}
+  - Front: {fileID: 21300000, guid: 5b8a0b58e1d312a44aeb1b72f46eb62f, type: 3}
+    Back: {fileID: 21300000, guid: 5b8a0b58e1d312a44aeb1b72f46eb62f, type: 3}
+  - Front: {fileID: 21300000, guid: a303d70fbd4a8d342898a32c94345ff8, type: 3}
+    Back: {fileID: 21300000, guid: a303d70fbd4a8d342898a32c94345ff8, type: 3}
+  - Front: {fileID: 21300000, guid: 9aa05582e8d96d440a626cbb9adba85c, type: 3}
+    Back: {fileID: 21300000, guid: 9aa05582e8d96d440a626cbb9adba85c, type: 3}
+  - Front: {fileID: 21300000, guid: b7a9a649da4b63245adfeb059f562456, type: 3}
+    Back: {fileID: 21300000, guid: b7a9a649da4b63245adfeb059f562456, type: 3}
+  - Front: {fileID: 21300000, guid: a96750c5ed0c9ec448b17b740c17aa22, type: 3}
+    Back: {fileID: 21300000, guid: a96750c5ed0c9ec448b17b740c17aa22, type: 3}
+  - Front: {fileID: 21300000, guid: fd80e0468511cd0418667673e11d6ce4, type: 3}
+    Back: {fileID: 21300000, guid: fd80e0468511cd0418667673e11d6ce4, type: 3}
+  - Front: {fileID: 21300000, guid: bc4a294982ec4eb4eb640406089846ef, type: 3}
+    Back: {fileID: 21300000, guid: bc4a294982ec4eb4eb640406089846ef, type: 3}
+  - Front: {fileID: 21300000, guid: fd77139204dce7149bdc5c22980dc09c, type: 3}
+    Back: {fileID: 21300000, guid: fd77139204dce7149bdc5c22980dc09c, type: 3}
   _rend: {fileID: 4396249742302542985}
   _maskRend: {fileID: 8747943001912121422}
   _minimumPlayTimeBeforeSwitch: 0.15

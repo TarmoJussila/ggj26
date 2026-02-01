@@ -24,6 +24,7 @@ namespace Logbound.Gameplay
         public List<SpritePair> IdleAnim;
         public List<SpritePair> JumpAnim;
         public List<SpritePair> HitAnim;
+        public List<SpritePair> DrinkAnim;
 
         [SerializeField] private SpriteRenderer _rend;
         [SerializeField] private SpriteRenderer _maskRend;
@@ -162,6 +163,7 @@ namespace Logbound.Gameplay
                 case Anim.Walk: return WalkAnim;
                 case Anim.Jump: return JumpAnim;
                 case Anim.Hit: return HitAnim;
+                case Anim.Drink: return DrinkAnim;
                 default: return IdleAnim;
             }
         }
@@ -179,6 +181,7 @@ namespace Logbound.Gameplay
         Idle,
         Walk,
         Jump,
-        Hit
+        Hit,
+        Drink
     }
 }
