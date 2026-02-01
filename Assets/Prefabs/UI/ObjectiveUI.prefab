@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 7472757264635546713}
   - component: {fileID: 4893325370736696360}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: EndText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -149,8 +149,8 @@ MonoBehaviour:
 
     Press ESC to play again'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 473ae64fed15d7d4384bdf7a10dfb638, type: 2}
-  m_sharedMaterial: {fileID: 5571912833763466969, guid: 473ae64fed15d7d4384bdf7a10dfb638, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 098a56e79958e054f9a1158090fd4607, type: 2}
+  m_sharedMaterial: {fileID: 9104973269741113845, guid: 098a56e79958e054f9a1158090fd4607, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -354,7 +354,7 @@ GameObject:
   - component: {fileID: 484660831598711878}
   - component: {fileID: 2349828663294836616}
   m_Layer: 0
-  m_Name: Text (TMP) (1)
+  m_Name: TimeText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -409,8 +409,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: You survived 1 seconds
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 473ae64fed15d7d4384bdf7a10dfb638, type: 2}
-  m_sharedMaterial: {fileID: 5571912833763466969, guid: 473ae64fed15d7d4384bdf7a10dfb638, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 098a56e79958e054f9a1158090fd4607, type: 2}
+  m_sharedMaterial: {fileID: 9104973269741113845, guid: 098a56e79958e054f9a1158090fd4607, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
