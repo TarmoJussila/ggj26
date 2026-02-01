@@ -1,4 +1,6 @@
+using System;
 using System.Collections;
+using System.Linq;
 using Logbound.Data;
 using Logbound.Utilities;
 using UnityEngine;
@@ -7,9 +9,10 @@ namespace Logbound.Services
 {
     public class RadioService : Singleton<RadioService>
     {
+        [Serializable]
         public class TaggedNewsAudioClip
         {
-            public WeatherState[] WeatherStates;
+            public WeatherState WeatherStates;
             public float Temperature;
             public AudioClip AudioClip;
         }
@@ -23,19 +26,66 @@ namespace Logbound.Services
         [Header("Settings")]
         [SerializeField] [Range(0.1f, 10f)] private float _musicVolume;
         [SerializeField] [Range(0.1f, 10f)] private float _newsVolume;
+        [SerializeField] private TaggedNewsAudioClip[] _audioClips;
+        [SerializeField] private AudioClip _intro;
+        [SerializeField] private AudioClip _start;
+        [SerializeField] private AudioClip _middle;
+        [SerializeField] private AudioClip _end;
+
+        private bool _isPlaying = false;
+        private bool isUpdate = false;
 
         private void Start()
         {
             _musicSource.transform.position = _radioLocation.transform.position;
             _newsSource.transform.position = _radioLocation.transform.position;
+            ForecastService.Instance.OnForecastUpdated += OnWeatherUpdate;
         }
 
-        private void Update()
+        private void OnWeatherUpdate(WeatherState state,  float temperature)
         {
-            if (Input.GetKeyDown(KeyCode.M))
+            isUpdate = !isUpdate;
+            if (!isUpdate)
             {
-                PlayNewsSnippet();
+                return;
             }
+
+            WeatherState currentState = WeatherService.Instance.GetTargetWeatherState();
+            WeatherState nextState = WeatherService.Instance.GetTargetWeatherState();
+            float currentTemp = WeatherService.Instance.GetTargetTemperature();
+            float nextTemp = WeatherService.Instance.GetTargetTemperature();
+            
+            AudioClip currentClip = _audioClips.Where(x => x.WeatherStates == currentState)
+                .OrderBy(x => Mathf.Abs(x.Temperature - currentTemp))
+                .FirstOrDefault()?.AudioClip;
+            
+            AudioClip nextClip = _audioClips.Where(x => x.WeatherStates == nextState)
+                .OrderBy(x => Mathf.Abs(x.Temperature - nextTemp))
+                .FirstOrDefault()?.AudioClip;
+
+            if (currentClip == null || nextClip == null)
+            {
+                Debug.LogError("Clips not found!");
+                return;
+            }
+
+            PlayNewsSnippet(_intro, _start, currentClip, _middle, nextClip);
+        }
+
+        private IEnumerator PlayClipsInOrder(params AudioClip[] clips)
+        {
+            _isPlaying = true;
+            foreach (AudioClip clip in clips)
+            {
+                while (_newsSource.isPlaying)
+                {
+                    yield return null;
+                }
+                
+                _newsSource.PlayOneShot(clip);
+            }
+
+            _isPlaying = false;
         }
 
         private IEnumerator FadeCanvasCoroutine(float start, float end, float speed)
@@ -62,24 +112,24 @@ namespace Logbound.Services
             _newsSource.volume = end;
         }
 
-        private void PlayNewsSnippet()
+        private void PlayNewsSnippet(params AudioClip[] clips)
         {
             StopAllCoroutines();
-            
             IEnumerator Coroutine()
             {
                 yield return FadeCanvasCoroutine(0, 1, 1);
-                _newsSource.Play();
                 yield return FadeVolume(0, _musicVolume, 1);
-                while (_newsSource.isPlaying)
+                while (_isPlaying)
                 {
                     yield return null;
                 }
-                
+
+                yield return new WaitForSeconds(2f);
                 yield return FadeVolume(_musicVolume, 0, 1);
                 yield return FadeCanvasCoroutine(1, 0, 1);
             }
             
+            StartCoroutine(PlayClipsInOrder(clips));;
             StartCoroutine(Coroutine());
         }
     }
