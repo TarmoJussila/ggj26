@@ -14,7 +14,7 @@ namespace Logbound.UI
                 return;
             }
 
-            ((RectTransform)child.transform).sizeDelta = new Vector2(0, 550);
+            ((RectTransform)child.transform).sizeDelta = new Vector2(0, 280);
         }
     }
 }
