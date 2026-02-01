@@ -99,23 +99,18 @@ namespace Logbound.Gameplay
                     _currentFrame = 0;
                 }
 
-                bool front = true;
-
-                if (_targetPlayerTransform != null)
-                {
-                    front = Vector3.Dot(transform.forward, _targetPlayerTransform.forward) < 0;
-                }
-
-                _rend.sprite = front ? _currentAnim[_currentFrame].Front : _currentAnim[_currentFrame].Back;
-
-                if (_currentMaskFrames != null && _maskRend != null)
-                {
-                    _maskRend.enabled = front && CurrentMaskType != MaskType.NONE;
-
-                    _maskRend.sprite = _currentMaskFrames.Frames[_currentFrame];
-                }
-
                 _frameTimer = 0f;
+            }
+
+            bool front = Vector3.Dot(_targetPlayerTransform.position - transform.position, _targetPlayerTransform.forward) < 0;
+
+            _rend.sprite = front ? _currentAnim[_currentFrame].Front : _currentAnim[_currentFrame].Back;
+
+            if (_currentMaskFrames != null && _maskRend != null)
+            {
+                _maskRend.enabled = front && CurrentMaskType != MaskType.NONE;
+
+                _maskRend.sprite = _currentMaskFrames.Frames[_currentFrame];
             }
         }
 
