@@ -39,6 +39,7 @@ namespace Logbound.Gameplay
             if (other.CompareTag("Heat") && other.TryGetComponent(out Fireplace fireplace))
             {
                 PlayerHeat += fireplace.GetPlayerHeatingEffect();
+                Heal(fireplace.GetPlayerHealingEffect() * Time.fixedDeltaTime);
             }
 
             if (!other.CompareTag($"Hazard"))

@@ -8,6 +8,7 @@ namespace Logbound.Gameplay
         [SerializeField] private float _maxBurnTime;
         [SerializeField] private float _burnTimePerLog;
         [SerializeField] private float _playerHeatingEffect;
+        [SerializeField] private float _playerHealingPerSecond = 0;
         [SerializeField] private AudioSource _audioSource;
         [SerializeField] private float _audioVolume;
 
@@ -36,6 +37,8 @@ namespace Logbound.Gameplay
 
         public int GetPlayerHeatingEffect() => Mathf.CeilToInt(GetHeatNormalized() * _playerHeatingEffect);
 
+        public float GetPlayerHealingEffect() => GetHeatNormalized() * _playerHealingPerSecond;
+        
         public override void Interact(PlayerInteraction playerInteraction) { }
 
         public override bool CanInteractWithOtherItem(InteractableItem otherItem)
