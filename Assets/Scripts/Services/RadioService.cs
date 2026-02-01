@@ -50,10 +50,10 @@ namespace Logbound.Services
                 return;
             }
 
-            WeatherState currentState = WeatherService.Instance.GetTargetWeatherState();
-            WeatherState nextState = WeatherService.Instance.GetTargetWeatherState();
-            float currentTemp = WeatherService.Instance.GetTargetTemperature();
-            float nextTemp = WeatherService.Instance.GetTargetTemperature();
+            WeatherState currentState = ForecastService.Instance.GetWeatherState(WeatherUtility.WeatherTimeState.Current);
+            WeatherState nextState = ForecastService.Instance.GetWeatherState(WeatherUtility.WeatherTimeState.Next);
+            float currentTemp = ForecastService.Instance.GetTemperature(WeatherUtility.WeatherTimeState.Current);
+            float nextTemp = ForecastService.Instance.GetTemperature(WeatherUtility.WeatherTimeState.Next);
             
             AudioClip currentClip = _audioClips.Where(x => x.WeatherStates == currentState)
                 .OrderBy(x => Mathf.Abs(x.Temperature - currentTemp))
