@@ -39,12 +39,16 @@ namespace Logbound.Gameplay.UI
             if (_player.MouseInput)
             {
                 _toggleLabel.text = "Press Enter to toggle inverted vertical look axis";
-                _wallOfText.text = "keyboard";
+                _wallOfText.text = @"first line
+multiline
+keyboard";
             }
             else
             {
                 _toggleLabel.text = "Press A to toggle inverted vertical look axis";
-                _wallOfText.text = "gamepad";
+                _wallOfText.text = @"first line
+multiline
+gamepad";
             }
         }
 
