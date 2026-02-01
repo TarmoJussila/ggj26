@@ -101,7 +101,7 @@ MonoBehaviour:
   _globalRt: {fileID: 8600000, guid: 8cd99b25fd01d5045b019ebb2904901d, type: 2}
   _target: {fileID: 0}
   _yPos: -16
-  _snowWorldHeightMin: -8
+  _snowWorldHeightMin: -32
   _snowWorldHeightMax: 8
 --- !u!114 &7431114146532053182
 MonoBehaviour:

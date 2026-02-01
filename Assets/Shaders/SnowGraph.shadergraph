@@ -967,7 +967,7 @@
     },
     "m_Slots": [
         {
-            "m_Id": "7b5ee2974d784dfbb7db92aa7e1cfdce"
+            "m_Id": "cade9cfbe3394e108a37b6bbb7f6bb2c"
         },
         {
             "m_Id": "cd042cdf56674d5091482e8cdddd2ad3"
@@ -2001,7 +2001,7 @@
 {
     "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
-    "m_ObjectId": "51b9d80cba92455dbe76b03dc88dd2db",
+    "m_ObjectId": "4f78ba840c014d349b90ff873b302436",
     "m_Id": 0,
     "m_DisplayName": "In",
     "m_SlotType": 0,
@@ -2432,13 +2432,13 @@
     "m_RefNameGeneratedByDisplayName": "_HeightDecay",
     "m_DefaultReferenceName": "_HeightDecay",
     "m_OverrideReferenceName": "",
-    "m_GeneratePropertyBlock": false,
+    "m_GeneratePropertyBlock": true,
     "m_UseCustomSlotLabel": false,
     "m_CustomSlotLabel": "",
     "m_DismissedVersion": 0,
     "m_Precision": 1,
-    "overrideHLSLDeclaration": true,
-    "hlslDeclarationOverride": 1,
+    "overrideHLSLDeclaration": false,
+    "hlslDeclarationOverride": 0,
     "m_Hidden": false,
     "m_PerRendererData": false,
     "m_customAttributes": [],
@@ -2865,22 +2865,6 @@
     "m_SlotType": 0,
     "m_Hidden": false,
     "m_ShaderOutputName": "B",
-    "m_StageCapability": 3,
-    "m_Value": 0.0,
-    "m_DefaultValue": 0.0,
-    "m_Labels": [],
-    "m_LiteralMode": false
-}
-
-{
-    "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
-    "m_ObjectId": "7b5ee2974d784dfbb7db92aa7e1cfdce",
-    "m_Id": 0,
-    "m_DisplayName": "In",
-    "m_SlotType": 0,
-    "m_Hidden": false,
-    "m_ShaderOutputName": "In",
     "m_StageCapability": 3,
     "m_Value": 0.0,
     "m_DefaultValue": 0.0,
@@ -4261,6 +4245,22 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
+    "m_ObjectId": "cade9cfbe3394e108a37b6bbb7f6bb2c",
+    "m_Id": 0,
+    "m_DisplayName": "In",
+    "m_SlotType": 0,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "In",
+    "m_StageCapability": 3,
+    "m_Value": 0.0,
+    "m_DefaultValue": 0.0,
+    "m_Labels": [],
+    "m_LiteralMode": false
+}
+
+{
+    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.Vector4MaterialSlot",
     "m_ObjectId": "cbdd8d314cd745b898de2ebdcc656cdb",
     "m_Id": 0,
@@ -4514,7 +4514,7 @@
     },
     "m_Slots": [
         {
-            "m_Id": "51b9d80cba92455dbe76b03dc88dd2db"
+            "m_Id": "4f78ba840c014d349b90ff873b302436"
         },
         {
             "m_Id": "7c9913491f50486092a98e3fbe386e65"
@@ -5012,13 +5012,13 @@
     "m_RefNameGeneratedByDisplayName": "_DecayDuration",
     "m_DefaultReferenceName": "_DecayDuration",
     "m_OverrideReferenceName": "",
-    "m_GeneratePropertyBlock": false,
+    "m_GeneratePropertyBlock": true,
     "m_UseCustomSlotLabel": false,
     "m_CustomSlotLabel": "",
     "m_DismissedVersion": 0,
     "m_Precision": 0,
-    "overrideHLSLDeclaration": true,
-    "hlslDeclarationOverride": 1,
+    "overrideHLSLDeclaration": false,
+    "hlslDeclarationOverride": 0,
     "m_Hidden": false,
     "m_PerRendererData": false,
     "m_customAttributes": [],

@@ -34,10 +34,10 @@ Material:
     m_Ints: []
     m_Floats:
     - _Blur: 0
-    - _DecayDuration: 5000
+    - _DecayDuration: 2500
     - _DecaySpeed: 15
     - _FillDuration: 15
-    - _HeightDecay: 5000
+    - _HeightDecay: 3500
     - _OffsetScale: 0
     m_Colors:
     - _Scale: {r: 1, g: -1, b: 0, a: 0}

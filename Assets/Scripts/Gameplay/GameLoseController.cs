@@ -14,6 +14,8 @@ namespace Logbound
 
         public bool GameEnded;
 
+        public bool StopLosing;
+
         private void Update()
         {
             if (GameEnded)
@@ -35,9 +37,19 @@ namespace Logbound
 
         public void LoseGame()
         {
+#if UNITY_EDITOR
+            if (StopLosing)
+            {
+                return;
+            }
+#endif
+
             GameEnded = true;
 
             OnGameEnded?.Invoke(GameTime);
+
+
+            Cursor.lockState = CursorLockMode.None;
         }
     }
 }

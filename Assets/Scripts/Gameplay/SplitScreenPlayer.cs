@@ -62,6 +62,8 @@ namespace Logbound.Gameplay
         private void Start()
         {
             GetComponentInChildren<PlayerHudController>().Initialize(this);
+
+            Cursor.lockState = CursorLockMode.Locked;
         }
 
         private void Update()
