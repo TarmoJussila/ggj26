@@ -39,6 +39,11 @@ namespace Logbound.UI
             // Map -30 to 20 range to 0 to 1
             float warmthFactor = Mathf.Clamp01((indoorTemp + 30f) / 50f);
             _fillImage.fillAmount = warmthFactor;
+
+            if (warmthFactor < 0.01f)
+            {
+                GameLoseController.Instance.LoseGame();
+            }
         }
 
         private void UpdateRatCount()
@@ -47,6 +52,11 @@ namespace Logbound.UI
             int ratCount = RatController.Instance.GetActiveRatCount();
             // 0 rats = full bar (1), 20 rats = empty bar (0)
             _fillImage.fillAmount = 1f - Mathf.Clamp01((float)ratCount / maxRats);
+
+            if (_fillImage.fillAmount < 0.01f)
+            {
+                GameLoseController.Instance.LoseGame();
+            }
         }
     }
 }
