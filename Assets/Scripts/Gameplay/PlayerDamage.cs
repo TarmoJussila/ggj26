@@ -177,6 +177,9 @@ namespace Logbound.Gameplay
 
         public void Kill()
         {
+            GetComponent<PlayerInteraction>().DropPressed();
+            GetComponent<PlayerInteraction>().DropPressed();
+            
             OnPlayerDead?.Invoke();
         }
     }
