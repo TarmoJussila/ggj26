@@ -89,7 +89,7 @@ MonoBehaviour:
   _maxStamina: 0
   _jumpBufferLength: 0.07
   _lookSpeed: 120
-  _mouseSensitivity: 0.3
+  _mouseSensitivity: 0.05
   _walkSpeed: 4
   _runSpeed: 1.5
   _airtimeThreshold: 0.15
