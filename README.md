@@ -27,10 +27,13 @@ Keyboard & Mouse
 | Move | WASD / Arrow keys |
 | Look | Mouse |
 | Jump | Space |
-| Pick Item | E |
-| Drop Item | Mouse 1 / Enter |
+| Interact / Pick up item | E |
+| Use carried item | Mouse 1 |
+| Drop Item | G |
+| Throw item | F |
+| Quit to main menu | R (hold) |
 | Options menu | ESC |
-| Quit to main menu | C (hold) |
+
 
 Gamepad
 | Action        | Bind          |
@@ -38,10 +41,12 @@ Gamepad
 | Move | Left stick |
 | Look | Right stick |
 | Jump | A |
-| Pick Item | X |
-| Drop Item | Y |
+| Interact / Pick up item | X |
+| Use carried item | Right trigger / right shoulder |
+| Drop Item | B |
+| Throw item | Y |
+| Quit to main menu | Left shoulder (hold) |
 | Options menu | Start |
-| Quit to main menu | B (hold) |
 
 
 # Credits - Team Too Many Heads
