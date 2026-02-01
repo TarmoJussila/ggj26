@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Globalization;
 using Logbound.Gameplay;
 using TMPro;
 using UnityEngine;
@@ -21,7 +22,7 @@ namespace Logbound.UI
 
         private void OnGameEnded(float obj)
         {
-            _scoreText.text = "You survived " + obj + " seconds";
+            _scoreText.text = $"You survived {obj.ToString("F2", CultureInfo.InvariantCulture)} seconds";
 
             StartCoroutine(AnimateAlpha());
         }
