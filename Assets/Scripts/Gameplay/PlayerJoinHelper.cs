@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Logbound.Gameplay
 {
@@ -38,7 +39,8 @@ namespace Logbound.Gameplay
 
         public Vector3 GetSpawnPoint()
         {
-            return _spawnPoints[SpawnIndex()];
+            //return _spawnPoints[SpawnIndex()];
+            return _spawnPoints[Random.Range(0, _spawnPoints.Count)];
         }
     }
 }
