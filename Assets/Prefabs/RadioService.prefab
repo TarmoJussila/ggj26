@@ -517,25 +517,25 @@ MonoBehaviour:
   - WeatherStates: 2
     Temperature: 0
     AudioClip: {fileID: 8300000, guid: 6bd1fa215fed21e47aefbdaa58b45242, type: 3}
-  - WeatherStates: 1
+  - WeatherStates: 2
     Temperature: -20
     AudioClip: {fileID: 8300000, guid: c82f1cd3c5be86649955644bc761d34e, type: 3}
   - WeatherStates: 3
     Temperature: 0
     AudioClip: {fileID: 8300000, guid: 3b9d14b8e36e51247b339b1aef6970aa, type: 3}
-  - WeatherStates: 1
+  - WeatherStates: 3
     Temperature: -20
     AudioClip: {fileID: 8300000, guid: d95997016b395094cb18880ee19fa76a, type: 3}
-  - WeatherStates: 1
+  - WeatherStates: 4
     Temperature: -20
-    AudioClip: {fileID: 8300000, guid: d95997016b395094cb18880ee19fa76a, type: 3}
-  - WeatherStates: 1
+    AudioClip: {fileID: 8300000, guid: 40b785d5d0fcf5741ae7df4ddab5764d, type: 3}
+  - WeatherStates: 4
     Temperature: -20
-    AudioClip: {fileID: 8300000, guid: d95997016b395094cb18880ee19fa76a, type: 3}
-  - WeatherStates: 1
+    AudioClip: {fileID: 8300000, guid: c3280f967d61c144e8a20eb050c15a9e, type: 3}
+  - WeatherStates: 5
     Temperature: -20
-    AudioClip: {fileID: 8300000, guid: d95997016b395094cb18880ee19fa76a, type: 3}
-  - WeatherStates: 1
+    AudioClip: {fileID: 8300000, guid: 53dd7c6d6e0e95a479c2367bd89d8959, type: 3}
+  - WeatherStates: 5
     Temperature: -20
     AudioClip: {fileID: 8300000, guid: 1ec09788b7634b84895f702d02f088fd, type: 3}
   _intro: {fileID: 8300000, guid: 8062d755160910f4d85eac0578a8bd18, type: 3}
