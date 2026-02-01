@@ -8,7 +8,7 @@ The game was created in 48 hours during the Global Game Jam / Finnish Game Jam 2
 
 # Watch
 
-Gameplay video: [**Watch**](https://globalgamejam.org/games/2026/logbound-9)
+Gameplay video: [**Watch**](https://www.youtube.com/watch?v=lx0XCYFltFk)
 
 # Download
 
