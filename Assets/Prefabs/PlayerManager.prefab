@@ -93,6 +93,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Logbound.PlayerJoinHelper
   howToJoinCamera: {fileID: 1018388088081077996}
   howToJoinCanvas: {fileID: 6926535496246522574}
+  _spawnPoints:
+  - {x: -10, y: 1.5, z: 4}
+  - {x: -14, y: 1.5, z: 30}
+  - {x: 14, y: 1.5, z: -30}
+  - {x: 16, y: 1.5, z: 7}
 --- !u!1 &4330239156695338845
 GameObject:
   m_ObjectHideFlags: 0
