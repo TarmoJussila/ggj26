@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace Logbound.UI
@@ -74,7 +75,7 @@ namespace Logbound.UI
 
         private void OnPlayButtonClicked()
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene("GameScene");
+            SceneManager.LoadScene("GameScene");
         }
 
         public void SelectResolution(int index)

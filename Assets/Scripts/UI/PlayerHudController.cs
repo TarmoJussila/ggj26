@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
@@ -177,7 +178,7 @@ namespace Logbound.UI
             _playerDamage.Resurrect();
         }
 
-        [System.Serializable]
+        [Serializable]
         public struct MaskOverlayPair
         {
             public MaskType MaskType;

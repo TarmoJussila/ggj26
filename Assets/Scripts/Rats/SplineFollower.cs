@@ -1,7 +1,7 @@
 using Unity.Mathematics;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.Splines;
+using Random = UnityEngine.Random;
 
 namespace Logbound.Rats
 {
@@ -24,8 +24,8 @@ namespace Logbound.Rats
         {
             if (SplineContainer != null)
                 _splineLength = SplineContainer.CalculateLength();
-            Speed = UnityEngine.Random.Range(_minSpeed, _maxSpeed);
-            float randomScale = UnityEngine.Random.Range(_minScale, _maxScale);
+            Speed = Random.Range(_minSpeed, _maxSpeed);
+            float randomScale = Random.Range(_minScale, _maxScale);
             transform.localScale = new Vector3(randomScale, randomScale, randomScale);
         }
 

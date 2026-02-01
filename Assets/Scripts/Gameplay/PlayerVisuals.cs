@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Logbound.Masks;
@@ -165,7 +166,7 @@ namespace Logbound.Gameplay
         }
     }
 
-    [System.Serializable]
+    [Serializable]
     public struct SpritePair
     {
         public Sprite Front;

@@ -1,12 +1,13 @@
 using System.Collections;
 using Logbound.Gameplay;
+using TMPro;
 using UnityEngine;
 
 namespace Logbound.UI
 {
     public class GameEndScreen : MonoBehaviour
     {
-        [SerializeField] private TMPro.TextMeshProUGUI _scoreText;
+        [SerializeField] private TextMeshProUGUI _scoreText;
 
         private void Awake()
         {

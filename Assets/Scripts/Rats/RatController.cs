@@ -1,13 +1,13 @@
+using System;
 using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.Serialization;
-using UnityEngine.Splines;
-using Logbound.Services;
 using Logbound.Utilities;
+using UnityEngine;
+using UnityEngine.Splines;
+using Random = UnityEngine.Random;
 
 namespace Logbound.Rats
 {
-    [System.Serializable]
+    [Serializable]
     public class SpawnIntervalThreshold
     {
         [Tooltip("Max number of rats for this interval")]
