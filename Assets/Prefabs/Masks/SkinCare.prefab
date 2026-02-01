@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f726fc5517d46af419d246c1cfe9c532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Logbound.Masks.BasicMaskItem
-  <MaskType>k__BackingField: 8
+  <MaskType>k__BackingField: 7
 --- !u!1 &5200981675902500786
 GameObject:
   m_ObjectHideFlags: 0
