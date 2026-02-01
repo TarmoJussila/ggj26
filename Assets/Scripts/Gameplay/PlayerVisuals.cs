@@ -45,6 +45,8 @@ namespace Logbound.Gameplay
         {
             PlayerJoinHelper.OnPlayerAdded += CheckPlayers;
             PlayerJoinHelper.OnPlayerRemoved += CheckPlayers;
+
+            _splitScreenPlayer = GetComponentInParent<SplitScreenPlayer>();
         }
 
         private void OnDestroy()
@@ -87,7 +89,9 @@ namespace Logbound.Gameplay
 
             if (_targetPlayerTransform != null)
             {
-                transform.forward = _targetPlayerTransform.position - transform.position;
+                   Vector3 forward = _targetPlayerTransform.position - transform.position;
+                   forward.y = 0;
+                   transform.forward = forward;
             }
 
             if (_frameTimer >= _animSpeed)
@@ -102,7 +106,7 @@ namespace Logbound.Gameplay
                 _frameTimer = 0f;
             }
 
-            bool front = Vector3.Dot(_targetPlayerTransform.position - transform.position, _targetPlayerTransform.forward) < 0;
+            bool front = Vector3.Dot((transform.position - _targetPlayerTransform.position), _splitScreenPlayer.transform.forward) < 0;
 
             _rend.sprite = front ? _currentAnim[_currentFrame].Front : _currentAnim[_currentFrame].Back;
 
