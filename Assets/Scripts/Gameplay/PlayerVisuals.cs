@@ -45,6 +45,8 @@ namespace Logbound.Gameplay
         private SplitScreenPlayer _splitScreenPlayer;
         private PlayerJoinHelper _playerJoinHelper;
 
+        private bool forcedAnimation = false;
+
         private void Awake()
         {
             PlayerJoinHelper.OnPlayerAdded += CheckPlayers;
@@ -111,6 +113,7 @@ namespace Logbound.Gameplay
                 if (_currentFrame >= _maxFrames)
                 {
                     _currentFrame = 0;
+                    forcedAnimation = false;
                 }
 
                 _frameTimer = 0f;
@@ -145,6 +148,11 @@ namespace Logbound.Gameplay
 
         public void SetAnimation(Anim anim, bool force = false)
         {
+            if (forcedAnimation)
+            {
+                return;
+            }
+            
             if (CurrentAnimation == anim && !force)
             {
                 return;
@@ -154,6 +162,8 @@ namespace Logbound.Gameplay
             {
                 return;
             }
+
+            forcedAnimation = force;
 
             _currentPlayTime = 0.0f;
             _currentAnim = new(GetFrames(anim));
