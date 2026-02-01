@@ -164,6 +164,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Logbound.Gameplay.UI.OptionsMenu
   _invertVerticalLookToggle: {fileID: 7002964252475505574}
+  _toggleLabel: {fileID: 4484945392496404598}
+  _wallOfText: {fileID: 3741054636342069862}
 --- !u!1 &960956965592213639
 GameObject:
   m_ObjectHideFlags: 0
@@ -176,7 +178,7 @@ GameObject:
   - component: {fileID: 6680706291671954040}
   - component: {fileID: 3741054636342069862}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: WallOfText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -198,8 +200,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -22.5, y: -259}
-  m_SizeDelta: {x: -55, y: 50}
+  m_AnchoredPosition: {x: 0, y: -1}
+  m_SizeDelta: {x: 0, y: 750}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6680706291671954040
 CanvasRenderer:
@@ -340,8 +342,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 118}
-  m_SizeDelta: {x: 500, y: 50}
+  m_AnchoredPosition: {x: 0, y: 257}
+  m_SizeDelta: {x: 800, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7002964252475505574
 MonoBehaviour:
@@ -707,7 +709,7 @@ GameObject:
   - component: {fileID: 1900233157330558381}
   - component: {fileID: 4484945392496404598}
   m_Layer: 5
-  m_Name: Label (TMP)
+  m_Name: ToggleLabel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
