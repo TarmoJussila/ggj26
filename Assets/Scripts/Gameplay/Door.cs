@@ -7,8 +7,10 @@ namespace Logbound.Gameplay
         public bool IsOpen { get; private set; }
         public bool AffectsHouseWarmth => _affectsHouseWarmth;
 
+        [SerializeField] private ParticleSystem _openParticles;
+
         [SerializeField] bool _affectsHouseWarmth = true;
-        
+
         private float _initialRotationY;
         private float _targetRotationY;
         private float _rotationY;
@@ -24,10 +26,24 @@ namespace Logbound.Gameplay
             _rotationY = Mathf.MoveTowardsAngle(_rotationY, IsOpen ? _targetRotationY : _initialRotationY, Time.deltaTime * 3 * 90);
             transform.localRotation = Quaternion.Euler(0, _rotationY, 0);
         }
-        
+
         public override void Interact(PlayerInteraction playerInteraction)
         {
             IsOpen = !IsOpen;
+
+            if (_openParticles == null)
+            {
+                return;
+            }
+
+            if (IsOpen)
+            {
+                _openParticles.Play();
+            }
+            else
+            {
+                _openParticles.Stop();
+            }
         }
     }
 }
