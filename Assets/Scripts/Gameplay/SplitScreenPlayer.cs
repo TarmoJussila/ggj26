@@ -197,7 +197,8 @@ namespace Logbound.Gameplay
             }
         }
 
-        private void OnCrouch(InputValue value)
+        /// <summary> Used to be "OnCrouch"</summary>
+        private void OnHoldToRestart(InputValue value)
         {
             if (value.Get<float>() >= 1f)
             {

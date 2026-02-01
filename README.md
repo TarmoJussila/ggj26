@@ -1,6 +1,6 @@
 # LOGBOUND
 
-**Logbound** is a tense survival game set in a frozen wilderness where every decision can mean the difference between warmth and death.
+**Logbound** is a tense survival game set in a frozen wilderness where every decision can mean the difference between warmth and death. You must chop wood, keep the fire alive, and stop your grandma from freezing while battling waves of sneaky rats. Different masks grant unique abilities, forcing you to swap roles on the fly as you struggle to survive the cold.
 
 The game was created in 48 hours during the Global Game Jam / Finnish Game Jam 2026.
 
@@ -21,16 +21,20 @@ The game was created with **Unity 6000.3.6f1**.
  3. Enjoy the game
 
 # Controls
+
 Keyboard & Mouse
 | Action        | Bind          |
 | ------------- |:-------------:|
 | Move | WASD / Arrow keys |
 | Look | Mouse |
 | Jump | Space |
-| Pick Item | E |
-| Drop Item | Mouse 1 / Enter |
+| Interact / Pick up item | E |
+| Use carried item | Mouse 1 |
+| Drop item | G |
+| Throw item | F |
+| Quit to main menu | R (hold) |
 | Options menu | ESC |
-| Quit to main menu | C (hold) |
+
 
 Gamepad
 | Action        | Bind          |
@@ -38,10 +42,12 @@ Gamepad
 | Move | Left stick |
 | Look | Right stick |
 | Jump | A |
-| Pick Item | X |
-| Drop Item | Y |
+| Interact / Pick up item | X |
+| Use carried item | Right trigger / Right shoulder |
+| Drop item | B |
+| Throw item | Y |
+| Quit to main menu | Left shoulder (hold) |
 | Options menu | Start |
-| Quit to main menu | B (hold) |
 
 
 # Credits - Team Too Many Heads

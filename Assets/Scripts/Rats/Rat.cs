@@ -22,12 +22,20 @@ namespace Logbound.Rats
         {
             if (other.CompareTag("Hazard") || other.CompareTag("RatTrap"))
             {
-                var ratTrap = other.GetComponent<RatTrapHazard>();
-                if (ratTrap != null && !ratTrap.IsActive)
+                var hazard = other.GetComponent<Hazard>();
+
+                if (hazard is not RatTrapHazard trap)
+                {
+                    Die();
+                    return;
+                }
+                
+                if (!trap.IsActive)
                 {
                     return;
                 }
-                ratTrap.Triggered();
+                
+                trap.Triggered();
                 Die();
             }
         }
