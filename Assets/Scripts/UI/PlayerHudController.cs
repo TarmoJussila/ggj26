@@ -85,6 +85,7 @@ namespace Logbound.UI
                 if (time <= double.Epsilon)
                 {
                     SceneManager.LoadScene("MainMenuScene");
+                    Cursor.lockState = CursorLockMode.None;
                 }
             }
             else

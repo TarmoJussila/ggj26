@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -17,6 +18,11 @@ namespace Logbound.UI
         private Resolution[] _resolutions;
         private int _selectedIndex = -1;
         public bool FullScreenEnabled { get; set; }
+
+        private void Awake()
+        {
+            Cursor.lockState = CursorLockMode.None;
+        }
 
         private void Start()
         {
