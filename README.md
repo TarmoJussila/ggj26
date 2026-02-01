@@ -12,7 +12,7 @@ Gameplay video: [**Watch**](https://www.youtube.com/watch?v=lx0XCYFltFk)
 
 # Download
 
-Executable: [**Download**](https://globalgamejam.org/games/2026/logbound-9)
+Executable: [**Download**](https://ggjv4.s3.us-west-1.amazonaws.com/files/games/2026/184589/exec/Logbound_0.zip?VersionId=lUYYaRentvFFae1M5YR_EwXfGzYLhKtz) 
 
 # Build
 
