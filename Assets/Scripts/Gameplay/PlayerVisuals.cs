@@ -43,6 +43,7 @@ namespace Logbound.Gameplay
         private float _currentPlayTime;
 
         private SplitScreenPlayer _splitScreenPlayer;
+        private PlayerJoinHelper _playerJoinHelper;
 
         private void Awake()
         {
@@ -50,6 +51,11 @@ namespace Logbound.Gameplay
             PlayerJoinHelper.OnPlayerRemoved += CheckPlayers;
 
             _splitScreenPlayer = GetComponentInParent<SplitScreenPlayer>();
+            _playerJoinHelper = FindObjectOfType<PlayerJoinHelper>();
+            if (_playerJoinHelper == null)
+            {
+                Debug.LogError("PlayerJoinHelper not found");
+            }
         }
 
         private void OnDestroy()
@@ -78,6 +84,7 @@ namespace Logbound.Gameplay
             }
 
             _rend.enabled = matchingInput != null && matchingInput != self;
+            transform.position = _playerJoinHelper.GetSpawnPoint();
         }
 
         private void Update()
