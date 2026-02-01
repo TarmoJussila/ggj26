@@ -71,6 +71,19 @@ namespace Logbound.Gameplay
             // Take damage from rat trap.
             if (other.CompareTag("Hazard") && other.TryGetComponent(out RatTrapHazard hazard))
             {
+                if (hazard.IsActive)
+                {
+                    TakeDamage(hazard.DamagePerTick);
+                    hazard.Triggered();
+                }
+            }
+        }
+        
+        private void OnCollisionEnter(Collision other)
+        {
+            // Take damage from rat trap.
+            if (other.gameObject.CompareTag("Hazard") && other.gameObject.TryGetComponent(out RatTrapHazard hazard))
+            {
                 TakeDamage(hazard.DamagePerTick);
                 hazard.Triggered();
             }

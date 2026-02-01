@@ -1,4 +1,5 @@
 using System;
+using Logbound.Gameplay;
 using Logbound.Services;
 using UnityEngine;
 using UnityEngine.Splines;
@@ -23,6 +24,12 @@ namespace Logbound.Rats
         {
             if (other.CompareTag("Hazard") || other.CompareTag("RatTrap"))
             {
+                var ratTrap = other.GetComponent<RatTrapHazard>();
+                if (ratTrap != null && !ratTrap.IsActive)
+                {
+                    return;
+                }
+                ratTrap.Triggered();
                 Die();
             }
         }
