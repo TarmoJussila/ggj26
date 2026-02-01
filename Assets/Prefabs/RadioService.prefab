@@ -527,13 +527,13 @@ MonoBehaviour:
     Temperature: -20
     AudioClip: {fileID: 8300000, guid: d95997016b395094cb18880ee19fa76a, type: 3}
   - WeatherStates: 4
-    Temperature: -20
+    Temperature: 0
     AudioClip: {fileID: 8300000, guid: 40b785d5d0fcf5741ae7df4ddab5764d, type: 3}
   - WeatherStates: 4
     Temperature: -20
     AudioClip: {fileID: 8300000, guid: c3280f967d61c144e8a20eb050c15a9e, type: 3}
   - WeatherStates: 5
-    Temperature: -20
+    Temperature: 0
     AudioClip: {fileID: 8300000, guid: 53dd7c6d6e0e95a479c2367bd89d8959, type: 3}
   - WeatherStates: 5
     Temperature: -20

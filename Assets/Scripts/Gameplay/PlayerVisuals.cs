@@ -24,6 +24,7 @@ namespace Logbound.Gameplay
         public List<SpritePair> IdleAnim;
         public List<SpritePair> JumpAnim;
         public List<SpritePair> HitAnim;
+        public List<SpritePair> DrinkAnim;
 
         [SerializeField] private SpriteRenderer _rend;
         [SerializeField] private SpriteRenderer _maskRend;
@@ -42,6 +43,9 @@ namespace Logbound.Gameplay
         private float _currentPlayTime;
 
         private SplitScreenPlayer _splitScreenPlayer;
+        private PlayerJoinHelper _playerJoinHelper;
+
+        private bool forcedAnimation = false;
 
         private void Awake()
         {
@@ -49,6 +53,11 @@ namespace Logbound.Gameplay
             PlayerJoinHelper.OnPlayerRemoved += CheckPlayers;
 
             _splitScreenPlayer = GetComponentInParent<SplitScreenPlayer>();
+            _playerJoinHelper = FindObjectOfType<PlayerJoinHelper>();
+            if (_playerJoinHelper == null)
+            {
+                Debug.LogError("PlayerJoinHelper not found");
+            }
         }
 
         private void OnDestroy()
@@ -77,6 +86,7 @@ namespace Logbound.Gameplay
             }
 
             _rend.enabled = matchingInput != null && matchingInput != self;
+            _splitScreenPlayer.transform.position = _playerJoinHelper.GetSpawnPoint();
         }
 
         private void Update()
@@ -103,6 +113,7 @@ namespace Logbound.Gameplay
                 if (_currentFrame >= _maxFrames)
                 {
                     _currentFrame = 0;
+                    forcedAnimation = false;
                 }
 
                 _frameTimer = 0f;
@@ -137,6 +148,11 @@ namespace Logbound.Gameplay
 
         public void SetAnimation(Anim anim, bool force = false)
         {
+            if (forcedAnimation)
+            {
+                return;
+            }
+            
             if (CurrentAnimation == anim && !force)
             {
                 return;
@@ -146,6 +162,8 @@ namespace Logbound.Gameplay
             {
                 return;
             }
+
+            forcedAnimation = force;
 
             _currentPlayTime = 0.0f;
             _currentAnim = new(GetFrames(anim));
@@ -162,6 +180,7 @@ namespace Logbound.Gameplay
                 case Anim.Walk: return WalkAnim;
                 case Anim.Jump: return JumpAnim;
                 case Anim.Hit: return HitAnim;
+                case Anim.Drink: return DrinkAnim;
                 default: return IdleAnim;
             }
         }
@@ -179,6 +198,7 @@ namespace Logbound.Gameplay
         Idle,
         Walk,
         Jump,
-        Hit
+        Hit,
+        Drink
     }
 }
