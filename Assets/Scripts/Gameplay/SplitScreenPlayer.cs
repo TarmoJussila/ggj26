@@ -1,10 +1,8 @@
 using System;
 using Logbound.Gameplay.UI;
-using Logbound.Masks;
 using Logbound.UI;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.SceneManagement;
 
 namespace Logbound.Gameplay
 {

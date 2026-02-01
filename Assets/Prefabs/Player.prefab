@@ -141,6 +141,7 @@ MonoBehaviour:
   _interactLayerMask:
     serializedVersion: 2
     m_Bits: 247
+  _throwStrength: 10
 --- !u!114 &9127873294200908677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -303,13 +304,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5017718581053789019}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.10919032, y: -0.31544316, z: -0.11107545, w: 0.9360745}
+  m_LocalRotation: {x: -0.055197265, y: 0.3183287, z: -0.54115105, w: 0.7763863}
   m_LocalPosition: {x: 0.355, y: -0.317, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4703400088749275691}
-  m_LocalEulerAnglesHint: {x: -15.932, y: -36.081, z: -8.315}
+  m_LocalEulerAnglesHint: {x: 15, y: 35, z: -65}
 --- !u!1 &7009222354020305312
 GameObject:
   m_ObjectHideFlags: 0
