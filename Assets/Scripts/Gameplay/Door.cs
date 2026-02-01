@@ -11,6 +11,8 @@ namespace Logbound.Gameplay
 
         [SerializeField] bool _affectsHouseWarmth = true;
 
+        [SerializeField] private int _openDirection = 1;
+
         private float _initialRotationY;
         private float _targetRotationY;
         private float _rotationY;
@@ -18,7 +20,7 @@ namespace Logbound.Gameplay
         private void Start()
         {
             _initialRotationY = transform.localRotation.eulerAngles.y;
-            _targetRotationY = transform.localRotation.eulerAngles.y + 90f;
+            _targetRotationY = transform.localRotation.eulerAngles.y + 90f * _openDirection;
         }
 
         private void Update()
