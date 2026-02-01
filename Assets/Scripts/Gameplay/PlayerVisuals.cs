@@ -84,7 +84,7 @@ namespace Logbound.Gameplay
             }
 
             _rend.enabled = matchingInput != null && matchingInput != self;
-            transform.position = _playerJoinHelper.GetSpawnPoint();
+            _splitScreenPlayer.transform.position = _playerJoinHelper.GetSpawnPoint();
         }
 
         private void Update()
