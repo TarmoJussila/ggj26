@@ -14,6 +14,7 @@ namespace Logbound.Gameplay
         [SerializeField] private float _scanFrequency = 0.1f;
         [SerializeField] private float _interactRange;
         [SerializeField] private LayerMask _interactLayerMask;
+        [SerializeField] private float _throwStrength = 50;
 
         private PlayerMaskHelper _playerMaskHelper;
         private float _scanTimer;
@@ -26,7 +27,7 @@ namespace Logbound.Gameplay
         {
             _playerMaskHelper = GetComponent<PlayerMaskHelper>();
         }
-        
+
         private void OnInteract(InputValue value)
         {
             if (value.isPressed)
@@ -117,10 +118,11 @@ namespace Logbound.Gameplay
             CurrentCarryItem.transform.SetParent(null);
             CurrentCarryItem.StopCarry();
 
-            Vector3 throwVec = _cameraTransform.forward * 50;
-            
-            CurrentCarryItem.GetComponent<Rigidbody>().AddForce(throwVec);
-            
+            Vector3 throwVec = _cameraTransform.forward * _throwStrength;
+
+            Rigidbody rb = CurrentCarryItem.GetComponent<Rigidbody>();
+            rb.AddForce(throwVec, ForceMode.VelocityChange);
+
             CurrentCarryItem = null;
         }
 
